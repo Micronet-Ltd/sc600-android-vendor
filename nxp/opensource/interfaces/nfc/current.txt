@@ -1,0 +1,9 @@
+#Copyright (c) 2018 Qualcomm Technologies, Inc.
+#All Rights Reserved.
+#Confidential and Proprietary - Qualcomm Technologies, Inc.
+
+### HAL released in Android O ###
+
+#NFC HAL 1.0
+54b8eab16646fa63eb0892a549ab737cb3425638ec28628f7278572c9b2dfc4d vendor.nxp.hardware.nfc@1.0::types
+612bc0fd5b0e1280829d4c81200337eaa9b090d4942a5b97b18f8c9b362414d3 vendor.nxp.hardware.nfc@1.0::INqNfc

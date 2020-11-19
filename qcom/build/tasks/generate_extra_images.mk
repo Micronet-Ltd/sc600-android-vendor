@@ -1,0 +1,1 @@
+/media/vladimir/github-repo/ca/device/qcom/common/generate_extra_images.mk
