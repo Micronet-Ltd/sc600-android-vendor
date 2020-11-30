@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 Verizon. All Rights Reserved.
+-->
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.verizon.dmclientupdate"
+    android:sharedUserId="android.uid.system"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <original-package android:name="com.verizon.dmclientupdate" />
+
+    <uses-permission android:name="android.permission.OMADMACCESS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-sdk
+        android:maxSdkVersion="23"
+        android:minSdkVersion="18"
+        android:targetSdkVersion="23" />
+
+    <application
+        android:allowBackup="false"
+        android:icon="@drawable/system_update"
+        android:label="@string/app_name"
+        android:name="com.verizon.dmclientupdate.App"
+        android:theme="@android:style/Theme.Holo.Light" >
+        <activity
+            android:name="com.verizon.dmclientupdate.MainActivity"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:icon="@drawable/system_update"
+            android:label="@string/system_update_activity_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.settings.DMCLIENT_SYSTEM_UPDATE_SETTINGS" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.verizon.dmclientupdate.OmadmControllerDialog"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+        <activity
+            android:name="com.verizon.dmclientupdate.OmadmFumoDialog"
+            android:screenOrientation="portrait"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:name="com.verizon.dmclientupdate.Browser">
+            <intent-filter>
+                <action android:name="com.verizon.dmclientupdate.BROWSER"/>
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+
+        <receiver android:name="com.verizon.dmclientupdate.OmadmNotificationReceiver">
+            <intent-filter>
+                <action android:name="com.verizon.dmclientupdate.Controller.SHOW_UI"/>
+                <action android:name="com.verizon.dmclientupdate.Fumo.SHOW_UI"/>
+                <action android:name="com.verizon.dmclientupdate.Fumo.SHOW_PROGRESS"/>
+                <action android:name="com.verizon.dmclientupdate.Fumo.REMOVE_UI"/>
+            </intent-filter>
+        </receiver>
+		<receiver android:name="com.verizon.dmclientupdate.FotaUpdateReceiver">
+             <intent-filter>
+				 <action android:name="com.verizon.dmclientupdate.Fumo.UPDATE_FOTA"/>
+			</intent-filter>
+		</receiver>
+        <receiver android:name="com.verizon.dmclientupdate.NotificationReceiver">
+            <intent-filter>
+                <action android:name="ACTION_OPEN_ACTIVITY"/>
+                <action android:name="ACTION_UPDATE_AVALIABLE_NOTIFICATION"/>
+                <action android:name="ACTION_LOW_BATTERY"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

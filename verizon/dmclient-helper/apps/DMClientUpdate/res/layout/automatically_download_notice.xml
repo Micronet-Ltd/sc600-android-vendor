@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 Verizon. All Rights Reserved.
+-->
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:padding="@dimen/main_padding">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_automatically_title"
+        android:textColor="@color/titles"
+        android:textSize="@dimen/title_text_size_25"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_automatically_download_warning_msg"
+        android:textColor="@color/conf_text"
+        android:textSize="@dimen/text_size_17"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/start_automatically_notice_ok_button"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="right|bottom"
+        android:text="@string/ok_button"
+        style="@style/button"/>
+
+</LinearLayout>

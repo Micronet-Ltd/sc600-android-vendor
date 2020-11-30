@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 Verizon. All Rights Reserved.
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/main_padding"
+    android:background="@color/background"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/mobile_ic"
+            android:layout_marginEnd="10dp"
+            android:contentDescription="@string/content_description"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/system_update_history"
+            android:textColor="@color/titles"
+            android:textSize="22sp"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/first_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/software_update_to"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/first_update_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="20dp"/>
+
+    <TextView
+        android:id="@+id/second_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:text="@string/software_update_to"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:id="@+id/second_update_date"
+        android:layout_width="match_parent"
+        android:textSize="17sp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:textColor="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/ok_button"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ok_button"
+            style="@style/button"/>
+
+    </LinearLayout>
+
+</LinearLayout>

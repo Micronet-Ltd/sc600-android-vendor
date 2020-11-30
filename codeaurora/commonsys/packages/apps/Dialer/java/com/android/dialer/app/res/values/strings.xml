@@ -978,5 +978,6 @@
     <string name="speed_dial_cancel">Cancel</string>
 
     <string name="speed_dial_ok">OK</string>
+    <string name="quectel_image_version">Quectel Version</string>
 
 </resources>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 Verizon. All Rights Reserved.
+-->
+<resources>
+    <color name="colorPrimary">#757575</color>
+    <color name="colorPrimaryDark">#5D5D5D</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="button_text_color">#E00B26</color>
+    <color name="titles">#3D3D3D</color>
+    <color name="conf_text">#9A9A9A</color>
+    <color name="background">#FAFAFA</color>
+</resources>

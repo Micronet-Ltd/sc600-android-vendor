@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 Verizon. All Rights Reserved.
+-->
+
+<resources>
+
+    <string name="app_name">DMClientUpdate</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- List item, for accessing phone updates related information.
+         About phone screen, list item title. Takes the user to the screen
+         for seeing and installing system updates. -->
+    <string name="system_update_activity_name">DMC updates</string>
+
+    <!-- Information, there are no new phone updates available. -->
+    <string name="system_update_no_update_content_text">You are all up to date</string>
+
+    <!-- Label, showing the time when phone last checked for
+         available updates. -->
+    <string name="system_update_last_checkin">Last checked: %s</string>
+
+    <!-- Information, showing the current phone SW version. -->
+    <string name="system_update_current_version">Version:</string>
+
+    <!-- Button, for checking if there are any updates available for
+         the phone. -->
+    <string name="system_update_check_now_button_text">Check for update</string>
+
+    <!-- Button, for emulate wap push system update if there are any
+         updates available for the phone. -->
+    <string name="system_update_wap_push_button_text">Emulate wap push</string>
+
+    <!-- Wait note, phone is checking if there are any updates
+         available. -->
+    <string name="system_update_checking_for_update">Checking</string>
+
+    <string name= "memory_title">Please make room for an update</string>
+
+    <string name="memory_msg">A system update is available for your phone,
+        but there is not enough room to download this update right now.
+        You need at least %.1f GB of available space</string>
+
+    <string name="memory_msg2">Please delete some files or apps to free up  %.2f GB of space.</string>
+
+    <string name="choose_files_to_delete_button">Choose files to delete</string>
+
+    <string name="memory_not_now_button">Not now</string>
+
+    <string name="notifications_tray">System update available memory check notification</string>
+
+    <string name="system_update_available_title">System update available</string>
+
+    <string name="system_update_available_msg">A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.A system update is available for your phone,
+        but there is not enough room to download this update right now.</string>
+
+    <string name="reject_no_thanks">NO THANKS</string>
+    <string name="reject_no">NO</string>
+    <string name="later">LATER</string>
+    <string name="yes">YES</string>
+    <string name="ok_button">OK</string>
+
+    <string name="learn_more_onlice">Learn More</string>
+    <string name="download_now">Download Now?</string>
+
+    <string name="defer_download_later">DOWNLOAD LATER</string>
+
+    <string name="accept_download_now">DOWNLOAD NOW</string>
+
+    <string name="canceled_title">System update canceled</string>
+
+    <string name="canceled_msg">Ok, we will not download this update.
+    To update in the future go to Settings > System Updates.</string>
+
+    <string name="system_update_canceled_install_msg"><![CDATA[Ok, we will not install this update.
+     To update in future go to Settings > System Updates.]]></string>
+
+    <string name="system_update_canceled">System update canceled</string>
+
+    <string name="system_update_canceled_msg"><![CDATA[Ok, we will not download this update.
+     To update in future go to Settings > System Updates.]]></string>
+
+    <string name="downloading_system_update">Downloading system update</string>
+
+    <string name="cancel_button">CANCEL</string>
+
+    <string name="Downloading">Downloading</string>
+
+    <string name="system_update_ready_to_install">System update ready to install</string>
+
+    <string name="install_later_button">INSTALL LATER</string>
+    <string name="install_now_button">INSTALL NOW</string>
+
+    <string name="post_download_warning">You will not be able to make or receive calls, including emergency calls for about %d minutes, during the update. This update will restart your phone.</string>
+    <string name="post_background_download_warning">You may continue to use your %1$s while this update is installed in the background. You will be asked to restart your %1$s  once it has finished.</string>
+    <string name="start_automatically_title">Start automatically</string>
+
+    <string name="start_automatically_download_warning_msg">The system will download automatically at the selected time. Be sure that your phone is turned on and connected to a charger. If your phone is turned off, the download will happen when the phone is turned on again.</string>
+
+    <string name="start_automatically_install_warning_msg">The system will update automatically at the selected time. Be sure that your phone is turned on and connected to a charger. If your phone is turned off, the installation will happen when the phone is turned on again.</string>
+
+    <string name="system_update_complete_title">System update complete</string>
+
+    <string name="system_update_complete_notice_msg"><![CDATA[Congratulation! Your  %1$s %2$s was update successfully.]]></string>
+
+    <string name="system_update_complete_notice_title">System update complete</string>
+
+    <string name="system_update_unsuccessful_title">System update unsuccessfull</string>
+
+    <string name="system_update_unsuccessful_msg"><![CDATA[Sorry, there was a problem updating your
+       %1$s %2$s. No changes were made.]]></string>
+    <string name="system_update_unsuccessful_msg2"><![CDATA[Sorry, your %1$s %2$s couldnt install this update. Please try again later or use the Software Upgrade Assistant tool on a computer to install the update. All you need is a USB cable. \n \n Just connect your %3$s %4$s to your computer and select System Update from the USB options on your %5$s %6$s. The tool will open on your computer.]]></string>
+    <string name="system_update_ready_title">System update ready</string>
+
+    <string name="system_update_ready_msg1">Restart your phone to complete the installation.</string>
+
+    <string name="system_update_ready_msg2">Your phone will take about %d minutes to restart.
+        Ensure that it is sufficiently charged or that it is plugged into charger.</string>
+
+    <string name="custom_notif_layout_low_battary_title">Unable to apply system update</string>
+    <string name="custom_notif_layout_low_battary_msg">Low battery. Charge phone to continue</string>
+
+    <string name="system_update_ready_notification_title">System Update Ready</string>
+
+    <string name="system_update_ready_notification_msg">Tap here to restart your phone</string>
+
+    <string name="download_unsuccessful_title">Download unsuccessful</string>
+
+    <string name="download_unsuccessful_msg"><![CDATA[We were not able to download this update. To retry, go to Settings > System Updates.]]></string>
+    <string name="download_over_wifi_ok_button">DOWNLOAD OVER WI-FI</string>
+    <string name="download_over_wifi_no_thanks_button">NO THANKS</string>
+    <string name="not_connected_wifi_notice_title">System update via Wi-Fi</string>
+    <string name="not_connected_wifi_msg">You are not currently connected to a Wi-Fi network.</string>
+    <string name="not_connected_wifi_msg2">Download will begin automatically when your phone connects to Wi-Fi.</string>
+    <string name="custom_notification_layout_title">Downloading system update</string>
+    <string name="learn_more">LEARN MORE</string>
+    <string name="time">5.05pm</string>
+    <string name="system_update_ready">System Update Ready To Install</string>
+    <string name="system_update_success">System Update Complete</string>
+    <string name="Tap_here_to_restart">Tap here to restart your phone.</string>
+    <string name="download_later">Download later</string>
+    <string name="when_would_you_like_to_download_this_update">When would you like to download this system update?</string>
+    <string name="when_would_you_like_to_install_this_update">When would you like to install this system update?</string>
+    <string name="when_wifi_is_avaliable">When Wi-Fi is available</string>
+    <string name="install_later">Install later</string>
+    <string name="start_install_automatically">Start install automatically</string>
+    <string name="restart_now">RESTART NOW</string>
+    <string name="content_description">content description</string>
+
+    <string name="system_update_info">System update info</string>
+    <string name="check_for_system_updates">Check for system updates</string>
+    <string name="show_system_update_history">Show system update history</string>
+    <string name="last_system_update">Last System Update</string>
+
+    <string name="applied">Applied</string>
+    <string name="info">%1$s - %2$s</string>
+    <string name="software_not_update_to">Software not updated to %s</string>
+    <string name="software_update_to">Software updated to %s</string>
+    <string name="installing_system_update">Installing System Update</string>
+    <string name="tap_here">Tap here to check memory and proceed</string>
+    <string name="failed">Failed</string>
+    <string name="error_code">Error Code: %s</string>
+    <string name="checking_toast">Checking for new software and configuration updates for your %1$s %2$s. Please wait...</string>
+    <string name="phone_is_up_to_date">Your %1$s %2$s is up to date. No update is necessary at this time</string>
+    <string name="system_update_history">System update history</string>
+    <string name="software_version">Software Version: %s</string>
+    <string name="no_updates_applies">No updates applied</string>
+
+    <!-- Resourses, for OMADM Controller SyncML Alert Dialogs. -->
+    <string name="system_update_omadm_controller_display_dialog_title">Information</string>
+
+    <string name="system_update_omadm_controller_confirm_dialog_title">Confirm</string>
+
+    <string name="system_update_omadm_controller_input_dialog_title">Please Enter</string>
+
+    <string name="system_update_omadm_controller_user_choice_dialog_title">Please Select</string>
+
+    <string name="system_update_omadm_controller_display_uie_dialog_title">Cannot connect</string>
+    <string name="system_update_omadm_controller_display_uie_dialog_body">Sorry, we had trouble checking for system updates. This may be because your connection was interrupted. You can try again when you are connected.</string>
+
+    <string name="system_update_omadm_controller_dialog_ok_button">Ok</string>
+    <string name="system_update_omadm_controller_dialog_accept_button">Accept</string>
+    <string name="system_update_omadm_controller_dialog_cancel_button">Cancel</string>
+
+    <string name="update_info_date_fmt_out">MMMM d, yyyy \'at\' h:mm a</string>
+    <string name="system_update_fail">System Update Fail</string>
+    <string name="download_system_update_fail">Download System Update Fail</string>
+
+</resources>

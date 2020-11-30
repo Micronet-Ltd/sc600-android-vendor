@@ -1,0 +1,465 @@
+/****************************************************************************************
+ * The file (ipth_err.h) defines the error codes used by InnoPath client                  *
+ * software products.                                                                   *
+ *                                                                                      *
+ * Copyright (c) 2003-2008 InnoPath Software, Inc. All rights reserved.                 *
+ *                                                                                      *
+ * Legal Statements                                                                     *
+ *                                                                                      *
+ * THE SOFTWARE AND ANY MATERIALS PROVIDED BY INNOPATH ARE PROVIDED ON AN "AS IS" BASIS *
+ * WITHOUT ANY REPRESENTATIONS, WARRANTIES OR CONDITIONS OF ANY KIND, WHETHER EXPRESS,  *
+ * IMPLIED, STATUTORY, OUT OF A COURSE OF DEALING OR USAGE, TRADE OR OTHERWISE INCLUDING*
+ * ANY IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, MERCHANTABLE QUALITY,       *
+ * FITNESS FOR ANY PARTICULAR PURPOSE OR USE, TITLE, OR NON-INFRINGEMENT. INNOPATH DOES *
+ * NOT REPRESENT OR WARRANT THAT THE SOFTWARE OR ANY MATERIALS WILL BE FREE OF DEFECTS, *
+ * UNINTERRUPTED, ACCURATE, COMPLETE, CURRENT, STABLE, BUG-FREE, ERROR-FREE, OR         *
+ * AVAILABLE AT ANY TIME.                                                               *
+ *                                                                                      *
+ * TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT SHALL INNOPATH BE LIABLE FOR ANY *
+ * DIRECT, INDIRECT, CONSEQUENTIAL, INCIDENTAL, SPECIAL, RELIANCE, PUNITIVE OR OTHER    *
+ * DAMAGES OR EXPENSES OF ANY KIND, INCLUDING BUT NOT LIMITED TO ANY LOSS OF PROFITS OR *
+ * REVENUE, LOST SAVINGS, INTERRUPTED BUSINESS, LOST BUSINESS, LOST BUSINESS            *
+ * OPPORTUNITIES, LOST DATA, LOST GOODWILL, LOSS FROM WORK STOPPAGE, COSTS OF OVERHEAD, *
+ * COSTS OF COVER, LOSS OF ANTICIPATED BENEFITS HEREUNDER, ARISING OUT OF OR RELATED TO *
+ * THIS AGREEMENT, HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, EVEN IF INNOPATH HAS  *
+ * BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES, AND NOTWITHSTANDING THE FAILURE OF  *
+ * THE ESSENTIAL PURPOSE OF ANY LIMITED REMEDY STATED HEREIN.                           *
+ *                                                                                      *
+ ***************************************************************************************/
+
+#ifndef IPTH_ERR_H
+#define IPTH_ERR_H
+
+/* Error Code from InnoPath provided APIs */
+
+/* Error received from DUPS, DUS */
+#define IP_ERR_SERVER_UNKNOWN_ERROR                 (310)            /* = 310, 0x136 */
+#define IP_ERR_SERVER_REQUEST_ERROR                 (320)            /* = 320, 0x140 */
+#define IP_ERR_SERVER_AUTHENTICATION_FAILED         (330)            /* = 330, 0x14A */
+#define IP_ERR_SERVER_INTERNAL_ERROR                (340)            /* = 340, 0x154 */
+#define IP_ERR_SERVER_OBJECT_NOT_FOUND              (350)            /* = 350, 0x15E */
+#define IP_ERR_SERVER_EXTERNAL_ERROR                (360)            /* = 360, 0x168 */
+#define IP_ERR_SERVER_INVALID_DEVICE_INFO           (370)            /* = 370, 0x172 */
+#define IP_ERR_SERVER_SERVICE_NOT_ACTIVATED         (380)            /* = 380, 0x17C */
+#define IP_ERR_SERVER_INVALID_SOFTWARE_INFO         (390)            /* = 390, 0x186 */
+#define IP_ERR_SERVER_SOFTWARE_IS_UP_TO_DATE        (400)            /* = 400, 0x190 */
+
+/* OMA Download Status Code */
+#define IP_OMADL_STATUS_SUCCESS     (900)       /* success */
+#define IP_OMADL_STATUS_INSUFMEM    (901)       /* insufficient memory */
+#define IP_OMADL_STATUS_USRCANCEL   (902)       /* user cancelled */
+#define IP_OMADL_STATUS_LOS         (903)       /* loss of service */
+#define IP_OMADL_STATUS_ATTRMISMAT  (905)       /* attribute mismatch */
+#define IP_OMADL_STATUS_INVDESCR    (906)       /* invalid descriptor */
+#define IP_OMADL_STATUS_INVDDVER    (951)       /* invalid DDVersion */
+#define IP_OMADL_STATUS_DEVABORT    (952)       /* device aborted */
+#define IP_OMADL_STATUS_NONACCCNT   (953)       /* non-acceptable content */
+#define IP_OMADL_STATUS_LOADERERR   (954)       /* loader error */
+
+/* download client */
+#define IP_ERR_DNLD_BASE                    (0x1000)
+#define IP_ERR_DNLD_WRONG_RESPONSE          (IP_ERR_DNLD_BASE)      /* = 4096, 0x1000 */
+#define IP_ERR_DNLD_NO_OBJECT               (IP_ERR_DNLD_BASE+1)    /* = 4097, 0x1001 */
+#define IP_ERR_DNLD_PACKAGE_OVERNUMBER      (IP_ERR_DNLD_BASE+2)    /* = 4098, 0x1002 */
+#define IP_ERR_DNLD_PACKAGE_OVERSIZE        (IP_ERR_DNLD_BASE+3)    /* = 4099, 0x1003 */
+#define IP_ERR_DNLD_PACKAGE_UPDATE_FAILURE  (IP_ERR_DNLD_BASE+4)    /* = 4100, 0x1004 */
+#define IP_ERR_DNLD_PACKAGE_NULL_PTR        (IP_ERR_DNLD_BASE+5)    /* = 4101, 0x1005 */
+#define IP_ERR_DNLD_UNKNOWN_ACTION          (IP_ERR_DNLD_BASE+6)    /* = 4102, 0x1006 */
+#define IP_ERR_DNLD_PACKAGE_UNKWONN_FAILURE (IP_ERR_DNLD_BASE+7)    /* = 4103, 0x1007 */
+#define IP_ERR_DNLD_NO_PACKAGE_FILE         (IP_ERR_DNLD_BASE+8)    /* = 4104, 0x1008 */
+
+#define IP_ERR_DNLD_OMA_BASE                (0X1000 + 0X100)
+#define IP_ERR_DNLD_PARAMETER_NULL_PTR      (IP_ERR_DNLD_OMA_BASE)
+
+/* HTTP Error codes */
+#define IPTH_ERR_HTTP_BASE                    (0x1000+0x200)
+#define IP_ERR_CANNOT_ADD_HDR_INFO          (IPTH_ERR_HTTP_BASE+1)    /* = 4609, 0x1201 */
+#define IP_ERR_DID_NOT_GET_LAST_LINE        (IPTH_ERR_HTTP_BASE+2)    /* = 4610, 0x1202 */
+#define IP_ERR_DOCPATH_ALLOC_ERROR          (IPTH_ERR_HTTP_BASE+3)    /* = 4611, 0x1203 */
+#define IP_ERR_ERROR_RESPONSE               (IPTH_ERR_HTTP_BASE+4)    /* = 4612, 0x1204 */
+#define IPTH_ERR_HDR_INFO_TOO_LONG            (IPTH_ERR_HTTP_BASE+5)    /* = 4613, 0x1205 */
+#define IPTH_ERR_HEADER_TOO_BIG               (IPTH_ERR_HTTP_BASE+6)    /* = 4614, 0x1206 */
+#define IPTH_ERR_HTTP_SEND                    (IPTH_ERR_HTTP_BASE+7)    /* = 4615, 0x1207 */
+#define IP_ERR_INTERNAL_CONTENT_LENGTH      (IPTH_ERR_HTTP_BASE+8)    /* = 4616, 0x1208 */
+#define IP_ERR_INVALID_HTTP_CONNECTION      (IPTH_ERR_HTTP_BASE+9)    /* = 4617, 0x1209 */
+#define IP_ERR_INVALID_REQUEST              (IPTH_ERR_HTTP_BASE+10)   /* = 4618, 0x120A */
+#define IP_ERR_MEM_ALLOCATION               (IPTH_ERR_HTTP_BASE+11)   /* = 4619, 0x120B */
+#define IP_ERR_NOT_READY_FOR_RECV           (IPTH_ERR_HTTP_BASE+12)   /* = 4620, 0x120C */
+
+/* Low-Level Communication Error codes */
+#define IP_ERR_COMMUNICATION_BASE                   (0x1000+0x400)
+#define IP_ERR_INVALID_TERMINATION                  (IP_ERR_COMMUNICATION_BASE+1)
+/* = 5121, 0x1401 */
+#define IP_ERR_RCV_BUFFER_OVERFLOW                  (IP_ERR_COMMUNICATION_BASE+2)
+/* = 5122, 0x1402 */
+#define IP_ERR_MSG_OVERFLOW                         (IP_ERR_COMMUNICATION_BASE+3)
+/* = 5123, 0x1403 */
+#define IP_ERR_PREMATURE_BOUNDARY                   (IP_ERR_COMMUNICATION_BASE+4)
+/* = 5124, 0x1404 */
+#define IP_ERR_RANGE_SYNTAX                         (IP_ERR_COMMUNICATION_BASE+5)
+/* = 5125, 0x1405 */
+#define IP_ERR_RANGE_BEGINNING_WRONG                (IP_ERR_COMMUNICATION_BASE+6)
+/* = 5126, 0x1406 */
+#define IP_ERR_INVALID_RANGE_END                    (IP_ERR_COMMUNICATION_BASE+7)
+/* = 5127, 0x1407 */
+#define IP_ERR_INCONSISTENT_RANGE_SIZE              (IP_ERR_COMMUNICATION_BASE+8)
+/* = 5128, 0x1408 */
+#define IP_ERR_DATA_OVERFLOW                        (IP_ERR_COMMUNICATION_BASE+9)
+/* = 5129, 0x1409 */
+#define IP_ERR_NO_ENDING_QUOTES_FOR_BOUNDARY_VALUE  (IP_ERR_COMMUNICATION_BASE+10)
+/* = 5130, 0x140A */
+#define IP_ERR_BOUNDARY_VALUE_TOO_LONG              (IP_ERR_COMMUNICATION_BASE+11)
+/* = 5131, 0x140B */
+#define IP_ERR_BAD_CHARACTER_IN_BOUNDARY            (IP_ERR_COMMUNICATION_BASE+12)
+/* = 5132, 0x140C */
+#define IP_ERR_BOUNDARY_VALUE_INVALID_CHAR          (IP_ERR_COMMUNICATION_BASE+13)
+/* = 5133, 0x140D */
+#define IP_ERR_MISSING_EQUAL_AFTER_BOUNDARY         (IP_ERR_COMMUNICATION_BASE+14)
+/* = 5134, 0x140E */
+#define IP_ERR_MISSING_BOUNDARY_AFTER_SEMICOLON     (IP_ERR_COMMUNICATION_BASE+15)
+/* = 5135, 0x140F */
+#define IPTH_ERR_HTTP_PREMATURE_END                   (IP_ERR_COMMUNICATION_BASE+16)
+/* = 5136, 0x1410 */
+#define IP_ERR_CRLF_NOT_AT_END_OF_BOUNDARY_TAG      (IP_ERR_COMMUNICATION_BASE+17)
+/* = 5137, 0x1411 */
+
+/* service registration and activation */
+#define IP_ERR_SERVICE_REGISTRATION_BASE              (0x2000)
+#define IP_ERR_SERVICE_ACTIVATION_SERVER_COMM         (IP_ERR_SERVICE_REGISTRATION_BASE)
+/* = 8192, 0x2000 */
+#define IP_ERR_SERVICE_ACTIVATION_DEVICE_FAILURE      (IP_ERR_SERVICE_REGISTRATION_BASE+1)
+/* = 8193, 0x2001 */
+#define IP_ERR_SERVICE_ACTIVATION_FAILED_INVALID_USER (IP_ERR_SERVICE_REGISTRATION_BASE+2)
+/* = 8194, 0x2002 */
+#define IP_ERR_SERVICE_DEACTIVATION_SERVER_COMM       (IP_ERR_SERVICE_REGISTRATION_BASE+3)
+/* = 8195, 0x2003 */
+#define IP_ERR_SERVICE_DEACTIVATION_DEVICE_FAILURE    (IP_ERR_SERVICE_REGISTRATION_BASE+4)
+/* = 8196, 0x2004 */
+#define IP_ERR_SERVICE_QUERY_FALSE                    (IP_ERR_SERVICE_REGISTRATION_BASE+5)
+/* = 8197, 0x2005 */
+#define IP_ERR_DEVICE_REGISTRATION_SERVER_COMM        (IP_ERR_SERVICE_REGISTRATION_BASE+6)
+/* = 8198, 0x2006 */
+#define IP_ERR_DEVICE_REGISTRATION_DEVICE_FAILURE     (IP_ERR_SERVICE_REGISTRATION_BASE+7)
+/* = 8199, 0x2007 */
+#define IP_ERR_DEVICE_REGISTRATION_INVALID_USER       (IP_ERR_SERVICE_REGISTRATION_BASE+8)
+/* = 8200, 0x2008 */
+#define IP_ERR_DEVICE_DEREGISTRATION_SERVER_COMM      (IP_ERR_SERVICE_REGISTRATION_BASE+9)
+/* = 8201, 0x2009 */
+#define IP_ERR_DEVICE_DEREGISTRATION_DEVICE_FAILURE  (IP_ERR_SERVICE_REGISTRATION_BASE+10)
+/* = 8202, 0x200A */
+#define IP_ERR_REGISTRATION_QUERY_FALSE              (IP_ERR_SERVICE_REGISTRATION_BASE+11)
+/* = 8203, 0x200B */
+
+/* notification client */
+#define IP_ERR_NOTIFICATION_BASE                (0x3000)
+#define IP_ERR_NOTIFICATION_COMP_NOT_FOUND      (IP_ERR_NOTIFICATION_BASE)
+/* = 12288, 0x3000 */
+#define IP_ERR_NOTIFICATION_COMP_VER_MISMATCH   (IP_ERR_NOTIFICATION_BASE+1)
+/* = 12289, 0x3001 */
+#define IP_ERR_NOTIFICATION_MSG_ERROR           (IP_ERR_NOTIFICATION_BASE+2)
+/* = 12290, 0x3002 */
+#define IP_ERR_NOTIFICATION_MSG_OVERFLOW        (IP_ERR_NOTIFICATION_BASE+3)
+/* = 12291, 0x3003 */
+#define IP_ERR_NOTIFICATION_AUTH_ERROR          (IP_ERR_NOTIFICATION_BASE+4)
+/* = 12292, 0x3004 */
+#define IP_ERR_NOTIFICATION_VENDOR_TOO_LONG (IP_ERR_NOTIFICATION_BASE+5)
+/* = 12293, 0x3005 */
+
+/* update client */
+/* error before ROM update */
+#define IP_ERR_UPDATE_BASE                      (0x4000)
+#define IP_ERR_DIFF_PACKAGE_CHECKSUM_FAILED     (IP_ERR_UPDATE_BASE)
+/* = 16384, 0x4000 */
+#define IP_ERR_DIFF_PACKAGE_CORRUPTED           (IP_ERR_UPDATE_BASE+1)
+/* = 16385, 0x4001 */
+#define IP_ERR_INVALID_PROTOCOL                 (IP_ERR_UPDATE_BASE+2)
+/* = 16386, 0x4002 */
+#define IP_ERR_SECURITY_TYPE_NOT_SUPPORTED      (IP_ERR_UPDATE_BASE+3)
+/* = 16387, 0x4003 */
+#define IP_ERR_NOT_ENOUGH_MEMORY                (IP_ERR_UPDATE_BASE+4)
+/* = 16388, 0x4004 */
+#define IP_ERR_CONFIG_CHECKSUM_MISMATCH         (IP_ERR_UPDATE_BASE+5)
+/* = 16389, 0x4005 */
+#define IP_ERR_DIFF_PACKAGE_SIZE_ZERO           (IP_ERR_UPDATE_BASE+6)
+/* = 16390, 0x4006 */
+#define IP_ERR_WORKING_RAM_ALLOCATION_FAILED    (IP_ERR_UPDATE_BASE+7)
+/* = 16391, 0x4007 */
+#define IP_ERR_NOTIFICATION_MSG_CORRUPTED       (IP_ERR_UPDATE_BASE+8)
+/* = 16392, 0x4008 */
+#define IP_ERR_MAP_VERSION_INCORRECT            (IP_ERR_UPDATE_BASE+9)
+/* = 16393, 0x4009 */
+#define IP_ERR_CONFIG_DATA_VERSION_MISMATCH     (IP_ERR_UPDATE_BASE+10)
+/* = 16394, 0x400A */
+#define IP_ERR_CONFIG_COMP_NOT_FOUND            (IP_ERR_UPDATE_BASE+11)
+/* = 16395, 0x400B */
+
+/* error after ROM update */
+#define IP_ERR_UPDATE_BASE_EXT              (IP_ERR_UPDATE_BASE+0x800)
+#define IP_ERR_INVALID_COMPONENT_NAME       (IP_ERR_UPDATE_BASE_EXT)
+/* = 18432, 0x4800 */
+#define IP_ERR_DIFF_BLOCK_CHECKSUM_MISMATCH (IP_ERR_UPDATE_BASE_EXT+1)
+/* = 18433, 0x4801 */
+#define IP_ERR_OLD_BLOCK_CHECKSUM_MISMATCH  (IP_ERR_UPDATE_BASE_EXT+2)
+/* = 18434, 0x4802 */
+#define IP_ERR_NEW_BLOCK_CHECKSUM_MISMATCH  (IP_ERR_UPDATE_BASE_EXT+3)
+/* = 18435, 0x4803 */
+#define IP_ERR_WRONG_DELTA_FILE             (IP_ERR_UPDATE_BASE_EXT+4)
+/* = 18436, 0x4804 */
+#define IP_ERR_INVALID_ZIP_FORMAT           (IP_ERR_UPDATE_BASE_EXT+5)
+/* = 18437, 0x4805 */
+#define IP_ERR_DIFF_ENGINE_REPORT_ERROR     (IP_ERR_UPDATE_BASE_EXT+6)
+/* = 18438, 0x4806 */
+#define IP_ERR_DECOMPRESS_FAILED            (IP_ERR_UPDATE_BASE_EXT+7)
+/* = 18439, 0x4807 */
+#define IP_ERR_ROM_READ_BLOCK_SIZE_MISMATCH (IP_ERR_UPDATE_BASE_EXT+8)
+/* = 18440, 0x4808 */
+#define IP_ERR_OUT_OF_RESERVED_ROM_SPACE    (IP_ERR_UPDATE_BASE_EXT+9)
+/* = 18441, 0x4809 */
+#define IP_ERR_UNDEFINED_STATE              (IP_ERR_UPDATE_BASE_EXT+10)
+/* = 18442, 0x480A */
+#define IP_ERR_DIFF_WORK_MEM_TOO_SMALL      (IP_ERR_UPDATE_BASE_EXT+11)
+/* = 18443, 0x480B */
+#define IP_ERR_DIFF_ENGINE_VER_ERR          (IP_ERR_UPDATE_BASE_EXT+12)
+/* = 18444, 0x480C */
+#define IP_ERR_DIFF_OLDV_CHECKSUM_ERR       (IP_ERR_UPDATE_BASE_EXT+13)
+/* = 18445, 0x480D */
+#define IP_ERR_DIFF_WRONG_DELTA_FILE        (IP_ERR_UPDATE_BASE_EXT+14)
+/* = 18446, 0x480E */
+#define IP_ERR_DIFF_OLDV_LENGTH_ERR         (IP_ERR_UPDATE_BASE_EXT+15)
+/* = 18447, 0x480F */
+#define IP_ERR_DIFF_DLTA_CHECKSUM_ERR       (IP_ERR_UPDATE_BASE_EXT+16)
+/* = 18448, 0x4810 */
+#define IP_ERR_ZIP_CHECKSUM_ERROR           (IP_ERR_UPDATE_BASE_EXT+17)
+/* = 18449, 0x4811 */
+#define IP_ERR_DIFF_UNZIP_NOT_SUPPORTED     (IP_ERR_UPDATE_BASE_EXT+18)
+/* = 18450, 0x4812 */
+#define IP_ERR_DIFF_NEWV_CHECKSUM_ERR       (IP_ERR_UPDATE_BASE_EXT+19)
+/* = 18451, 0x4813 */
+
+
+/* error code from Update Agent */
+#define IP_ERR_UA_BASE                       (0x4100)
+#define IP_ERR_UA_DIFF_PKG_CORRUPTED         (IP_ERR_UA_BASE)       /* = 16640, 0x4100 */
+#define IP_ERR_UA_DIFF_PKG_VERSION_MISMATCH  (IP_ERR_UA_BASE+1)     /* = 16641, 0x4101 */
+#define IP_ERR_UA_MEM_ALLOC_FAILED           (IP_ERR_UA_BASE+2)     /* = 16642, 0x4102 */
+#define IP_ERR_UA_CONFIG_DATA_CORRUPTED      (IP_ERR_UA_BASE+3)     /* = 16643, 0x4103 */
+#define IP_ERR_UA_OLD_IMAGE_CORRUPTED        (IP_ERR_UA_BASE+4)     /* = 16644, 0x4104 */
+#define IP_ERR_UA_SECURITY_NOT_SUPPORTED     (IP_ERR_UA_BASE+5)     /* = 16645, 0x4105 */
+#define IP_ERR_UA_DEVICE_API_ERROR			 (IP_ERR_UA_BASE+6)		/* =16646,	0x4106*/
+#define IP_ERR_UA_DEVICE_LAYOUT_NOT_SUPPORTED (IP_ERR_UA_BASE+7) 	/* = 16647, 0x4107 */
+#define IP_ERR_UA_TRY_LATER                   (IP_ERR_UA_BASE+8) 	/* = 16648, 0x4108 */
+/* End limit for this range of error codes */
+#define IP_ERR_UA_PROCESSING_ERROR           (IP_ERR_UA_BASE+0x80)	/* = 16768, 0x4180 */
+
+
+/* error code from Handoff Agent */
+#define IPTH_ERR_HA_BASE                       (0x4200)
+#define IPTH_ERR_HA_READ_STATUS                (IPTH_ERR_HA_BASE)     /* = 16896, 0x4200 */
+#define IPTH_ERR_HA_WRONG_OBJECT               (IPTH_ERR_HA_BASE+1)   /* = 16897, 0x4201 */
+
+/* RAM Errors */
+#define IP_ERR_RAM_ERR_BASE         (0x5000)
+#define IPTH_ERR_HEAP_NO_MEM          (IP_ERR_RAM_ERR_BASE)   /* = 20480, 0x5000 */
+#define IPTH_ERR_HEAP_NOT_CLEARED     (IP_ERR_RAM_ERR_BASE+1) /* = 20481, 0x5001 */
+#define IP_ERR_NO_HEAP              (IP_ERR_RAM_ERR_BASE+2) /* = 20482, 0x5002 */
+#define IP_ERR_DATA_OVERSIZE        (IP_ERR_RAM_ERR_BASE+3) /* = 20483, 0x5003 */
+#define IP_ERR_INVALID_PARAM        (IP_ERR_RAM_ERR_BASE+4) /* = 20484, 0x5004 */
+
+/* Compression Lib Errors */
+#define IP_ERR_Z_NOT_SUPPORTED      (0x5800)
+#define IP_ERR_Z_ERROR              (0x5801)
+
+/* Security Error */
+#define IP_ERR_SECURITY_ERR_BASE            (0x6000)
+#define IP_ERR_SECURITY_CHECKSUM            (IP_ERR_SECURITY_ERR_BASE+1)
+/* = 24577, 0x6001 */
+#define IP_ERR_SECURITY_RETRIEVE_KEY        (IP_ERR_SECURITY_ERR_BASE+2)
+/* = 24578, 0x6002 */
+#define IP_ERR_SECURITY_CALC_DIGEST_FAILED  (IP_ERR_SECURITY_ERR_BASE+3)
+/* = 24579, 0x6003 */
+#define IP_ERR_SECURITY_MD5_DIGEST          (IP_ERR_SECURITY_ERR_BASE+4)
+/* = 24580, 0x6004 */
+
+/* DFS update agent returned errors */
+#define IP_ERR_DFS_UA_ERR_BASE                  (0x6800)
+#define IP_ERR_FILESYSTEM_API_CALL	            (IP_ERR_DFS_UA_ERR_BASE)
+/* = 26624, 0x6800 */
+#define IP_ERR_FILESYSTEM_UNRECOVERABLE	        (IP_ERR_DFS_UA_ERR_BASE+1)
+/* = 26625, 0x6801 */
+#define IP_ERR_FILESYSTEM_CRC   	            (IP_ERR_DFS_UA_ERR_BASE+2)
+/* = 26626, 0x6802 */
+#define IP_ERR_FILESYSTEM_NOTEXIST	            (IP_ERR_DFS_UA_ERR_BASE+3)
+/* = 26627, 0x6803 */
+#define IP_ERR_FILESYSTEM_DIFF_WRONG_VERSION	(IP_ERR_DFS_UA_ERR_BASE+4)
+/* = 26628, 0x6804 */
+#define IP_ERR_FILESYSTEM_DIFF_WRONG_PLATFORM	(IP_ERR_DFS_UA_ERR_BASE+5)
+/* = 26629, 0x6805 */
+#define IP_ERR_FILESYSTEM_NOT_ROOT_USER	        (IP_ERR_DFS_UA_ERR_BASE+6)
+/* = 26630, 0x6806 */
+#define IP_ERR_FILESYSTEM_SEC_NOT_SUPPORTED     (IP_ERR_DFS_UA_ERR_BASE+7)
+/* = 26631, 0x6807 */
+#define IP_ERR_FILESYSTEM_SEC_INVALID_KEY       (IP_ERR_DFS_UA_ERR_BASE+8)
+/* = 26632, 0x6808 */
+#define IP_ERR_FILESYSTEM_SEC_DECRYPT_FAILED    (IP_ERR_DFS_UA_ERR_BASE+9)
+/* = 26633, 0x6809 */
+#define IP_ERR_FILESYSTEM_DEVICEAPI_NOT_AVAILABLE (IP_ERR_DFS_UA_ERR_BASE+0xA)
+/* = 26634, 0x680A */
+
+/* High-Level Communication Error */
+#define IP_ERR_COMM_ERR_BASE                (0x7000)
+#define IP_ERR_COMM_REQ_MSG_ERROR           (IP_ERR_COMM_ERR_BASE)
+/* = 28672, 0x7000 */
+#define IP_ERR_COMM_SEND_ERROR              (IP_ERR_COMM_ERR_BASE+1)
+/* = 28673, 0x7001 */
+#define IP_ERR_COMM_RSP_MSG_ERROR           (IP_ERR_COMM_ERR_BASE+2)
+/* = 28674, 0x7002 */
+#define IP_ERR_COMM_RECV_ERROR              (IP_ERR_COMM_ERR_BASE+3)
+/* = 28675, 0x7003 */
+#define IP_ERR_COMM_SND_WAMP_PARSER_ERROR   (IP_ERR_COMM_ERR_BASE+4)
+/* = 28676, 0x7004 */
+#define IP_ERR_COMM_RCV_XML_PARSER_ERROR    (IP_ERR_COMM_ERR_BASE+5)
+/* = 28677, 0x7005 */
+#define IP_ERR_COMM_SERVER_UNAVAILABLE      (IP_ERR_COMM_ERR_BASE+6)
+/* = 28678, 0x7006 */
+#define IP_ERR_COMM_REDIRECT_FAILED         (IP_ERR_COMM_ERR_BASE+7)
+/* = 28679, 0x7007 */
+#define IP_ERR_COMM_SERVER_CONN_ERROR       (IP_ERR_COMM_ERR_BASE+8)
+/* = 28680, 0x7008 */
+#define IP_ERR_COMM_SND_MSG_NULL            (IP_ERR_COMM_ERR_BASE+9)
+/* = 28681, 0x7009 */
+#define IP_ERR_COMM_RCV_BUFF_NULL           (IP_ERR_COMM_ERR_BASE+10)
+/* = 28682, 0x700A */
+#define IP_ERR_COMM_HTTP_PARSE_ERROR        (IP_ERR_COMM_ERR_BASE+11)
+/* = 28683, 0x700B */
+#define IP_ERR_COMM_INVALID_URL             (IP_ERR_COMM_ERR_BASE+12)
+/* = 28684, 0x700C */
+
+/* WAMP Error */
+#define IP_ERR_WAMP_ERR_BASE             (0x7500)
+#define IP_ERR_WAMP_WRONG_TAG_TYPE       (IP_ERR_WAMP_ERR_BASE)      /* = 29952, 0x7500 */
+#define IP_ERR_WAMP_NO_START_TAG         (IP_ERR_WAMP_ERR_BASE+1)    /* = 29953, 0x7501 */
+#define IP_ERR_WAMP_NO_END_TAG           (IP_ERR_WAMP_ERR_BASE+2)    /* = 29954, 0x7502 */
+#define IP_ERR_WAMP_NO_START_BRACE       (IP_ERR_WAMP_ERR_BASE+3)    /* = 29955, 0x7503 */
+#define IP_ERR_WAMP_NO_END_BRACE         (IP_ERR_WAMP_ERR_BASE+4)    /* = 29956, 0x7504 */
+#define IP_ERR_WAMP_NO_CMD               (IP_ERR_WAMP_ERR_BASE+5)    /* = 29957, 0x7505 */
+#define IP_ERR_WAMP_NO_ATTRIBUTE         (IP_ERR_WAMP_ERR_BASE+6)    /* = 29958, 0x7506 */
+#define IP_ERR_WAMP_NO_PARAMETER         (IP_ERR_WAMP_ERR_BASE+7)    /* = 29959, 0x7507 */
+#define IP_ERR_WAMP_PARAMETER_OVERSIZE   (IP_ERR_WAMP_ERR_BASE+8)    /* = 29960, 0x7508 */
+#define IP_ERR_WAMP_NO_VALUE             (IP_ERR_WAMP_ERR_BASE+9)    /* = 29961, 0x7509 */
+#define IP_ERR_WAMP_NON_NUMERIC          (IP_ERR_WAMP_ERR_BASE+10)   /* = 29962, 0x750A */
+#define IP_ERR_WAMP_MSG_CORRUPTED        (IP_ERR_WAMP_ERR_BASE+11)   /* = 29963, 0x750B */
+#define IP_ERR_WAMP_NO_NEXT              (IP_ERR_WAMP_ERR_BASE+12)   /* = 29964, 0x750C */
+#define IP_ERR_WAMP_NULL_PTR             (IP_ERR_WAMP_ERR_BASE+13)   /* = 29965, 0x750D */
+
+/* OMA DM Error */
+#define IP_ERR_OMA_DM_ERR_BASE                      (0x7600)
+#define IP_ERR_OMA_UNSUPPORTED_DM_VERSION           (IP_ERR_OMA_DM_ERR_BASE)
+/* = 30208, 0x7600 */
+#define IP_ERR_OMA_INVALID_SERVER_IDENTIFIER        (IP_ERR_OMA_DM_ERR_BASE + 1)
+/* = 30209, 0x7601 */
+#define IP_ERR_OMA_MESSAGE_OVERSIZE                 (IP_ERR_OMA_DM_ERR_BASE + 2)
+/* = 30210, 0x7602 */
+#define IP_ERR_OMA_DM_WRONG_COMMAND                 (IP_ERR_OMA_DM_ERR_BASE + 3)
+/* = 30211, 0x7603 */
+#define IP_ERR_OMA_DM_SERVER_HANDLE_COMMAND_FAILED  (IP_ERR_OMA_DM_ERR_BASE + 5)
+/* = 30213, 0x7605 */
+#define IP_ERR_OMA_DM_INVALID_CREDENTIAL            (IP_ERR_OMA_DM_ERR_BASE + 6)
+/* = 30214, 0x7606 */
+#define IP_ERR_OMA_DM_AUTHENTICATION_FAILED         (IP_ERR_OMA_DM_ERR_BASE + 7)
+/* = 30215, 0x7607 */
+#define IP_ERR_OMA_DM_SESSION_ID_UNMATCH            (IP_ERR_OMA_DM_ERR_BASE + 8)
+/* = 30216, 0x7608 */
+#define IP_ERR_OMA_DM_WRONG_MESSAGE_ID              (IP_ERR_OMA_DM_ERR_BASE + 9)
+/* = 30217, 0x7609 */
+#define IP_ERR_OMA_DM_SERVER_ABORT_SESSION          (IP_ERR_OMA_DM_ERR_BASE + 11)
+/* = 30219, 0x760B */
+#define IP_ERR_OMA_DM_INVALID_INTEGRITY             (IP_ERR_OMA_DM_ERR_BASE + 12)
+/* = 30220, 0x760C */
+#define IP_ERR_OMA_DM_SERVER_ERROR                  (IP_ERR_OMA_DM_ERR_BASE + 13)
+/* = 30221, 0x760D */
+#define IP_ERR_OMA_DM_SERVER_WRONG_TARGET           (IP_ERR_OMA_DM_ERR_BASE + 14)
+/* = 30222, 0x760E */
+#define IP_ERR_OMA_DM_SERVER_WRONG_SOURCE           (IP_ERR_OMA_DM_ERR_BASE + 15)
+/* = 30223, 0x760F */
+#define IP_ERR_OMA_DM_UNCOMPLETE_PACKAGE            (IP_ERR_OMA_DM_ERR_BASE + 16)
+/* = 30224, 0x7610 */
+#define IP_ERR_MANAGEMENT_OBJECT_BUFFER_NOT_ENOUGH  (IP_ERR_OMA_DM_ERR_BASE + 17)
+/* = 30225, 0x7611 */
+#define IP_ERR_MANAGEMENT_OBJECT_VALUE_OVERSIZE     (IP_ERR_OMA_DM_ERR_BASE + 18)
+/* = 30226, 0x7612 */
+#define IP_ERR_OMA_INVALID_DOWNLOAD_MEHTHOD         (IP_ERR_OMA_DM_ERR_BASE + 20)
+/* = 30228, 0x7614 */
+#define IP_ERR_OMA_INVALID_DOWNLOAD_STATUS          (IP_ERR_OMA_DM_ERR_BASE + 21)
+/* = 30229, 0x7615 */
+#define IP_ERR_OMA_INVALID_UPDATE_STATUS            (IP_ERR_OMA_DM_ERR_BASE + 22)
+/* = 30230, 0x7616 */
+#define IP_ERR_REGISTER_DOWNLOAD_STATUS_FAILED      (IP_ERR_OMA_DM_ERR_BASE + 23)
+/* = 30231, 0x7617 */
+#define IP_ERR_OMA_NO_SERVER                        (IP_ERR_OMA_DM_ERR_BASE + 24)
+/* = 30232, 0x7618 */
+#define IP_ERR_REGISTER_UPDATE_STATUS_FAILED        (IP_ERR_OMA_DM_ERR_BASE + 25)
+/* = 30233, 0x7619 */
+#define IP_ERR_REGISTRATION_SERVRE_ERROR            (IP_ERR_OMA_DM_ERR_BASE + 27)
+/* = 30235, 0x761b */
+#define IP_ERR_REGISTRATION_INVALID_DEVICE_MODLE    (IP_ERR_OMA_DM_ERR_BASE + 28)
+/* = 30236, 0x761c */
+#define IP_ERR_REGISTRATION_INVALID_PARAMETER       (IP_ERR_OMA_DM_ERR_BASE + 29)
+/* = 30237, 0x761d */
+
+#define IP_ERR_SML_ERR_BASE (0x7800)
+/**
+* SyncML Common Error Codes
+**/
+
+/* general errors */
+#define IP_ERR_SML_UNSPECIFIC       (IP_ERR_SML_ERR_BASE+0x10)  /* = 30736, 0x7810 */
+#define IP_ERR_SML_NOT_ENOUGH_SPACE (IP_ERR_SML_ERR_BASE+0x11)  /* = 30737, 0x7811 */
+#define IP_ERR_SML_WRONG_USAGE      (IP_ERR_SML_ERR_BASE+0x13)  /* = 30739, 0x7813 */
+
+/**
+* SyncML Mgr Error Codes
+**/
+#define IP_ERR_SML_MGR_INVALID_INSTANCE_INFO   (IP_ERR_SML_ERR_BASE+0x42)
+/* = 30786, 0x7842 */
+
+/**
+* SyncML Xlt Error Codes
+**/
+#define IP_ERR_SML_XLT_MISSING_CONT            (IP_ERR_SML_ERR_BASE+0x61)
+/* = 30817, 0x7861 */
+#define IP_ERR_SML_XLT_BUF_ERR                 (IP_ERR_SML_ERR_BASE+0x62)
+/* = 30818, 0x7862 */
+#define IP_ERR_SML_XLT_INVAL_PCDATA_TYPE       (IP_ERR_SML_ERR_BASE+0x63)
+/* = 30819, 0x7863 */
+#define IP_ERR_SML_XLT_INVAL_LIST_TYPE         (IP_ERR_SML_ERR_BASE+0x64)
+/* = 30820, 0x7864 */
+#define IP_ERR_SML_XLT_INVAL_TAG_TYPE          (IP_ERR_SML_ERR_BASE+0x65)
+/* = 30821, 0x7865 */
+#define IP_ERR_SML_XLT_ENC_UNK                 (IP_ERR_SML_ERR_BASE+0x67)
+/* = 30823, 0x7867 */
+#define IP_ERR_SML_XLT_INVAL_PROTO_ELEM        (IP_ERR_SML_ERR_BASE+0x68)
+/* = 30824, 0x7868 */
+#define IP_ERR_SML_XLT_INVAL_SYNCML_DOC        (IP_ERR_SML_ERR_BASE+0x6B)
+/* = 30827, 0x786B */
+#define IP_ERR_SML_XLT_INVAL_PCDATA            (IP_ERR_SML_ERR_BASE+0x6C)
+/* = 30828, 0x786C */
+#define IP_ERR_SML_XLT_END_OF_BUFFER           (IP_ERR_SML_ERR_BASE+0x72)
+/* = 30834, 0x7872 */
+#define IP_ERR_SML_XLT_INVAL_XML_DOC           (IP_ERR_SML_ERR_BASE+0x73)
+/* = 30835, 0x7873 */
+#define IP_ERR_SML_XLT_INVAL_EXT               (IP_ERR_SML_ERR_BASE+0x76)
+/* = 30838, 0x7876 */
+#define IP_ERR_SML_XLT_NO_MATCHING_CODEPAGE    (IP_ERR_SML_ERR_BASE+0x77)
+/* = 30839, 0x7877 */
+
+/**
+* SyncML Util Error Codes
+**/
+#define IP_ERR_SML_A_UTI_UNKNOWN_PROTO_ELEMENT (IP_ERR_SML_ERR_BASE+0x91)
+/* = 30865, 0x7891 */
+
+
+#endif /* IPTH_ERR_H */
+
+/* End of File */
+
