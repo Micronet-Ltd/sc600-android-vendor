@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 Verizon. All Rights Reserved.
+-->
+
+<resources>
+
+    <string name="app_name">DMClientUpdate</string>
+    <string name="dm_browser">Browser</string>
+</resources>

@@ -1,0 +1,18 @@
+/*
+ * Copyright (c) 2019 Qualcomm Technologies, Inc.
+ * All Rights Reserved.
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ */
+
+package vendor.qti.qspmhal@1.0;
+
+interface IQspmhal {
+    getGpuProf(uint32_t pid) generates (memory mem, uint32_t size, string pkg_name, string pkg_ver, string timestamp, Status status);
+    getGpuProfFD(uint32_t pid) generates (handle fd, uint32_t size, string pkg_name, string pkg_ver, string timestamp, Status status);
+    getCpuProf(string pkg_name) generates (memory mem, uint32_t size, string pkg_name, string pkg_ver, string timestamp, Status status);
+    getCpuProfFD(string pkg_name) generates (handle fd, uint32_t size, string pkg_name, string pkg_ver, string timestamp, Status status);
+    setAppInfoH(uint32_t pid, string pkg_name, string pkg_ver);
+    setAppProf(uint32_t size, string pkg_name) generates (memory mem, Status status);
+    getLicense(string license) generates (Status status);
+};

@@ -1,0 +1,73 @@
+
+/*
+ * Automatically generated C header file. Don't manually update.
+ */
+
+#ifndef __IPTH_IPTH_CONFIG_H__
+#define __IPTH_IPTH_CONFIG_H__
+
+#if 0  // Not used
+#define IPTH_CONFIG_VERSION_MAJOR (6)
+
+#define IPTH_CONFIG_VERSION_MINOR (4)
+
+#define IPTH_CONFIG_VERSION_PLUGIN (1)
+
+
+#define IPTH_CONFIG_UNITTEST
+
+#define IPTH_CONFIG_UNITTEST_DATA_ROOT "../tests/"
+/* #define IPTH_CONFIG_UNITTEST_DATA_ROOT "/Storage Card/" */
+
+#define IPTH_CONFIG_DATE "Thu Sep 27 16:49:29 2007"
+
+/* TARGET_OS */
+#define IPTH_CONFIG_LINUX
+
+/* THREAD_SUPPORT */
+#define IPTH_CONFIG_POSIX_THREAD
+
+/* ASSERT */
+/* #define IPTH_CONFIG_ASSERT_OFF */
+#define IPTH_CONFIG_ASSERT_NATIVE ////
+/* #define IPTH_CONFIG_ASSERT_LOGGER */
+
+#define IPTH_CONFIG_STORE_ID "mgmtree"
+
+#define IPTH_CONFIG_UIALERT_MAX_USER_INPUT_LENGTH (256)
+
+#define IPTH_CONFIG_MAX_MSG_SIZE (10000)
+
+#define IPTH_CONFIG_MAX_OBJ_SIZE (550000)
+
+#define IPTH_CONFIG_CONNECT_TIME_OUT (10000)
+
+#define IPTH_CONFIG_SEND_TIME_OUT (30000)
+
+#define IPTH_CONFIG_RECEIVE_TIME_OUT (30000)
+
+#define IPTH_CONFIG_HTTP_USER_AGENT "InnoPathOMADUC_HTTP6.X"
+
+#define IPTH_CONFIG_NUMBER_OF_IO_RETRIES (3)
+
+#define IPTH_CONFIG_SYNCML_FORMAT_XML (0)
+
+#define IPTH_CONFIG_LOG_PATH "dme_log.txt"
+
+#define IPTH_CONFIG_LOG_SIZE (0x40000)
+
+#define IPTH_CONFIG_RTCONFIG_URI "./InnoPath/Custom/Configuration/IMDMC"
+
+#define IPTH_CONFIG_DLWORKING_FILE "./ipthdl_context"
+
+#define IPTH_CONFIG_DLUSER_AGENT "innopath software"
+
+#define IPTH_CONFIG_DLBUF_SIZE (0x10000)
+
+#define IPTH_CONFIG_DLRETRY_TIME (3)
+#define IPTH_CONFIG_DLRETRY_SHORT_INTERVAL (60)     /* 1 min */
+#define IPTH_CONFIG_DLRETRY_LONG_TIME (8760)		/* one year */
+#define IPTH_CONFIG_DLRETRY_LONG_INTERVAL (3240)   /*54 mins*/
+#endif
+
+#endif /* __IPTH_IPTH_CONFIG_H__ */

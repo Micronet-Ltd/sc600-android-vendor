@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2016 Verizon. All Rights Reserved.
+-->
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="20dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="@dimen/main_padding"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/mobile_ic"
+                android:layout_marginEnd="10dp"
+                android:contentDescription="@string/content_description"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/system_update_available_title"
+                android:gravity="center|start"
+                android:textColor="@color/titles"
+                android:textSize="@dimen/title_text_size_25"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:id="@+id/ScrollView01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android">
+
+                <TextView
+                    android:padding="10dp"
+                    android:id="@+id/configurable_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/conf_text"
+                    android:text="@string/system_update_available_msg"
+                    android:textSize="17sp"
+                    android:layout_marginBottom="20dp"/>
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/main_padding"
+        android:paddingRight="@dimen/main_padding"
+        android:paddingBottom="@dimen/main_padding">
+
+        <TextView
+            android:id="@+id/learn_more_online_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/learn_more_onlice"
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/button_text_color"
+            android:clickable="true"
+            android:layout_gravity="center"
+            android:textIsSelectable="false"
+            android:visibility="gone"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="end"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp">
+
+            <Button
+                android:id="@+id/download_over_wifi_no_thanks_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/download_over_wifi_no_thanks_button"
+                android:layout_marginBottom="30dp"
+                style="@style/button"/>
+
+            <Button
+                android:id="@+id/download_over_wifi_ok_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/download_over_wifi_ok_button"
+                style="@style/button"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
