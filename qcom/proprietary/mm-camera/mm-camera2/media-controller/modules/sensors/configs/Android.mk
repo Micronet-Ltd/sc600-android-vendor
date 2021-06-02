@@ -66,6 +66,25 @@ include $(BUILD_PREBUILT)
 endif
 
 include $(CLEAR_VARS)
+LOCAL_MODULE:= ov9284_chromatix.xml
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := ov9284_chromatix.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/camera
+LOCAL_MODULE_OWNER := qti
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE:= ov2718_chromatix.xml
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES := ov2718_chromatix.xml
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/etc/camera
+LOCAL_MODULE_OWNER := qti
+include $(BUILD_PREBUILT)
+
+
+include $(CLEAR_VARS)
 LOCAL_MODULE:= imx214_chromatix.xml
 LOCAL_MODULE_CLASS := EXECUTABLES
 LOCAL_SRC_FILES := imx214_chromatix.xml
