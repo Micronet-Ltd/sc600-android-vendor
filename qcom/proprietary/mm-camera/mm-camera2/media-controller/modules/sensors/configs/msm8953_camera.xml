@@ -86,11 +86,11 @@ LensInfo : Information of the lens present in the module.
 <CameraConfigurationRoot>
   <CameraModuleConfig>
     <CameraId>0</CameraId>
-    <SensorName>s5k3p3</SensorName>
-    <ActuatorName>dw9763</ActuatorName>
-    <EepromName>s5k3p3_gt24c32</EepromName>
+    <SensorName>ov2718</SensorName>
+    <ActuatorName>dw9714</ActuatorName>
+    <!--EepromName>sunny_gt24c64a_imx362</EepromName> -->
     <FlashName>pmic</FlashName>
-    <ChromatixName>s5k3p3_chromatix</ChromatixName>
+    <ChromatixName>ov2718_chromatix</ChromatixName>
     <ModesSupported>1</ModesSupported>
     <Position>BACK</Position>
     <MountAngle>270</MountAngle>
@@ -134,11 +134,11 @@ LensInfo : Information of the lens present in the module.
   </CameraModuleConfig>
   <CameraModuleConfig>
     <CameraId>0</CameraId>
-    <SensorName>s5k3p9</SensorName>
-    <ActuatorName>s5k3p9_dw9763</ActuatorName>
-    <EepromName>s5k3p9_gt24c64</EepromName>
+    <SensorName>ov2718</SensorName>
+    <ActuatorName>dw9714</ActuatorName>
+    <!--EepromName>sunny_gt24c64a_imx362</EepromName> -->
     <FlashName>pmic</FlashName>
-    <ChromatixName>s5k3p9_chromatix</ChromatixName>
+    <ChromatixName>ov2718_chromatix</ChromatixName>
     <ModesSupported>1</ModesSupported>
     <Position>BACK</Position>
     <MountAngle>270</MountAngle>
@@ -159,10 +159,10 @@ LensInfo : Information of the lens present in the module.
   </CameraModuleConfig>
   <CameraModuleConfig>
     <CameraId>2</CameraId>
-    <SensorName>hi843</SensorName>
+    <SensorName>ov9284</SensorName>
     <ActuatorName>dw9714</ActuatorName>
     <FlashName>pmic</FlashName>
-    <ChromatixName>hi843_chromatix</ChromatixName>
+    <ChromatixName>ov9284_chromatix</ChromatixName>
     <ModesSupported>1</ModesSupported>
     <Position>FRONT</Position>
     <MountAngle>270</MountAngle>
@@ -183,11 +183,11 @@ LensInfo : Information of the lens present in the module.
   </CameraModuleConfig>
   <CameraModuleConfig>
     <CameraId>2</CameraId>
-    <SensorName>s5k4h7</SensorName>
-    <EepromName>s5k4h7_otp</EepromName>
-    <ActuatorName>fp5510</ActuatorName>
+    <SensorName>ov9284</SensorName>
+    <!--EepromName>sunny_gt24c64a_imx362</EepromName>-->
+    <ActuatorName>dw9714</ActuatorName>
     <FlashName>pmic</FlashName>
-    <ChromatixName>s5k4h7_chromatix</ChromatixName>
+    <ChromatixName>ov9284_chromatix</ChromatixName>
     <ModesSupported>1</ModesSupported>
     <Position>FRONT</Position>
     <MountAngle>90</MountAngle>
@@ -276,10 +276,10 @@ LensInfo : Information of the lens present in the module.
   </CameraModuleConfig>
   <CameraModuleConfig>
     <CameraId>2</CameraId>
-    <SensorName>ov9281</SensorName>
+    <SensorName>ov9284</SensorName>
     <ActuatorName>dw9714</ActuatorName>
     <FlashName>pmic</FlashName>
-    <ChromatixName>ov9281_chromatix</ChromatixName>
+    <ChromatixName>ov9284_chromatix</ChromatixName>
     <ModesSupported>0</ModesSupported>
     <Position>FRONT</Position>
     <MountAngle>180</MountAngle>
