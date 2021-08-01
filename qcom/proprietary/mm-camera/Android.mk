@@ -262,7 +262,7 @@ ifeq ($(BUILD_SERVER), true)
 else ifeq ($(BUILD_MM_CAMERA2), true)
   ifeq ($(OEM_CHROMATIX_0308), 1)
     CHROMATIX_VERSION := 0308E
-  else ifeq ($(call is-board-platform-in-list,msm8937 msm8953 sdm660 msm8998 apq8098_latv),true)
+  else ifeq ($(call is-board-platform-in-list,msm8937 sdm660 msm8998 apq8098_latv),true)
     CHROMATIX_VERSION := 0310
   else
     CHROMATIX_VERSION := 0309

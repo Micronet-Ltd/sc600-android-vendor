@@ -103,7 +103,7 @@ LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/stats/q3a/aw
 LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/stats/q3a/test
 LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/stats/asd
 LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/stats/afd
-ifeq ($(call is-board-platform-in-list,sdm660 msm8998 apq8098_latv msm8937 msm8953),true)
+ifeq ($(call is-board-platform-in-list,sdm660 msm8998 apq8098_latv msm8937),true)
   LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/stats/q3a/af_v2
   LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/stats/q3a/af_v2/af_algo_interface
   LOCAL_C_INCLUDES += $(LOCAL_MMCAMERA_PATH)/media-controller/modules/stats/q3a/af_v2/examples
@@ -169,7 +169,7 @@ LOCAL_AF_SRC_FILES_310 := $(LOCAL_PATH)/q3a/af_v2
 LOCAL_AF_SRC_FILES_GYRO:= $(LOCAL_PATH)/gyro
 LOCAL_IS_SRC_FILES := $(LOCAL_PATH)/is
 
-ifeq ($(call is-board-platform-in-list,sdm660 msm8998 apq8098_latv msm8953 msm8937),true)
+ifeq ($(call is-board-platform-in-list,sdm660 msm8998 apq8098_latv msm8937),true)
   LOCAL_SRC_FILES += $(shell find $(LOCAL_AF_SRC_FILES_310) -name '*.c' | sed s:^$(LOCAL_PATH)::g)
   LOCAL_SRC_FILES += $(shell find $(LOCAL_AF_SRC_FILES_310) -name '*.cpp' | sed s:^$(LOCAL_PATH)::g)
 else
