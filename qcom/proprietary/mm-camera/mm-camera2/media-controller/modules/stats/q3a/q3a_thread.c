@@ -744,7 +744,7 @@ void q3a_thread_af_free_msg(q3a_thread_af_msg_t **msg_pp)
         }
       }
         break;
-/*
+
       case AF_SET_PARAM_BG_STATS: {
         af_bg_stats_data_t *af_bg_stats = &msg->u.af_set_parm.u.bg_stats;
         if (af_bg_stats->af_stats_cb && af_bg_stats->af_port) {
@@ -752,7 +752,7 @@ void q3a_thread_af_free_msg(q3a_thread_af_msg_t **msg_pp)
         }
       }
         break;
-*/
+
       default:
         break;
     }

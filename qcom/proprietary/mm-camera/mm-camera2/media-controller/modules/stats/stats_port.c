@@ -1098,7 +1098,7 @@ static boolean stats_port_proc_downstream_set_parm(mct_port_t *port,
         send_internal = TRUE;
       }
         break;
-/*
+
       case CAM_INTF_PARM_SKIP_FINE_SCAN: {
         port_event.cap_flag = MCT_PORT_CAP_STATS_AF;
         stats_parm->param_type = STATS_SET_Q3A_PARAM;
@@ -1110,7 +1110,7 @@ static boolean stats_port_proc_downstream_set_parm(mct_port_t *port,
         send_internal = TRUE;
       }
         break;
-*/
+
       case CAM_INTF_PARM_FOCUS_ALGO_TYPE: {
         port_event.cap_flag = MCT_PORT_CAP_STATS_AF;
         stats_parm->param_type = STATS_SET_Q3A_PARAM;
