@@ -2204,6 +2204,7 @@ static sensor_lib_t sensor_lib_ptr =
         .line_length_pclk = 2200,
         .frame_length_lines = 1818,
         .op_pixel_clk = 320000000,
+        /*.vt_pixel_clk = 120000000,*/
         .binning_factor = 1,
         .min_fps = 7.500,
         .max_fps = 30.00,
@@ -2218,7 +2219,7 @@ static sensor_lib_t sensor_lib_ptr =
   },
   .csi_params =
   {
-    .lane_cnt = 2,
+    .lane_cnt = 4,
     .settle_cnt = 0x10,
     .is_csi_3phase = 0,
   },
