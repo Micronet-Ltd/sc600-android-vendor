@@ -310,6 +310,18 @@ static sensor_lib_t sensor_lib_ptr =
         },
         {
           .seq_type = CAMERA_POW_SEQ_GPIO,
+          .seq_val = CAMERA_GPIO_STANDBY,
+          .config_val = GPIO_OUT_LOW,
+          .delay = 1,
+        },
+        {
+          .seq_type = CAMERA_POW_SEQ_GPIO,
+          .seq_val = CAMERA_GPIO_STANDBY,
+          .config_val = GPIO_OUT_HIGH,
+          .delay = 5,
+        },
+        {
+          .seq_type = CAMERA_POW_SEQ_GPIO,
           .seq_val = CAMERA_GPIO_RESET,
           .config_val = GPIO_OUT_LOW,
           .delay = 3,
@@ -327,7 +339,7 @@ static sensor_lib_t sensor_lib_ptr =
           .delay = 1,
         },
       },
-      .size = 6,
+      .size = 8,
       .power_down_setting_a =
       {
         {
@@ -639,7 +651,7 @@ static sensor_lib_t sensor_lib_ptr =
   },
   .csi_params =
   {
-    .lane_cnt = 1,
+    .lane_cnt = 2,
     .settle_cnt = 0x06,
     .is_csi_3phase = 0,
   },
