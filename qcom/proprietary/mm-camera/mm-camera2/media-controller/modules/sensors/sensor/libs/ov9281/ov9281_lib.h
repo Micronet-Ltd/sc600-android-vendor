@@ -318,7 +318,7 @@ static sensor_lib_t sensor_lib_ptr =
           .seq_type = CAMERA_POW_SEQ_GPIO,
           .seq_val = CAMERA_GPIO_RESET,
           .config_val = GPIO_OUT_HIGH,
-          .delay = 1,
+          .delay = 8,
         },
         {
           .seq_type = CAMERA_POW_SEQ_CLK,
