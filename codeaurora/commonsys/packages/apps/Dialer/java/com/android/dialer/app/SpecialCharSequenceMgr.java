@@ -84,6 +84,9 @@ public class SpecialCharSequenceMgr {
   private static final String MMI_IMEI_DISPLAY = "*#06#";
   private static final String MMI_REGULATORY_INFO_DISPLAY = "*#07#";
   private static final String PRL_VERSION_DISPLAY = "*#0000#";
+  
+  private static final String CIT = "#*789#";
+  
   /** ***** This code is used to handle SIM Contact queries ***** */
   private static final String ADN_PHONE_NUMBER_COLUMN_NAME = "number";
 
@@ -254,6 +257,21 @@ public class SpecialCharSequenceMgr {
 
         return null;
     }
+
+  //add by wh
+  static boolean handleCIT(Context context,String input){
+	  if(CIT.equals(input)){
+		  try{
+			  context.startActivity(new Intent("lovdream.intent.action.FACTORY_KIT").addFlags(Intent.FLAG_ACTIVITY_NEW_TASK));
+			  return true;
+		  }catch(Exception e){
+			  e.printStackTrace();
+		  }
+	  }
+	  return false;
+  }
+  
+
 
   static private boolean handlePRLVersion(Context context, String input) {
     if (input.equals(PRL_VERSION_DISPLAY)) {
