@@ -2219,7 +2219,7 @@ static sensor_lib_t sensor_lib_ptr =
   },
   .csi_params =
   {
-    .lane_cnt = 4,
+    .lane_cnt = 2,
     .settle_cnt = 0x10,
     .is_csi_3phase = 0,
   },
