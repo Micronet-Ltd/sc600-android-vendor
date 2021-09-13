@@ -135,7 +135,7 @@ import java.lang.reflect.Constructor;
 
 public class NfcService implements DeviceHostListener {
     static final boolean DBG = true;
-    static final String TAG = "NfcService";
+    static final String TAG = "NfcNxpService";
 
     public static final String SERVICE_NAME = "nfc";
     public static final String NXP_PREF = "NfcServiceNxpPrefs";
@@ -1020,6 +1020,7 @@ public class NfcService implements DeviceHostListener {
 
         void updateState(int newState) {
             synchronized (NfcService.this) {
+            	if (DBG) Log.d(TAG, "[updateState] newState=" + newState+",state="+mState);
                 if (newState == mState) {
                     return;
                 }
@@ -1112,7 +1113,7 @@ public class NfcService implements DeviceHostListener {
             saveNfcOnSetting(true);
 
             new EnableDisableTask().execute(TASK_ENABLE);
-
+            Log.d(TAG, "[enable]");
             return true;
         }
 
@@ -1125,7 +1126,7 @@ public class NfcService implements DeviceHostListener {
             }
 
             new EnableDisableTask().execute(TASK_DISABLE);
-
+            Log.d(TAG, "[disable]");
             return true;
         }
 
@@ -1137,7 +1138,7 @@ public class NfcService implements DeviceHostListener {
                 Log.e(TAG, "Refusing to pause polling for " + timeoutInMs + "ms.");
                 return;
             }
-
+            Log.d(TAG, "[pausePolling]");
             synchronized (NfcService.this) {
                 mPollingPaused = true;
                 mDeviceHost.disableDiscovery();
@@ -1149,7 +1150,7 @@ public class NfcService implements DeviceHostListener {
         @Override
         public void resumePolling() {
             NfcPermissions.enforceAdminPermissions(mContext);
-
+            Log.d(TAG, "[resumePolling]");
             synchronized (NfcService.this) {
                 if (!mPollingPaused) {
                     return;
@@ -1298,12 +1299,13 @@ public class NfcService implements DeviceHostListener {
         @Override
         public void verifyNfcPermission() {
             NfcPermissions.enforceUserPermissions(mContext);
+            Log.d(TAG, "[verifyNfcPermission]");
         }
 
         @Override
         public void invokeBeam() {
             NfcPermissions.enforceUserPermissions(mContext);
-
+            Log.d(TAG, "[invokeBeam]");
             if (mForegroundUtils.isInForeground(Binder.getCallingUid())) {
                 mP2pLinkManager.onManualBeamInvoke(null);
             } else {
@@ -1364,6 +1366,7 @@ public class NfcService implements DeviceHostListener {
         @Override
         public int getState() throws RemoteException {
             synchronized (NfcService.this) {
+            	  Log.d(TAG, "[getState]" + mState);
                 return mState;
             }
         }
@@ -1429,7 +1432,8 @@ public class NfcService implements DeviceHostListener {
 
         @Override
         public INfcAdapterExtras getNfcAdapterExtrasInterface(String pkg) throws RemoteException {
-            return (INfcAdapterExtras) mNfcExtraObj;
+        	  Log.d(TAG, "[getNfcAdapterExtrasInterface]");
+        	return (INfcAdapterExtras) mNfcExtraObj;
         }
 
         @Override
@@ -1487,7 +1491,8 @@ public class NfcService implements DeviceHostListener {
          */
         @Override
         public IBinder getNfcAdapterVendorInterface(String vendor) {
-            if(vendor.equalsIgnoreCase("nxp")) {
+        	  Log.d(TAG, "[getNfcAdapterVendorInterface]");
+        	if(vendor.equalsIgnoreCase("nxp")) {
                 return (IBinder) mNxpNfcAdapter;
             } else {
                 return null;
@@ -2565,7 +2570,8 @@ public class NfcService implements DeviceHostListener {
     }
 
     public void routeAids(String aid, int route, int aidInfo, int power) {
-        Message msg = mHandler.obtainMessage();
+    	  Log.d(TAG, "[routeAids]");
+    	Message msg = mHandler.obtainMessage();
         msg.what = MSG_ROUTE_AID;
         msg.arg1 = route;
         msg.obj = aid;
@@ -2744,6 +2750,7 @@ public class NfcService implements DeviceHostListener {
         return aidTableStatus;
     }
     public boolean sendData(byte[] data) {
+    	  Log.d(TAG, "[sendData]");
         return mDeviceHost.sendRawFrame(data);
     }
 

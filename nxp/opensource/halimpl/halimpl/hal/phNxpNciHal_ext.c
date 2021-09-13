@@ -588,13 +588,13 @@ static NFCSTATUS phNxpNciHal_process_ext_cmd_rsp(uint16_t cmd_len,
     NXPLOG_NCIHAL_D("Create ext_cb_data failed");
     return NFCSTATUS_FAILED;
   }
-
+  NXPLOG_NCIHAL_D("[%s]-->", __func__);
   nxpncihal_ctrl.ext_cb_data.status = NFCSTATUS_SUCCESS;
 
   /* Send ext command */
   data_written = phNxpNciHal_write_unlocked(cmd_len, p_cmd);
   if (data_written != cmd_len) {
-    NXPLOG_NCIHAL_D("phNxpNciHal_write failed for hal ext");
+    NXPLOG_NCIHAL_D("[%s] phNxpNciHal_write failed for hal ext", __func__);
     goto clean_and_return;
   }
 
@@ -602,17 +602,17 @@ static NFCSTATUS phNxpNciHal_process_ext_cmd_rsp(uint16_t cmd_len,
   status = phOsalNfc_Timer_Start(timeoutTimerId, HAL_EXTNS_WRITE_RSP_TIMEOUT,
                                  &hal_extns_write_rsp_timeout_cb, NULL);
   if (NFCSTATUS_SUCCESS == status) {
-    NXPLOG_NCIHAL_D("Response timer started");
+    NXPLOG_NCIHAL_D("[%s] Response timer started", __func__);
   } else {
-    NXPLOG_NCIHAL_E("Response timer not started!!!");
+    NXPLOG_NCIHAL_E("[%s] Response timer not started!!!", __func__);
     status = NFCSTATUS_FAILED;
     goto clean_and_return;
   }
 
   /* Wait for rsp */
-  NXPLOG_NCIHAL_D("Waiting after ext cmd sent");
+  NXPLOG_NCIHAL_D("[%s] Waiting after ext cmd sent", __func__);
   if (SEM_WAIT(nxpncihal_ctrl.ext_cb_data)) {
-    NXPLOG_NCIHAL_E("p_hal_ext->ext_cb_data.sem semaphore error");
+    NXPLOG_NCIHAL_E("[%s] p_hal_ext->ext_cb_data.sem semaphore error", __func__);
     goto clean_and_return;
   }
 
@@ -620,9 +620,9 @@ static NFCSTATUS phNxpNciHal_process_ext_cmd_rsp(uint16_t cmd_len,
   status = phOsalNfc_Timer_Stop(timeoutTimerId);
 
   if (NFCSTATUS_SUCCESS == status) {
-    NXPLOG_NCIHAL_D("Response timer stopped");
+    NXPLOG_NCIHAL_D("[%s] Response timer stopped", __func__);
   } else {
-    NXPLOG_NCIHAL_E("Response timer stop ERROR!!!");
+    NXPLOG_NCIHAL_E("[%s] Response timer stop ERROR!!!", __func__);
     status = NFCSTATUS_FAILED;
     goto clean_and_return;
   }
@@ -631,23 +631,23 @@ static NFCSTATUS phNxpNciHal_process_ext_cmd_rsp(uint16_t cmd_len,
     status = phOsalNfc_Timer_Start(timeoutTimerId, HAL_EXTNS_WRITE_RSP_TIMEOUT,
       &hal_extns_write_rsp_timeout_cb, NULL);
     if (NFCSTATUS_SUCCESS == status) {
-      NXPLOG_NCIHAL_D("Response timer started");
+      NXPLOG_NCIHAL_D("[%s] Response timer started", __func__);
     } else {
-      NXPLOG_NCIHAL_E("Response timer not started!!!");
+      NXPLOG_NCIHAL_E("[%s] Response timer not started!!!", __func__);
       status = NFCSTATUS_FAILED;
       goto clean_and_return;
     }
     if (SEM_WAIT(nxpncihal_ctrl.ext_cb_data)) {
-      NXPLOG_NCIHAL_E("p_hal_ext->ext_cb_data.sem semaphore error");
+      NXPLOG_NCIHAL_E("[%s] p_hal_ext->ext_cb_data.sem semaphore error", __func__);
       /* Stop Timer */
       status = phOsalNfc_Timer_Stop(timeoutTimerId);
       goto clean_and_return;
     }
     status = phOsalNfc_Timer_Stop(timeoutTimerId);
     if (NFCSTATUS_SUCCESS == status) {
-      NXPLOG_NCIHAL_D("Response timer stopped");
+      NXPLOG_NCIHAL_D("[%s] Response timer stopped", __func__);
     } else {
-      NXPLOG_NCIHAL_E("Response timer stop ERROR!!!");
+      NXPLOG_NCIHAL_E("[%s] Response timer stop ERROR!!!", __func__);
       status = NFCSTATUS_FAILED;
       goto clean_and_return;
     }
@@ -660,7 +660,7 @@ static NFCSTATUS phNxpNciHal_process_ext_cmd_rsp(uint16_t cmd_len,
     goto clean_and_return;
   }
 
-  NXPLOG_NCIHAL_D("Checking response");
+  NXPLOG_NCIHAL_D("[%s] Checking response", __func__);
 
   if ((mGetCfg_info != NULL) && (mGetCfg_info->isGetcfg == true) &&
       (nxpncihal_ctrl.p_rx_data[0] == 0x40) &&
@@ -999,7 +999,7 @@ NFCSTATUS phNxpNciHal_write_ext(uint16_t* cmd_len, uint8_t* p_cmd_data,
           }
       }
   }
-
+   NXPLOG_NCIHAL_D("%s:%s:return %d",__FILE__,__func__,status);
   return status;
 }
 
@@ -1023,7 +1023,7 @@ NFCSTATUS phNxpNciHal_send_ext_cmd(uint16_t cmd_len, uint8_t* p_cmd) {
   status = phNxpNciHal_process_ext_cmd_rsp(nxpncihal_ctrl.cmd_len,
                                            nxpncihal_ctrl.p_cmd_data);
   HAL_DISABLE_EXT();
-
+   NXPLOG_NCIHAL_D("%s:%s:return %d",__FILE__,__func__,status);
   return status;
 }
 
@@ -1374,7 +1374,7 @@ int phNxpNciHal_CheckFwRegFlashRequired(uint8_t* fw_update_req,
                                         uint8_t* rf_update_req) {
   int status = NFCSTATUS_OK;
   UNUSED(rf_update_req);
-  NXPLOG_NCIHAL_D("phNxpNciHal_CheckFwRegFlashRequired() : enter");
+  NXPLOG_NCIHAL_D("[%s:%s] : enter",__FILE__,__func__);
   status = phDnldNfc_InitImgInfo();
   NXPLOG_NCIHAL_D("FW version of the libpn5xx.so binary = 0x%x", wFwVer);
   NXPLOG_NCIHAL_D("FW version found on the device = 0x%x", wFwVerRsp);
@@ -1386,7 +1386,6 @@ int phNxpNciHal_CheckFwRegFlashRequired(uint8_t* fw_update_req,
     phDnldNfc_ReSetHwDevHandle();
   }
 
-  NXPLOG_NCIHAL_D("phNxpNciHal_CheckFwRegFlashRequired() : exit - status = %x ",
-                  status);
+  NXPLOG_NCIHAL_D("[%s:%s] : exit - status = %x",__FILE__,__func__,status);
   return status;
 }

@@ -56,9 +56,15 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 
+#ifdef LOG_TAG
+#undef LOG_TAG
+#endif
+#define LOG_TAG "NxpConfig"
 #include <phNxpLog.h>
 #include <cutils/properties.h>
 #include "sparse_crc32.h"
+
+
 
 #if GENERIC_TARGET
 const char alternative_config_path[] = "/data/vendor/nfc/";
@@ -364,18 +370,23 @@ int CNfcConfig::getconfiguration_id (char * config_file)
 
     // Converting the HW_PLATFORM detail that is read from target to lowercase
     for (int i=0;target_type[i];i++)
+    {
         target_type[i] = tolower(target_type[i]);
-
+       
+    } 
+    
+    ALOGD("%s:%s target = %s\n", __FILE__, __func__,target_type);
     // generating a generic config file name based on the target details
     snprintf(config_file, MAX_DATA_CONFIG_PATH_LEN, "libnfc-%s_%s.conf",
             soc_info, target_type);
-
+	ALOGD("config_file = %s\n", config_file);
     findConfigFilePathFromTransportConfigPaths(config_file, strPath);
+    ALOGD("config_path = %s\n", strPath.c_str());
     if (file_exist(strPath.c_str()))
         idx = 0;
 
-    if (DEBUG)
-        ALOGI("id:%d, config_file_name:%s\n", idx, config_file);
+    //if (DEBUG)
+        ALOGI("id:%d, config_file:%s, chipid:%s, fw_ver:%s \n", idx, config_file, nq_chipid, nq_fw_ver);
 
     // if target is QRD platform then config id is assigned here
     if (0 == strncmp(target_type, QRD_HW_PLATFORM, MAX_SOC_INFO_NAME_LEN)) {
@@ -406,7 +417,7 @@ int CNfcConfig::getconfiguration_id (char * config_file)
                 strlcpy(config_file, config_name_qrd_NQ4XX, MAX_DATA_CONFIG_PATH_LEN);
             } else {
                 config_id = QRD_TYPE_NQ3XX;
-                strlcpy(config_file, config_name_qrd_NQ3XX, MAX_DATA_CONFIG_PATH_LEN);
+                strlcpy(config_file, config_name_nxp_PN7150, MAX_DATA_CONFIG_PATH_LEN);
             }
             break;
         case TARGET_MSM8976:
@@ -472,7 +483,7 @@ int CNfcConfig::getconfiguration_id (char * config_file)
                 strlcpy(config_file, config_name_mtp_NQ4XX, MAX_DATA_CONFIG_PATH_LEN);
             } else {
                 config_id = MTP_TYPE_NQ3XX;
-                strlcpy(config_file, config_name_mtp_NQ3XX, MAX_DATA_CONFIG_PATH_LEN);
+                strlcpy(config_file, config_name_nxp_PN7150, MAX_DATA_CONFIG_PATH_LEN);
             }
             break;
         case TARGET_SDM845:
@@ -509,7 +520,7 @@ int CNfcConfig::getconfiguration_id (char * config_file)
             break;
         }
     }
-    if (DEBUG)
+    //if (DEBUG)
         ALOGI("platform config id:%d, config_file_name:%s\n", config_id, config_file);
 
     return config_id;
@@ -843,11 +854,13 @@ CNfcConfig& CNfcConfig::GetInstance() {
             strPath.assign(alternative_config_path);
             strPath += config_name;
             theInstance.readConfig(strPath.c_str(), true);
+            ALOGI("1==>config file= %s\n",strPath.c_str());
             if (!theInstance.empty())
             {
                 return theInstance;
             }
         }
+        ALOGI("2==>config file= %s\n",strPath.c_str());
         findConfigFilePathFromTransportConfigPaths(config_name, strPath);
         //checks whether the default config file is present in th target
         if (theInstance.file_exist(strPath.c_str())) {
@@ -862,12 +875,14 @@ CNfcConfig& CNfcConfig::GetInstance() {
         }
 
         gconfigpathid = theInstance.getconfiguration_id(config_name_generic);
+        ALOGI("3==>config id=%d,file= %s\n",gconfigpathid, config_name_generic);
         findConfigFilePathFromTransportConfigPaths(config_name_generic, strPath);
+        ALOGI("4==>config file = %s\n",strPath.c_str());
         if (!(theInstance.file_exist(strPath.c_str()))) {
             ALOGI("no matching file found, using default file for stability\n");
             findConfigFilePathFromTransportConfigPaths(config_name_default, strPath);
         }
-        ALOGI("config file used = %s\n",strPath.c_str());
+        ALOGI("5==>config file = %s\n",strPath.c_str());
         theInstance.readConfig(strPath.c_str(), true);
 #if(NXP_EXTNS == TRUE)
 

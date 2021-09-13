@@ -50,7 +50,7 @@ union nqx_uinfo {
     struct nqx_devinfo info;
 };
 
-bool nfc_debug_enabled = false;
+bool nfc_debug_enabled = true;
 static hal_api_struct_t *hal_api_s = nullptr;
 static bool struct_initialized = false;
 static void* hal_handle = nullptr;

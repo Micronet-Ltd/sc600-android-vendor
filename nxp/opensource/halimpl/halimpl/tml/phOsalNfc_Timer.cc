@@ -79,10 +79,11 @@ uint32_t phOsalNfc_Timer_Create(void) {
   se.sigev_notify_function = phOsalNfc_Timer_Expired;
   se.sigev_notify_attributes = NULL;
   dwTimerId = phUtilNfc_CheckForAvailableTimer();
-
+NXPLOG_TML_E("timer id=%d",dwTimerId);
   /* Check whether timers are available, if yes create a timer handle structure
    */
   if ((PH_NFC_TIMER_ID_ZERO != dwTimerId) && (dwTimerId <= PH_NFC_MAX_TIMER)) {
+    NXPLOG_TML_E("timer are available");
     pTimerHandle = (phOsalNfc_TimerHandle_t*)&apTimerInfo[dwTimerId - 1];
     /* Build the Timer Id to be returned to Caller Function */
     dwTimerId += PH_NFC_TIMER_BASE_ADDRESS;
@@ -90,6 +91,7 @@ uint32_t phOsalNfc_Timer_Create(void) {
     /* Create POSIX timer */
     if (timer_create(CLOCK_MONOTONIC, &se, &(pTimerHandle->hTimerHandle)) ==
         -1) {
+      NXPLOG_TML_E("Create POSIX timer fail");
       dwTimerId = PH_NFC_TIMER_ID_INVALID;
     } else {
       /* Set the state to indicate timer is ready */

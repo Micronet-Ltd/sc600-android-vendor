@@ -1193,7 +1193,7 @@ retryget:
 int phNxpNciHal_CheckFwRegFlashRequired(uint8_t* fw_update_req,
                                         uint8_t* rf_update_req,
                                         uint8_t skipEEPROMRead) {
-  NXPLOG_NCIHAL_D("phNxpNciHal_CheckFwRegFlashRequired() : enter");
+  NXPLOG_NCIHAL_D("[%s:%s] : enter",__FILE__,__func__);
   UNUSED_PROP(rf_update_req);
   int status = NFCSTATUS_OK;
   long option;

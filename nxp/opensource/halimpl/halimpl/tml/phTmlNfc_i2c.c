@@ -80,11 +80,11 @@ NFCSTATUS phTmlNfc_i2c_open_and_configure(pphTmlNfc_Config_t pConfig,
                                           void** pLinkHandle) {
   int nHandle;
 
-  NXPLOG_TML_D("Opening port=%s\n", pConfig->pDevName);
+  NXPLOG_TML_E("Opening port=%s\n", pConfig->pDevName);
   /* open port */
   nHandle = open((const char*)pConfig->pDevName, O_RDWR);
   if (nHandle < 0) {
-    NXPLOG_TML_E("_i2c_open() Failed: retval %x", nHandle);
+    NXPLOG_TML_E("Open %s Failed errno:0x08%x retval:0x08%x\n",pConfig->pDevName, errno , nHandle);
     *pLinkHandle = NULL;
     return NFCSTATUS_INVALID_DEVICE;
   }
@@ -286,14 +286,14 @@ int phTmlNfc_i2c_write(void* pDevHandle, uint8_t* pBuffer,
 int phTmlNfc_i2c_reset(void* pDevHandle, long level) {
   int ret = -1;
 
-  NXPLOG_TML_D("phTmlNfc_i2c_reset(), VEN level %ld", level);
+  NXPLOG_TML_D("[%s], VEN level %ld", __func__,level);
 
   if (NULL == pDevHandle) {
     return -1;
   }
   ret = ioctl((intptr_t)pDevHandle, PN544_SET_PWR, level);
   if (ret < 0) {
-    NXPLOG_TML_E("%s :failed errno = 0x%x", __func__, errno);
+    NXPLOG_TML_E("[%s] :failed errno = 0x%x", __func__, errno);
     if (level == 2 && errno == EBUSY) {
       notifyFwrequest = true;
     } else {

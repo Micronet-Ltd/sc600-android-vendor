@@ -86,7 +86,7 @@ static int phTmlNfc_WaitReadInit(void);
 *******************************************************************************/
 NFCSTATUS phTmlNfc_Init(pphTmlNfc_Config_t pConfig) {
   NFCSTATUS wInitStatus = NFCSTATUS_SUCCESS;
-
+NXPLOG_TML_D("[%s]--> ",__func__);
   /* Check if TML layer is already Initialized */
   if (NULL != gpphTmlNfc_Context) {
     /* TML initialization is already completed */
@@ -187,7 +187,7 @@ NFCSTATUS phTmlNfc_Init(pphTmlNfc_Config_t pConfig) {
 void phTmlNfc_ConfigNciPktReTx(phTmlNfc_ConfigRetrans_t eConfiguration,
                                uint8_t bRetryCounter) {
   /* Enable/Disable Retransmission */
-
+NXPLOG_TML_D("[%s]--> ",__func__);
   gpphTmlNfc_Context->eConfig = eConfiguration;
   if (phTmlNfc_e_EnableRetrans == eConfiguration) {
     /* Check whether Retry counter passed is valid */
@@ -257,6 +257,7 @@ static NFCSTATUS phTmlNfc_StartThread(void) {
 **
 *******************************************************************************/
 static void phTmlNfc_ReTxTimerCb(uint32_t dwTimerId, void* pContext) {
+  NXPLOG_TML_D("[%s]--> ",__func__);
   if ((gpphTmlNfc_Context->dwTimerId == dwTimerId) && (NULL == pContext)) {
     /* If Retry Count has reached its limit,Retransmit Nci
        packet */
@@ -609,7 +610,7 @@ static void phTmlNfc_TmlWriterThread(void* pParam) {
 *******************************************************************************/
 static void phTmlNfc_CleanUp(void) {
   NFCSTATUS wRetval = NFCSTATUS_SUCCESS;
-
+NXPLOG_TML_D("[%s]--> ",__func__);
   if (NULL == gpphTmlNfc_Context) {
     return;
   }
@@ -650,6 +651,7 @@ static void phTmlNfc_CleanUp(void) {
 *******************************************************************************/
 NFCSTATUS phTmlNfc_Shutdown(void) {
   NFCSTATUS wShutdownStatus = NFCSTATUS_SUCCESS;
+  NXPLOG_TML_D("[%s]--> ",__func__);
   /* Check whether TML is Initialized */
   if (NULL != gpphTmlNfc_Context) {
     /* Reset thread variable to terminate the thread */
@@ -715,7 +717,7 @@ NFCSTATUS phTmlNfc_Write(uint8_t* pBuffer, uint16_t wLength,
                          pphTmlNfc_TransactCompletionCb_t pTmlWriteComplete,
                          void* pContext) {
   NFCSTATUS wWriteStatus;
-
+NXPLOG_TML_D("[%s]--> ",__func__);
   /* Check whether TML is Initialized */
 
   if (NULL != gpphTmlNfc_Context) {
@@ -787,7 +789,7 @@ NFCSTATUS phTmlNfc_Read(uint8_t* pBuffer, uint16_t wLength,
                         pphTmlNfc_TransactCompletionCb_t pTmlReadComplete,
                         void* pContext) {
   NFCSTATUS wReadStatus;
-
+NXPLOG_TML_D("[%s]--> ",__func__);
   /* Check whether TML is Initialized */
   if (NULL != gpphTmlNfc_Context) {
     if ((gpphTmlNfc_Context->pDevHandle != NULL) && (NULL != pBuffer) &&
@@ -839,6 +841,7 @@ NFCSTATUS phTmlNfc_Read(uint8_t* pBuffer, uint16_t wLength,
 *******************************************************************************/
 NFCSTATUS phTmlNfc_ReadAbort(void) {
   NFCSTATUS wStatus = NFCSTATUS_INVALID_PARAMETER;
+  NXPLOG_TML_D("[%s]--> ",__func__);
   gpphTmlNfc_Context->tReadInfo.bEnable = 0;
 
   /*Reset the flag to accept another Read Request */
@@ -867,7 +870,7 @@ NFCSTATUS phTmlNfc_ReadAbort(void) {
 *******************************************************************************/
 NFCSTATUS phTmlNfc_WriteAbort(void) {
   NFCSTATUS wStatus = NFCSTATUS_INVALID_PARAMETER;
-
+NXPLOG_TML_D("[%s]--> ",__func__);
   gpphTmlNfc_Context->tWriteInfo.bEnable = 0;
   /* Stop if any retransmission is in progress */
   bCurrentRetryCount = 0;
@@ -899,7 +902,7 @@ NFCSTATUS phTmlNfc_WriteAbort(void) {
 *******************************************************************************/
 NFCSTATUS phTmlNfc_IoCtl(phTmlNfc_ControlCode_t eControlCode) {
   NFCSTATUS wStatus = NFCSTATUS_SUCCESS;
-
+  NXPLOG_TML_D("[%s] - eControlCode=0x%x",__func__,eControlCode);
   if (NULL == gpphTmlNfc_Context) {
     wStatus = NFCSTATUS_FAILED;
   } else {
