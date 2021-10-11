@@ -3480,58 +3480,6 @@ typedef struct _af_tuning_extension_adapter_t
 {
   boolean end; /*Added dummy member to avoid compile time warning*/
 } af_tuning_extension_adapter_t;
-#else
-typedef enum
-{
-    Q3A_VM_DETECTOR_STABLE = 0,
-    Q3A_VM_DETECTOR_UNSTABLE,
-    Q3A_VM_DETECTOR_MAX,
-} af_vm_detector_type_adapter_enum;
-
-typedef struct _af_vm_fltr_median_config_adapter_t
-{
-    int                                enable;
-    int                                num_of_samples;
-} af_vm_fltr_median_config_adapter_t;
-
-typedef struct _af_vm_fltr_mvavg_config_adapter_t
-{
-    int                                enable;
-    int                                num_of_samples;
-} af_vm_fltr_mvavg_config_adapter_t;
-
-typedef struct _af_vm_fltr_iir_config_adapter_t
-{
-    int                                enable;
-    int                                num_of_samples;
-    float                              coeff_numerator;
-    float                              coeff_denominator;
-} af_vm_fltr_iir_config_adapter_t ;
-
-typedef struct _af_abs_mode_config_adapter_t
-{
-    int                                enable;
-    float                              baseline;
-} af_abs_mode_config_adapter_t;
-
-typedef struct _af_vm_sens_profile_adapter_t
-{
-    float                                      trigger_threshold;
-    int                                        consecutive_count_threshold;
-    int                                        frame2armed;
-    af_vm_fltr_median_config_adapter_t         median_fltr_cfg;
-    af_vm_fltr_mvavg_config_adapter_t          mvavg_fltr_cfg;
-    af_vm_fltr_iir_config_adapter_t            iir_fltr_cfg;
-} af_vm_sens_profile_adapter_t;
-
-typedef struct _af_vm_config_adapter_t
-{
-    af_vm_detector_type_adapter_enum    detection_type;
-    af_abs_mode_config_adapter_t        absolute_mode_cfg;
-    af_vm_sens_profile_adapter_t        sens_profile_low;
-    af_vm_sens_profile_adapter_t        sens_profile_med;
-    af_vm_sens_profile_adapter_t        sens_profile_high;
-} af_vm_config_adapter_t;
 
 #endif
 
