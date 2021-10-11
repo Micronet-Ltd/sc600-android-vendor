@@ -49,7 +49,6 @@
   {0x4315, 0x00, 0x00}, \
   {0x3006, 0x06, 0x00}, \
 }
-
 #define SLAVE_SYNC_REG_ARRAY \
 { \
   {0x3666, 0x00, 0x00}, \
@@ -291,52 +290,52 @@ static sensor_lib_t sensor_lib_ptr =
       .power_setting_a =
       {
         {
-          .seq_type = CAMERA_POW_SEQ_VREG,
-          .seq_val = CAMERA_VANA,
-          .config_val = 0,
-          .delay = 0,
+          .seq_type = CAMERA_POW_SEQ_GPIO,
+          .seq_val = CAMERA_GPIO_RESET,
+          .config_val = GPIO_OUT_LOW,
+          .delay = 1,
+        },
+        {
+          .seq_type = CAMERA_POW_SEQ_GPIO,
+          .seq_val = CAMERA_GPIO_STANDBY,
+          .config_val = GPIO_OUT_LOW,
+          .delay = 5,
         },
         {
           .seq_type = CAMERA_POW_SEQ_VREG,
-          .seq_val = CAMERA_VDIG,
+          .seq_val = CAMERA_VANA,
           .config_val = 0,
-          .delay = 0,
+          .delay = 1,
         },
         {
           .seq_type = CAMERA_POW_SEQ_VREG,
           .seq_val = CAMERA_VIO,
           .config_val = 0,
-          .delay = 0,
-        },
-        {
-          .seq_type = CAMERA_POW_SEQ_GPIO,
-          .seq_val = CAMERA_GPIO_STANDBY,
-          .config_val = GPIO_OUT_LOW,
           .delay = 1,
         },
         {
-          .seq_type = CAMERA_POW_SEQ_GPIO,
-          .seq_val = CAMERA_GPIO_RESET,
-          .config_val = GPIO_OUT_LOW,
-          .delay = 1,
-        },
-        {
-          .seq_type = CAMERA_POW_SEQ_GPIO,
-          .seq_val = CAMERA_GPIO_STANDBY,
-          .config_val = GPIO_OUT_HIGH,
-          .delay = 1,
+          .seq_type = CAMERA_POW_SEQ_VREG,
+          .seq_val = CAMERA_VDIG,
+          .config_val = 0,
+          .delay = 5,
         },
         {
           .seq_type = CAMERA_POW_SEQ_GPIO,
           .seq_val = CAMERA_GPIO_RESET,
           .config_val = GPIO_OUT_HIGH,
-          .delay = 8,
+          .delay = 10,
+        },
+        {
+          .seq_type = CAMERA_POW_SEQ_GPIO,
+          .seq_val = CAMERA_GPIO_STANDBY,
+          .config_val = GPIO_OUT_HIGH,
+          .delay = 10,
         },
         {
           .seq_type = CAMERA_POW_SEQ_CLK,
           .seq_val = CAMERA_MCLK,
           .config_val = 24000000,
-          .delay = 1,
+          .delay = 10,
         },
       },
       .size = 8,
@@ -350,8 +349,8 @@ static sensor_lib_t sensor_lib_ptr =
         },
         {
           .seq_type = CAMERA_POW_SEQ_GPIO,
-          .seq_val = CAMERA_GPIO_RESET,
-          .config_val = GPIO_OUT_HIGH,
+          .seq_val = CAMERA_GPIO_STANDBY,
+          .config_val = GPIO_OUT_LOW,
           .delay = 1,
         },
         {
@@ -484,7 +483,7 @@ static sensor_lib_t sensor_lib_ptr =
   },
   .embedded_data_enable_settings =
   {
-    .reg_setting_a = 0,
+    .reg_setting_a = {},
     .size = 0,
     .addr_type = 0,
     .data_type = 0,
@@ -492,7 +491,7 @@ static sensor_lib_t sensor_lib_ptr =
   },
   .embedded_data_disable_settings =
   {
-    .reg_setting_a = 0,
+    .reg_setting_a = {},
     .size = 0,
     .addr_type = 0,
     .data_type = 0,

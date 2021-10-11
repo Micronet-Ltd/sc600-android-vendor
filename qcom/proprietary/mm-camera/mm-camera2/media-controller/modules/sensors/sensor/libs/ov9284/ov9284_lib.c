@@ -69,7 +69,7 @@ static int32_t sensor_calculate_exposure(float real_gain,
  *  input param 7 : struct reg_settings
  **/
  static int32_t sensor_fill_exposure_array(uint32_t gain,
-  uint32_t digital_gain, uint32_t line,
+  __attribute__((unused)) uint32_t digital_gain, uint32_t line,
   uint32_t fl_lines, __attribute__((unused)) int32_t luma_avg,
   __attribute__((unused)) uint32_t fgain,
   struct camera_i2c_reg_setting* reg_setting,
