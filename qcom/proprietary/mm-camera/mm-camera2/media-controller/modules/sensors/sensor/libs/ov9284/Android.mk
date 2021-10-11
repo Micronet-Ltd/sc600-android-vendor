@@ -1,20 +1,19 @@
 # ---------------------------------------------------------------------------
-#                      Make the shared library (libmmcamera_ov7251)
+#                      Make the shared library (libmmcamera_ov9284)
 # ---------------------------------------------------------------------------
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-LOCAL_MODULE_TAGS := optional
+LOCAL_LDFLAGS := $(mmcamera_debug_lflags)
 
-LOCAL_CFLAGS:= \
-        -DAMSS_VERSION=$(AMSS_VERSION) \
-        $(mmcamera_debug_defines) \
-        $(mmcamera_debug_cflags)
-LOCAL_C_INCLUDES += $(SRC_CAMERA_HAL_DIR)/QCamera2/stack/common
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../../../../../../mm-camerasdk/sensor/includes/
+LOCAL_CFLAGS := -DAMSS_VERSION=$(AMSS_VERSION) \
+  $(mmcamera_debug_defines) \
+  $(mmcamera_debug_cflags)
+LOCAL_CFLAGS += -Werror
+
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../../../../../../mm-camerasdk/sensor/includes/
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../../../../../../../../mm-camerasdk/sensor/includes/$(CHROMATIX_VERSION)
 
 LOCAL_C_INCLUDES += ov9284_lib.h
-LOCAL_C_INCLUDES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
-LOCAL_ADDITIONAL_DEPENDENCIES := $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 LOCAL_SRC_FILES:= ov9284_lib.c
 LOCAL_MODULE           := libmmcamera_ov9284
@@ -30,5 +29,7 @@ LOCAL_PROPRIETARY_MODULE := true
 ifeq ($(32_BIT_FLAG), true)
 LOCAL_32_BIT_ONLY := true
 endif
+
+LOCAL_ADDITIONAL_DEPENDENCIES += $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr
 
 include $(BUILD_SHARED_LIBRARY)
