@@ -17,6 +17,11 @@
 /* ############################################### Header Includes
  * ################################################ */
 #if !defined(NXPLOG__H_INCLUDED)
+
+#ifdef LOG_TAG
+#undef LOG_TAG
+#endif
+#define LOG_TAG "NxpLog"
 #include "phNxpLog.h"
 #include "phNxpConfig.h"
 #endif

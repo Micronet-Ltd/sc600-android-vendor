@@ -168,7 +168,8 @@ int updateNxpConfigTimestamp();
 #define config_name_qrd_NQ3XX   "libnfc-qrd-NQ3XX.conf"
 #define config_name_qrd_NQ4XX   "libnfc-qrd-NQ4XX.conf"
 #define config_name_default     "libnfc-nxp_default.conf"
-
+#define config_name_nxp_PN7150  "libnfc-nxp-PN7150.conf"
+  
 /**
  *  @brief defines the different major number used.
  */

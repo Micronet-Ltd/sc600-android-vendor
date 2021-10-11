@@ -56,6 +56,10 @@
 #include <sys/stat.h>
 #include <stdlib.h>
 
+#ifdef LOG_TAG
+#undef LOG_TAG
+#endif
+#define LOG_TAG "NxpConfig"
 #include <phNxpLog.h>
 #include <cutils/properties.h>
 #include "sparse_crc32.h"
@@ -375,7 +379,7 @@ int CNfcConfig::getconfiguration_id (char * config_file)
         idx = 0;
 
     if (DEBUG)
-        ALOGI("id:%d, config_file_name:%s\n", idx, config_file);
+        ALOGI("id:%d, config_file:%s, chipid:%s, fw_ver:%s \n", idx, config_file, nq_chipid, nq_fw_ver);
 
     // if target is QRD platform then config id is assigned here
     if (0 == strncmp(target_type, QRD_HW_PLATFORM, MAX_SOC_INFO_NAME_LEN)) {
@@ -406,7 +410,7 @@ int CNfcConfig::getconfiguration_id (char * config_file)
                 strlcpy(config_file, config_name_qrd_NQ4XX, MAX_DATA_CONFIG_PATH_LEN);
             } else {
                 config_id = QRD_TYPE_NQ3XX;
-                strlcpy(config_file, config_name_qrd_NQ3XX, MAX_DATA_CONFIG_PATH_LEN);
+                strlcpy(config_file, config_name_nxp_PN7150, MAX_DATA_CONFIG_PATH_LEN);
             }
             break;
         case TARGET_MSM8976:
@@ -472,7 +476,7 @@ int CNfcConfig::getconfiguration_id (char * config_file)
                 strlcpy(config_file, config_name_mtp_NQ4XX, MAX_DATA_CONFIG_PATH_LEN);
             } else {
                 config_id = MTP_TYPE_NQ3XX;
-                strlcpy(config_file, config_name_mtp_NQ3XX, MAX_DATA_CONFIG_PATH_LEN);
+                strlcpy(config_file, config_name_nxp_PN7150, MAX_DATA_CONFIG_PATH_LEN);
             }
             break;
         case TARGET_SDM845:
