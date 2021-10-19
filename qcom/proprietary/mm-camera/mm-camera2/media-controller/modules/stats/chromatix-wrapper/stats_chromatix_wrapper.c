@@ -4585,7 +4585,7 @@ boolean parse_AWB_chromatix(void* awb_tuning_info, awb_algo_tuning_adapter* tuni
     tuning_adapter->awb_dualcam_sync.sync_convergence_speed = 0.5;
   }
 #else
-      tuning_adapter->custom_reference_points.num_customer_refer_points = 0;
+      tuning_adapter->awb_dualcam_sync.custom_reference_points.num_customer_refer_points = 0;
 
 #endif
     }

@@ -349,7 +349,7 @@ static NFCSTATUS phNxpNciHal_CheckValidFwVersion(void) {
   /* extract the firmware's major no */
   ufw_current_major_no = ((0x00FF) & (wFwVer >> 8U));
 
-  NXPLOG_NCIHAL_D("%s current_major_no = 0x%x", __func__, ufw_current_major_no);
+  NXPLOG_NCIHAL_D("[%s] current_major_no = 0x%x", __func__, ufw_current_major_no);
 
   if (ufw_current_major_no == nfcFL.nfcMwFL._FW_MOBILE_MAJOR_NUMBER) {
     status = NFCSTATUS_SUCCESS;
@@ -418,14 +418,14 @@ static NFCSTATUS phNxpNciHal_FwDwnld(uint16_t aType) {
         status= phNxpNciHal_CheckValidFwVersion();
    }
   if (NFCSTATUS_SUCCESS == status) {
-    NXPLOG_NCIHAL_D("Found Valid Firmware Type");
+    NXPLOG_NCIHAL_D("[%s] Found Valid Firmware Type", __func__);
     status = phNxpNciHal_fw_download();
     if (status != NFCSTATUS_SUCCESS) {
       if (NFCSTATUS_SUCCESS != phNxpNciHal_fw_mw_ver_check()) {
         NXPLOG_NCIHAL_D("Chip Version Middleware Version mismatch!!!!");
         goto clean_and_return;
       }
-      NXPLOG_NCIHAL_E("FW Download failed - NFCC init will continue");
+      NXPLOG_NCIHAL_E("[%s] FW Download failed - NFCC init will continue", __func__);
     }
   } else {
     if (wFwVerRsp == 0) phDnldNfc_ReSetHwDevHandle();
@@ -3755,10 +3755,10 @@ static void phNxpNciHal_print_res_status(uint8_t* p_rx_data, uint16_t* p_len) {
   if (p_rx_data[0] == 0x40 && (p_rx_data[1] == 0x02 || p_rx_data[1] == 0x03)) {
     if (p_rx_data[2] && p_rx_data[3] <= 10) {
       status_byte = p_rx_data[CORE_RES_STATUS_BYTE];
-      NXPLOG_NCIHAL_D("%s: response status =%s", __func__,
+      NXPLOG_NCIHAL_D("%s:%s: response status =%s", __FILE__,__func__,
                       response_buf[status_byte]);
     } else {
-      NXPLOG_NCIHAL_D("%s: response status =%s", __func__, response_buf[11]);
+      NXPLOG_NCIHAL_D("%s:%s: response status =%s",__FILE__, __func__, response_buf[11]);
     }
     if (phNxpNciClock.isClockSet) {
       int i;
@@ -3903,7 +3903,7 @@ void phNxpNciHal_configFeatureList(uint8_t* init_rsp, uint16_t rsp_len) {
     nxpncihal_ctrl.chipType = configChipType(init_rsp,rsp_len);
     tNFC_chipType chipType = nxpncihal_ctrl.chipType;
     CONFIGURE_FEATURELIST(chipType);
-    NXPLOG_NCIHAL_D("NFC_GetFeatureList ()chipType = %d", chipType);
+    NXPLOG_NCIHAL_D("[%s] chipType = %d", __func__, chipType);
 }
 
 /*******************************************************************************

@@ -82,6 +82,8 @@ static uint8_t pwr_link_required = false;
 static uint8_t config_access = false;
 static uint8_t config_success = true;
 static uint8_t fw_download_success = 0;
+/* Anti-tearing mechanism sucess flag */
+uint8_t anti_tearing_recovery_success = 0;
 static NFCSTATUS phNxpNciHal_FwDwnld(uint16_t aType);
 /* NCI HAL Control structure */
 phNxpNciHal_Control_t nxpncihal_ctrl;
@@ -183,7 +185,7 @@ static void phNxpNciHal_initialize_debug_enabled_flag() {
     sscanf(valueStr, "%u", &debug_enabled);
     nfc_debug_enabled = (debug_enabled == 0) ? false : true;
   }
-  NXPLOG_NCIHAL_D("nfc_debug_enabled : %d",nfc_debug_enabled);
+  NXPLOG_NCIHAL_D("==>nfc_debug_enabled : %d",nfc_debug_enabled);
 
 }
 //static tNfc_featureList phNxpNciHal_getFeatureList();
@@ -463,14 +465,14 @@ static NFCSTATUS phNxpNciHal_fw_download(void) {
 
   int fw_retry_count = 0;
   NFCSTATUS status = NFCSTATUS_REJECTED;
-  NXPLOG_NCIHAL_D("Starting FW update");
+  NXPLOG_NCIHAL_D("[%s:%s] Starting FW update",__FILE__,__func__);
   do {
     fw_download_success = 0;
     // phNxpNciHal_get_clk_freq();
     status = phTmlNfc_IoCtl(phTmlNfc_e_EnableDownloadMode);
     if (NFCSTATUS_SUCCESS != status) {
       fw_retry_count++;
-      NXPLOG_NCIHAL_D("Retrying: FW download");
+      NXPLOG_NCIHAL_D("[%s:%s] Retrying: FW download",__FILE__,__func__);
       continue;
     }
 
@@ -1314,7 +1316,7 @@ int phNxpNciHal_write_unlocked(uint16_t data_len, const uint8_t* p_data) {
 
   /* Create the local semaphore */
   if (phNxpNciHal_init_cb_data(&cb_data, NULL) != NFCSTATUS_SUCCESS) {
-    NXPLOG_NCIHAL_D("phNxpNciHal_write_unlocked Create cb data failed");
+    NXPLOG_NCIHAL_D("[%s] Create cb data failed",__func__);
     data_len = 0;
     goto clean_and_return;
   }
@@ -1327,7 +1329,7 @@ int phNxpNciHal_write_unlocked(uint16_t data_len, const uint8_t* p_data) {
   /* check for write synchronyztion */
   if(phNxpNciHal_check_ncicmd_write_window(nxpncihal_ctrl.cmd_len,
                          nxpncihal_ctrl.p_cmd_data) != NFCSTATUS_SUCCESS) {
-    NXPLOG_NCIHAL_D("phNxpNciHal_write_unlocked Create cb data failed");
+    NXPLOG_NCIHAL_D("[%s] check nci write window failed",__func__);
     data_len = 0;
     goto clean_and_return;
   }
@@ -1623,7 +1625,7 @@ int phNxpNciHal_core_initialized(uint8_t* p_core_init_rsp_params) {
     return NFCSTATUS_FAILED;
   }
 
-  NXPLOG_NCIHAL_D("phNxpNciHal_core_initialized::p_core_init_rsp_params : %d", *p_core_init_rsp_params);
+  NXPLOG_NCIHAL_D("[%s]::p_core_init_rsp_params : %d", __func__, *p_core_init_rsp_params);
 
   /*MW recovery -- begins*/
   if ((*p_core_init_rsp_params > 0) && (*p_core_init_rsp_params < 4)) {
@@ -2533,7 +2535,7 @@ static NFCSTATUS phNxpNciHal_check_eSE_Session_Identity(void) {
  *
  ******************************************************************************/
 NFCSTATUS phNxpNciHal_CheckRFCmdRespStatus() {
-    NXPLOG_NCIHAL_D("phNxpNciHal_CheckRFCmdRespStatus () Enter");
+    NXPLOG_NCIHAL_D("[%s]-->", __func__);
     if(nfcFL.chipType == pn547C2) {
         NXPLOG_NCIHAL_D("chipType : pn547C2. Not allowed. Returning");
         return NFCSTATUS_FAILED;
@@ -4471,10 +4473,10 @@ static void phNxpNciHal_print_res_status(uint8_t* p_rx_data, uint16_t* p_len) {
   if (p_rx_data[0] == 0x40 && (p_rx_data[1] == 0x02 || p_rx_data[1] == 0x03)) {
     if (p_rx_data[2] && p_rx_data[3] <= 10) {
       status_byte = p_rx_data[CORE_RES_STATUS_BYTE];
-      NXPLOG_NCIHAL_D("%s: response status =%s", __func__,
+      NXPLOG_NCIHAL_D("%s:%s: response status =%s", __FILE__,__func__,
                       response_buf[status_byte]);
     } else {
-      NXPLOG_NCIHAL_D("%s: response status =%s", __func__, response_buf[11]);
+      NXPLOG_NCIHAL_D("%s:%s: response status =%s", __FILE__, __func__, response_buf[11]);
     }
     if (phNxpNciClock.isClockSet) {
       int i;
@@ -4619,7 +4621,7 @@ void phNxpNciHal_configFeatureList(uint8_t* msg, uint16_t msg_len) {
     nxpncihal_ctrl.chipType = configChipType(msg,msg_len);
     tNFC_chipType chipType = nxpncihal_ctrl.chipType;
     CONFIGURE_FEATURELIST(chipType);
-    NXPLOG_NCIHAL_D("NFC_GetFeatureList ()chipType = %d", chipType);
+    NXPLOG_NCIHAL_D("[%s] chip=%d -->chipType=%d",__func__, chipType, nxpncihal_ctrl.chipType);
 }
 
 /*******************************************************************************

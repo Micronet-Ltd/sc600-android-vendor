@@ -135,7 +135,7 @@ import java.lang.reflect.Constructor;
 
 public class NfcService implements DeviceHostListener {
     static final boolean DBG = true;
-    static final String TAG = "NfcService";
+    static final String TAG = "NfcNxpService";
 
     public static final String SERVICE_NAME = "nfc";
     public static final String NXP_PREF = "NfcServiceNxpPrefs";
@@ -1020,6 +1020,7 @@ public class NfcService implements DeviceHostListener {
 
         void updateState(int newState) {
             synchronized (NfcService.this) {
+            	if (DBG) Log.d(TAG, "[updateState] newState=" + newState+",state="+mState);
                 if (newState == mState) {
                     return;
                 }

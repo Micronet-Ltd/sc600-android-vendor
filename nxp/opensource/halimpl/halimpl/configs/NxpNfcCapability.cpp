@@ -48,7 +48,7 @@ tNFC_chipType capability::getChipType(uint8_t* msg, uint16_t msg_len) {
             offsetFwVersion = offsetPropFwVersion;
         }
         if ((offsetHwVersion > 0) && (offsetHwVersion < msg_len)) {
-            ALOGD ("%s HwVersion : 0x%02x", __func__,msg[offsetHwVersion]);
+            ALOGD ("[%s] HwVersion : 0x%02x", __func__,msg[offsetHwVersion]);
             switch(msg[offsetHwVersion]){
 
             case 0x40 : //A0
@@ -91,6 +91,7 @@ tNFC_chipType capability::getChipType(uint8_t* msg, uint16_t msg_len) {
 
             case 0x18 :
             case 0x58 : //NQ220
+			case 0x88:  // PN7150
                 chipType = pn66T;
                 break;
 
@@ -99,11 +100,11 @@ tNFC_chipType capability::getChipType(uint8_t* msg, uint16_t msg_len) {
             }
         }
         else {
-            ALOGD ("%s Wrong msg_len. Setting Default ChiptType pn81T",__func__);
+            ALOGD ("[%s] Wrong msg_len. Setting Default ChiptType pn81T",__func__);
             chipType = pn81T;
         }
     }
-    ALOGD ("%s NxpNci > Product : %s",__func__,product[chipType]);
+    ALOGD ("[%s] NxpNci > Product : %s",__func__,product[chipType]);
     return chipType;
 }
 
@@ -112,6 +113,6 @@ extern tNFC_chipType configChipType(uint8_t* msg, uint16_t msg_len) {
 }
 
 extern tNFC_chipType getChipType() {
-    ALOGD ("%s", __FUNCTION__);
+    ALOGD ("[%s]", __FUNCTION__);
     return capability::chipType;
 }

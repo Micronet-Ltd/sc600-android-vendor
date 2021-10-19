@@ -1587,12 +1587,12 @@ static NFCSTATUS phNxpNciHal_fw_dnld_complete(void* pContext, NFCSTATUS status,
     }
     status = phNxpNciHal_fw_dnld_complete(pContext, wStatus, &pInfo);
     if (NFCSTATUS_SUCCESS == status) {
-      NXPLOG_FWDNLD_D(" phNxpNciHal_fw_dnld_complete : SUCCESS");
+      NXPLOG_FWDNLD_D("[%s] : SUCCESS",__func__);
     } else {
-      NXPLOG_FWDNLD_E(" phNxpNciHal_fw_dnld_complete : FAILED");
+      NXPLOG_FWDNLD_E("[%s] : FAILED",__func__);
     }
   } else if (true == (gphNxpNciHal_fw_IoctlCtx.bDnldRecovery)) {
-    NXPLOG_FWDNLD_E("Invoking Download Recovery Sequence..");
+    NXPLOG_FWDNLD_E("[%s] Invoking Download Recovery Sequence..",__func__);
 
     if (NFCSTATUS_SUCCESS == wStatus) {
       /* Perform the download Recovery sequence */
@@ -1600,9 +1600,9 @@ static NFCSTATUS phNxpNciHal_fw_dnld_complete(void* pContext, NFCSTATUS status,
 
       status = phNxpNciHal_fw_dnld_complete(pContext, wStatus, &pInfo);
       if (NFCSTATUS_SUCCESS == status) {
-        NXPLOG_FWDNLD_D(" phNxpNciHal_fw_dnld_complete : SUCCESS");
+        NXPLOG_FWDNLD_D("[%s] : SUCCESS",__func__);
       } else {
-        NXPLOG_FWDNLD_E(" phNxpNciHal_fw_dnld_complete : FAILED");
+        NXPLOG_FWDNLD_E("[%s] : FAILED",__func__);
       }
     }
   } else if (true == (gphNxpNciHal_fw_IoctlCtx.bRetryDnld)) {
@@ -1623,41 +1623,41 @@ static NFCSTATUS phNxpNciHal_fw_dnld_complete(void* pContext, NFCSTATUS status,
 
     status = phNxpNciHal_fw_dnld_complete(pContext, wStatus, &pInfo);
     if (NFCSTATUS_SUCCESS == status) {
-      NXPLOG_FWDNLD_D(" phNxpNciHal_fw_dnld_complete : SUCCESS");
+      NXPLOG_FWDNLD_D("[%s] : SUCCESS",__func__);
     } else {
-      NXPLOG_FWDNLD_E(" phNxpNciHal_fw_dnld_complete : FAILED");
+      NXPLOG_FWDNLD_E("[%s] : FAILED",__func__);
     }
   } else {
-    NXPLOG_FWDNLD_D("phNxpNciHal_fw_dnld_complete: Download Status = 0x%x",
+    NXPLOG_FWDNLD_D("[%s]: Download Status = 0x%x",__func__,
                     status);
     if (false == (gphNxpNciHal_fw_IoctlCtx.bSkipSeq)) {
       if (NFCSTATUS_SUCCESS == status) {
         if (NFC_FW_DOWNLOAD == gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("Fw Download success.. ");
+          NXPLOG_FWDNLD_E("[%s] Fw Download success.. ",__func__);
         } else if (PHLIBNFC_DNLD_MEM_READ ==
                    gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("Read Request success.. ");
+          NXPLOG_FWDNLD_E("[%s] Read Request success.. ",__func__);
         } else if (PHLIBNFC_DNLD_MEM_WRITE ==
                    gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("Write Request success.. ");
+          NXPLOG_FWDNLD_E("[%s] Write Request success.. ",__func__);
         } else if (PHLIBNFC_DNLD_READ_LOG ==
                    gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("ReadLog Request success.. ");
+          NXPLOG_FWDNLD_E("[%s] ReadLog Request success.. ",__func__);
         } else {
-          NXPLOG_FWDNLD_E("Invalid Request!!");
+          NXPLOG_FWDNLD_E("[%s] Invalid Request!!",__func__);
         }
       } else {
         if (NFC_FW_DOWNLOAD == gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("Fw Download Failed!!");
+          NXPLOG_FWDNLD_E("[%s] Fw Download Failed!!",__func__);
         } else if (NFC_MEM_READ == gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("Read Request Failed!!");
+          NXPLOG_FWDNLD_E("[%s] Read Request Failed!!",__func__);
         } else if (NFC_MEM_WRITE == gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("Write Request Failed!!");
+          NXPLOG_FWDNLD_E("[%s] Write Request Failed!!",__func__);
         } else if (PHLIBNFC_DNLD_READ_LOG ==
                    gphNxpNciHal_fw_IoctlCtx.IoctlCode) {
-          NXPLOG_FWDNLD_E("ReadLog Request Failed!!");
+          NXPLOG_FWDNLD_E("[%s] ReadLog Request Failed!!",__func__);
         } else {
-          NXPLOG_FWDNLD_E("Invalid Request!!");
+          NXPLOG_FWDNLD_E("[%s] Invalid Request!!",__func__);
         }
       }
     }
@@ -1735,7 +1735,7 @@ NFCSTATUS phNxpNciHal_fw_download_seq(uint8_t bClkSrcVal, uint8_t bClkFreqVal,
   }
   /* Get firmware version */
   if (NFCSTATUS_SUCCESS == phDnldNfc_InitImgInfo()) {
-    NXPLOG_FWDNLD_D("phDnldNfc_InitImgInfo:SUCCESS");
+    NXPLOG_FWDNLD_D("[%s] phDnldNfc_InitImgInfo:SUCCESS",__func__);
     if ((nfcFL.chipType != pn547C2) && (gRecFWDwnld == true)) {
       status =
           phNxpNciHal_fw_seq_handler(phNxpNciHal_dummy_rec_dwnld_seqhandler);
@@ -1748,7 +1748,7 @@ NFCSTATUS phNxpNciHal_fw_download_seq(uint8_t bClkSrcVal, uint8_t bClkFreqVal,
         }
     }
   } else {
-    NXPLOG_FWDNLD_E("phDnldNfc_InitImgInfo: FAILED");
+    NXPLOG_FWDNLD_E("[%s] phDnldNfc_InitImgInfo: FAILED",__func__);
   }
 
   /* Chage to normal mode */
