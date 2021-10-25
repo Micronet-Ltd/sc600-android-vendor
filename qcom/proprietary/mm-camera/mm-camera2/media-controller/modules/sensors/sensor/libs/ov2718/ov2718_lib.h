@@ -14,7 +14,7 @@
 #define MIN_GAIN (3.0)
 #define MAX_ANALOG_GAIN (32.0)
 #define MIN_DIGITAL_GAIN (1.0)
-#define MAX_DIGITAL_GAIN (1.0)
+#define MAX_DIGITAL_GAIN (2.0)
 #define MAX_GAIN (MAX_ANALOG_GAIN * MAX_DIGITAL_GAIN)
 #define MAX_LINECOUNT 65500
 #define OV2718_MAX_DGAIN_DECIMATOR  256
@@ -158,7 +158,7 @@
   {0x30bd, 0x03, 0x00}, \
   {0x30be, 0x5c, 0x00}, \
   {0x30bf, 0x00, 0x00}, \
-  {0x30c0, 0x05, 0x00},\
+  {0x30c0, 0x04, 0x00},\
   {0x30c1, 0x00, 0x00}, \
   {0x30c2, 0x20, 0x00}, \
   {0x30c3, 0x00, 0x00}, \

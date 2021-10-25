@@ -31,13 +31,19 @@
 static unsigned int sensor_real_to_register_gain(float gain)
 {
   uint16_t reg_analog_gain;
+  float analog_realGain = gain/MIN_DIGITAL_GAIN;
 
-  if (gain < MIN_GAIN) {
-      gain = MIN_GAIN;
-  } else if (gain > MAX_ANALOG_GAIN) {
-      gain = MAX_ANALOG_GAIN;
+  if (analog_realGain < MIN_GAIN) {
+      gain = 1;
+  } else if (analog_realGain < 8) {
+      gain = 1;
+  } else if (analog_realGain < MAX_ANALOG_GAIN) {
+      gain = 2;
+  } else {
+      gain = 3;
   }
-  gain = (gain) * 256.0;
+
+  gain = (gain) * 1.0;
   reg_analog_gain = (uint16_t) gain;
 
   return reg_analog_gain;
@@ -52,12 +58,17 @@ static float sensor_register_to_real_gain(unsigned int reg_gain)
 {
   float real_gain = 0;
 
-  if (reg_gain < 0x100) {
-    reg_gain = 0x100;
-  } else if (reg_gain > 0x2000) {
-    reg_gain = 0x20000;
+  if (reg_gain == 0) {
+    real_gain = 1.0;
+  } else if (reg_gain == 1) {
+    real_gain = MIN_GAIN;
+  } else if (reg_gain == 2) {
+    real_gain = 8.0;
+  } else if (reg_gain == 3) {
+    real_gain = MAX_ANALOG_GAIN;
+  } else {
+    real_gain = MIN_DIGITAL_GAIN;
   }
-  real_gain = (float) reg_gain / 256.0;
 
   return real_gain;
 }
@@ -129,13 +140,9 @@ static int sensor_fill_exposure_array(unsigned int gain,
   __attribute__((unused)) int s_linecount,
   __attribute__((unused)) int is_hdr_enabled)
 {
-	int rc = 0;
-	unsigned short reg_count = 0;
-	unsigned short i = 0;
-	uint16_t gain_a = 0;
-	uint16_t gain_d_h = 0;
-	uint16_t gain_d_l = 0;
-	uint16_t BASEGAIN= 256;
+  int rc = 0;
+  unsigned short reg_count = 0;
+  unsigned short i = 0;
 
   if (!reg_setting) {
     return -1;
@@ -170,68 +177,19 @@ static int sensor_fill_exposure_array(unsigned int gain,
     sensor_lib_ptr.exp_gain_info.coarse_int_time_addr + 1;
   reg_setting->reg_setting[reg_count].reg_data = line & 0x00ff;
   reg_count++;
-/*
-  reg_setting->reg_setting[reg_count].reg_addr =
-    sensor_lib_ptr.exp_gain_info.coarse_int_time_addr + 2;
-  reg_setting->reg_setting[reg_count].reg_data = (line & 0x0f) << 4;
-  reg_count++;
-  */
-	#if 1
-	if (gain < 3*BASEGAIN || gain > 32* BASEGAIN) {
-	if (gain < 3*BASEGAIN)
-		gain = 3*BASEGAIN;
-	else if (gain > 32 * BASEGAIN)
-		gain = 32 * BASEGAIN;
-	}
-	//3x--4.375x
-	if(gain>= 3*256 && gain < 4.375*256)
-	{
-		gain_a=0x01;//LCG
-		gain_d_h=((unsigned int)(gain/2+0.5))>>8;
-		gain_d_l=(( unsigned int)(gain/2+0.5)) & 0x00ff;
-	}
-	//4.375x---8.75x
-	else if(gain>= 4.375*256 && gain < 8.75*256)
-	{
-		gain_a=0x02;//LCG
-		gain_d_h=((unsigned int)(gain/4+0.5))>>8;
-		gain_d_l=((unsigned int)(gain/4+0.5)) & 0x00ff;
-	}
-	//8.75x---22x
-	else if(gain>= 8.75*256 && gain < 22*256)
-	{
-		gain_a=0x03;//LCG		
-		gain_d_h= (( unsigned int)(gain/8+0.5))>>8;
-		gain_d_l= (( unsigned int)(gain/8+0.5)) & 0x00ff;
-	}
-	//22X---32X
-	else if(gain >=22*256 && gain<=32*256)
-	{
-		gain_a = 0x40;//HCG
-		gain_d_h = (( unsigned int)(gain/11+0.5))>>8;                
-		gain_d_l = (((unsigned int)(gain/11+0.5))>>1) & 0xff;
-	}
-	#endif
-  
-  reg_setting->reg_setting[reg_count].reg_addr =0x30bb;
-  reg_setting->reg_setting[reg_count].reg_data = gain_a;
-  reg_count++;
-  
-  reg_setting->reg_setting[reg_count].reg_addr =
-    sensor_lib_ptr.exp_gain_info.global_gain_addr;
-  reg_setting->reg_setting[reg_count].reg_data = gain_d_h;
-  reg_count++;
+
 
   reg_setting->reg_setting[reg_count].reg_addr =
-    sensor_lib_ptr.exp_gain_info.global_gain_addr + 1;
-  reg_setting->reg_setting[reg_count].reg_data = gain_d_l;
+    sensor_lib_ptr.exp_gain_info.global_gain_addr;
+  reg_setting->reg_setting[reg_count].reg_data = (gain & 0x03);
   reg_count++;
-  
-    reg_setting->reg_setting[reg_count].reg_addr =0x315c;
-  reg_setting->reg_setting[reg_count].reg_data = gain_d_h;
+
+  reg_setting->reg_setting[reg_count].reg_addr = STG_DIGITAL_GAIN_HCG_ADDR;
+  reg_setting->reg_setting[reg_count].reg_data = (digital_gain& 0x3F00) >> 8;
   reg_count++;
-    reg_setting->reg_setting[reg_count].reg_addr =0x315d;
-  reg_setting->reg_setting[reg_count].reg_data = gain_d_l;
+
+  reg_setting->reg_setting[reg_count].reg_addr = STG_DIGITAL_GAIN_HCG_ADDR + 1;
+  reg_setting->reg_setting[reg_count].reg_data = (digital_gain & 0xFF);
   reg_count++;
 
   for (i = 0; i < sensor_lib_ptr.groupoff_settings.size; i++) {
