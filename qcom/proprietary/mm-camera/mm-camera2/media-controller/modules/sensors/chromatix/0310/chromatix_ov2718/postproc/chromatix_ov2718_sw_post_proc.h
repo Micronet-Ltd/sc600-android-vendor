@@ -73,7 +73,7 @@
 
 /* RNR1 */
 {
-   0, /* Enable */
+   1, /* Enable */
    1, /* Control Enable */
    1, /* Control Method - 1 = Gain, 0 = Lux Index */
    164, /* Sigma LUT Size */
@@ -194,8 +194,8 @@
       {
          /* Trigger */
          {
-            1.900000f, /* Gain Start */
-            2.100000f, /* Gain End */
+            35.62047f, /* Gain Start */
+            42.74456f, /* Gain End */
             285, /* Lux Index Start */
             297, /* Lux Index End */
          },
@@ -208,8 +208,8 @@
       {
          /* Trigger */
          {
-            3.900000f, /* Gain Start */
-            4.100000f, /* Gain End */
+            70.24094f, /* Gain Start */
+            84.28912f, /* Gain End */
             305, /* Lux Index Start */
             317, /* Lux Index End */
          },
@@ -222,8 +222,8 @@
       {
          /* Trigger */
          {
-            7.900000f, /* Gain Start */
-            8.100000f, /* Gain End */
+            124.6445f, /* Gain Start */
+            149.5734f, /* Gain End */
             380, /* Lux Index Start */
             392, /* Lux Index End */
          },
@@ -236,8 +236,8 @@
       {
          /* Trigger */
          {
-            15.90000f, /* Gain Start */
-            16.10000f, /* Gain End */
+            190.3203f, /* Gain Start */
+            228.3844f, /* Gain End */
             395, /* Lux Index Start */
             407, /* Lux Index End */
          },
@@ -250,8 +250,8 @@
       {
          /* Trigger */
          {
-            31.00000f, /* Gain Start */
-            32.20000f, /* Gain End */
+            255.9961f, /* Gain Start */
+            307.1953f, /* Gain End */
             420, /* Lux Index Start */
             432, /* Lux Index End */
          },
@@ -351,8 +351,8 @@
          1, /* Enable CAC2 for this region */
          /* Trigger */
          {
-            1.900000f, /* Gain Start */
-            2.000000f, /* Gain End */
+            35.62047f, /* Gain Start */
+            42.74456f, /* Gain End */
             285, /* Lux Index Start */
             297, /* Lux Index End */
          },
@@ -368,8 +368,8 @@
          0, /* Enable CAC2 for this region */
          /* Trigger */
          {
-            3.900000f, /* Gain Start */
-            4.000000f, /* Gain End */
+            70.24094f, /* Gain Start */
+            84.28912f, /* Gain End */
             305, /* Lux Index Start */
             317, /* Lux Index End */
          },
@@ -385,8 +385,8 @@
          0, /* Enable CAC2 for this region */
          /* Trigger */
          {
-            7.800000f, /* Gain Start */
-            8.100000f, /* Gain End */
+            124.6445f, /* Gain Start */
+            149.5734f, /* Gain End */
             380, /* Lux Index Start */
             392, /* Lux Index End */
          },
@@ -402,8 +402,8 @@
          0, /* Enable CAC2 for this region */
          /* Trigger */
          {
-            15.50000f, /* Gain Start */
-            16.50000f, /* Gain End */
+            190.3203f, /* Gain Start */
+            228.3844f, /* Gain End */
             395, /* Lux Index Start */
             407, /* Lux Index End */
          },
@@ -419,8 +419,8 @@
          0, /* Enable CAC2 for this region */
          /* Trigger */
          {
-            31.00000f, /* Gain Start */
-            32.20000f, /* Gain End */
+            255.9961f, /* Gain Start */
+            307.1953f, /* Gain End */
             420, /* Lux Index Start */
             432, /* Lux Index End */
          },
