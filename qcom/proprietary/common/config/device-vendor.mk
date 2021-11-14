@@ -1092,7 +1092,7 @@ HY11_HY22_diff_debug += uimremoteclient
 HY11_HY22_diff_debug += radioconfig
 HY11_HY22_diff_debug += radioconfig.xml
 HY11_HY22_diff_debug += radioconfiginterface.xml
-HY11_HY22_diff_debug += PresenceApp
+#HY11_HY22_diff_debug += PresenceApp
 HY11_HY22_diff_debug += libmmi_jni
 HY11_HY22_diff_debug += libomx-dts
 
@@ -1143,8 +1143,8 @@ IMS_RCS := lib-imsxml
 IMS_RCS += lib-uceservice
 IMS_RCS += lib-imscmservice
 IMS_RCS += imsrcsd
-IMS_RCS += uceShimService
-IMS_RCS += whitelist_com.qualcomm.qti.uceShimService
+#IMS_RCS += uceShimService
+#IMS_RCS += whitelist_com.qualcomm.qti.uceShimService
 IMS_RCS += com.qualcomm.qti.imscmservice@1.0
 IMS_RCS += com.qualcomm.qti.imscmservice@1.0_vendor
 IMS_RCS += lib-imsrcs-v2
@@ -6641,9 +6641,9 @@ SECUREMSM_DBG += libSecureUIApt
 
 #SENSORS_DEBUG
 ifneq ($(TARGET_HAS_LOW_RAM), true)
-SENSORS_DBG := QSensorTest
+#SENSORS_DBG := QSensorTest
 endif
-SENSORS_DBG += libAR_jni
+SENSORS_DBG = libAR_jni
 SENSORS_DBG += libAR_jni_32
 SENSORS_DBG += libsensor_low_lat
 SENSORS_DBG += libsensor_low_lat_system
@@ -6680,8 +6680,8 @@ SENSORS_DBG += libSensorCalLibNative
 SENSORS_DBG += libSensorCalLibNative_system
 
 #TELEPHONY_APPS_DBG
-TELEPHONY_APPS_DBG := Presence
-TELEPHONY_APPS_DBG += NetworkSetting
+#TELEPHONY_APPS_DBG := Presence
+TELEPHONY_APPS_DBG = NetworkSetting
 TELEPHONY_APPS_DBG += QosTest
 TELEPHONY_APPS_DBG += LDSTestApp.xml
 TELEPHONY_APPS_DBG += QosTestConfig.xml
