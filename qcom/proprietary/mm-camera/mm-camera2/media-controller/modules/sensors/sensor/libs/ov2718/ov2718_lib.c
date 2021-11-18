@@ -33,11 +33,11 @@ static unsigned int sensor_real_to_register_gain(float gain)
   uint16_t reg_analog_gain;
   float analog_realGain = gain/MIN_DIGITAL_GAIN;
 
-  if (analog_realGain < 2) {
-      gain = 1;
-  } else if (analog_realGain < 4) {
+  if (analog_realGain < MIN_GAIN) {
       gain = 1;
   } else if (analog_realGain < 8) {
+      gain = 1;
+  } else if (analog_realGain < MAX_ANALOG_GAIN) {
       gain = 2;
   } else {
       gain = 3;
@@ -61,13 +61,13 @@ static float sensor_register_to_real_gain(unsigned int reg_gain)
   if (reg_gain == 0) {
     real_gain = 1.0;
   } else if (reg_gain == 1) {
-    real_gain = 2.0;
+    real_gain = MIN_GAIN;
   } else if (reg_gain == 2) {
-    real_gain = 4.0;
-  } else if (reg_gain == 3) {
     real_gain = 8.0;
+  } else if (reg_gain == 3) {
+    real_gain = MAX_ANALOG_GAIN;
   } else {
-    real_gain = 1.0;
+    real_gain = MIN_DIGITAL_GAIN;
   }
 
   return real_gain;

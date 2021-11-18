@@ -1,7 +1,7 @@
 PRODUCT_PACKAGES += evt-sniff.cfg
 PRODUCT_PACKAGES += DynamicDDSService
 PRODUCT_PACKAGES += embms
-PRODUCT_PACKAGES += EmbmsTestApp
+#PRODUCT_PACKAGES += EmbmsTestApp
 PRODUCT_PACKAGES += FidoCryptoService
 PRODUCT_PACKAGES += LteDirectDiscovery
 PRODUCT_PACKAGES += ODLT

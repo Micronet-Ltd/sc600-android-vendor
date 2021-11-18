@@ -82,63 +82,63 @@
       {
          /* D65 AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.404000f, /* R/G ratio */
+            0.687900f, /* B/G ratio */
          },
          /* Shade AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.386800f, /* R/G ratio */
+            0.741600f, /* B/G ratio */
          },
          /* A AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.715800f, /* R/G ratio */
+            0.329500f, /* B/G ratio */
          },
          /* TL84 AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.565100f, /* R/G ratio */
+            0.394600f, /* B/G ratio */
          },
          /* CoolWhite AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.475200f, /* R/G ratio */
+            0.388700f, /* B/G ratio */
          },
          /* Horizon AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.874000f, /* R/G ratio */
+            0.252100f, /* B/G ratio */
          },
          /* D50 AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.472600f, /* R/G ratio */
+            0.558500f, /* B/G ratio */
          },
          /* Cust. Fluor. AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.565100f, /* R/G ratio */
+            0.394600f, /* B/G ratio */
          },
          /* Noon AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.472600f, /* R/G ratio */
+            0.558500f, /* B/G ratio */
          },
          /* Custom Daylight AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.404000f, /* R/G ratio */
+            0.687900f, /* B/G ratio */
          },
          /* Custom A AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.715800f, /* R/G ratio */
+            0.329500f, /* B/G ratio */
          },
          /* U30 AWB Reference Point */
          {
-            1.000000f, /* R/G ratio */
-            1.000000f, /* B/G ratio */
+            0.762500f, /* R/G ratio */
+            0.300100f, /* B/G ratio */
          },
          /* Custom Daylight 1 Reference Point */
          {
@@ -161,8 +161,8 @@
             1.000000f, /* B/G ratio */
          },
       },
-      290, /* Indoor Index */
-      190, /* Outdoor Index */
+      270, /* Indoor Index */
+      170, /* Outdoor Index */
       /* AWB Min Gains - RGB */
       {1.000000f, 1.000000f, 1.000000f},
       /* AWB Max Gains - RGB */
@@ -207,45 +207,45 @@
          {
             /* Entry 0 */
             {
-               0, /* Lux Index */
-               -100.0000f, /* Green RG Offset Adj */
-               -100.0000f, /* Green BG Offset Adj */
+               220, /* Lux Index */
+               10.00000f, /* Green RG Offset Adj */
+               0.000000f, /* Green BG Offset Adj */
                0.000000f, /* Outlier Dist Adj */
             },
             /* Entry 1 */
             {
-               0, /* Lux Index */
-               -100.0000f, /* Green RG Offset Adj */
-               -100.0000f, /* Green BG Offset Adj */
+               250, /* Lux Index */
+               2.000000f, /* Green RG Offset Adj */
+               -10.00000f, /* Green BG Offset Adj */
                0.000000f, /* Outlier Dist Adj */
             },
             /* Entry 2 */
             {
-               0, /* Lux Index */
-               -100.0000f, /* Green RG Offset Adj */
-               -100.0000f, /* Green BG Offset Adj */
-               0.000000f, /* Outlier Dist Adj */
+               280, /* Lux Index */
+               -12.00000f, /* Green RG Offset Adj */
+               -25.00000f, /* Green BG Offset Adj */
+               0.330000f, /* Outlier Dist Adj */
             },
             /* Entry 3 */
             {
-               0, /* Lux Index */
-               -100.0000f, /* Green RG Offset Adj */
-               -100.0000f, /* Green BG Offset Adj */
-               0.000000f, /* Outlier Dist Adj */
+               330, /* Lux Index */
+               -45.00000f, /* Green RG Offset Adj */
+               -40.00000f, /* Green BG Offset Adj */
+               0.330000f, /* Outlier Dist Adj */
             },
             /* Entry 4 */
             {
-               0, /* Lux Index */
-               -100.0000f, /* Green RG Offset Adj */
-               -100.0000f, /* Green BG Offset Adj */
-               0.000000f, /* Outlier Dist Adj */
+               380, /* Lux Index */
+               -60.00000f, /* Green RG Offset Adj */
+               -60.00000f, /* Green BG Offset Adj */
+               1.000000f, /* Outlier Dist Adj */
             },
             /* Entry 5 */
             {
-               0, /* Lux Index */
-               -100.0000f, /* Green RG Offset Adj */
-               -100.0000f, /* Green BG Offset Adj */
-               0.000000f, /* Outlier Dist Adj */
+               416, /* Lux Index */
+               -60.00000f, /* Green RG Offset Adj */
+               -60.00000f, /* Green BG Offset Adj */
+               2.000000f, /* Outlier Dist Adj */
             },
          },
       },
@@ -329,17 +329,17 @@
          0, /* Interpolate Gain Adj Enable */
          /* Gain Adj Bright Light Trigger */
          {
-            0.000000f, /* Not Applicable */
-            0.000000f, /* Not Applicable */
-            220, /* Lux Index Start */
-            190, /* Lux Index End */
+            2.000000f, /* Gain Start */
+            1.000000f, /* Gain End */
+            208, /* Lux Index Start */
+            187, /* Lux Index End */
          },
          /* Gain Adj Lowlight Trigger */
          {
-            0.000000f, /* Not Applicable */
-            0.000000f, /* Not Applicable */
-            405, /* Lux Index Start */
-            435, /* Lux Index End */
+            18.00000f, /* Gain Start */
+            20.00000f, /* Gain End */
+            374, /* Lux Index Start */
+            416, /* Lux Index End */
          },
          0, /* Control Method - 1 = Gain, 0 = Lux Index */
          /* AWB Bright Light Gain Adjust */
@@ -1122,17 +1122,17 @@
          // Data range: 0 (disable), 1(enable)
          /*********************************************************************/
 
-         14, /* Outlier Distance */
-         14, /* Outlier Distance Day */
-         14, /* Outlier Distance F */
-         14, /* Outlier Distance A */
-         14, /* Outlier Distance H */
-         14, /* Outlier Distance Custom Day */
+         16, /* Outlier Distance */
+         16, /* Outlier Distance Day */
+         16, /* Outlier Distance F */
+         16, /* Outlier Distance A */
+         16, /* Outlier Distance H */
+         16, /* Outlier Distance Custom Day */
          14, /* Outlier Distance Custom F */
          /* Special */
          {
-            12, /* Outlier Distance for Left Side of the Day Light Line */
-            12, /* Outlier Distance for Top Side of the Day Light Zone */
+            14, /* Outlier Distance for Left Side of the Day Light Line */
+            14, /* Outlier Distance for Top Side of the Day Light Zone */
             10, /* Outlier Distance for Left Side of the A/H Light Zone */
             0, /* Outlier Distance for Left/Top sides of the Day Light Zone Enable */
          },
@@ -1376,22 +1376,22 @@
          {
             0, /* Index */
             {
-               1, /* AWB_DAY_D75 */
-               1, /* AWB_DAY_D75_D65_1 */
-               1, /* AWB_DAY_D75_D65_2 */
-               5, /* AWB_DAY_D75_D65_3 */
-               5, /* AWB_DAY_D65 */
-               5, /* AWB_DAY_D65_D50_1 */
-               5, /* AWB_DAY_D65_D50_2 */
-               5, /* AWB_DAY_D65_D50_3 */
-               5, /* AWB_DAY_D50 */
-               5, /* AWB_DAY_NOON_LINE_0 */
-               5, /* AWB_DAY_NOON_LINE_1 */
-               5, /* AWB_DAY_NOON_LINE_2 */
-               5, /* AWB_DAY_NOON_LINE_3 */
-               5, /* AWB_DAY_NOON_LINE_4 */
-               5, /* AWB_DAY_D50_FLO_1 */
-               3, /* AWB_DAY_D50_FLO_2 */
+               2, /* AWB_DAY_D75 */
+               2, /* AWB_DAY_D75_D65_1 */
+               2, /* AWB_DAY_D75_D65_2 */
+               10, /* AWB_DAY_D75_D65_3 */
+               10, /* AWB_DAY_D65 */
+               10, /* AWB_DAY_D65_D50_1 */
+               10, /* AWB_DAY_D65_D50_2 */
+               10, /* AWB_DAY_D65_D50_3 */
+               10, /* AWB_DAY_D50 */
+               10, /* AWB_DAY_NOON_LINE_0 */
+               10, /* AWB_DAY_NOON_LINE_1 */
+               10, /* AWB_DAY_NOON_LINE_2 */
+               10, /* AWB_DAY_NOON_LINE_3 */
+               10, /* AWB_DAY_NOON_LINE_4 */
+               10, /* AWB_DAY_D50_FLO_1 */
+               6, /* AWB_DAY_D50_FLO_2 */
                1, /* AWB_DAY_D50_FLO_3 */
                0, /* AWB_DAY_D50_FLO_4 */
                0, /* AWB_F_TL84 */
@@ -1420,22 +1420,22 @@
          {
             47, /* Index */
             {
-               1, /* AWB_DAY_D75 */
-               1, /* AWB_DAY_D75_D65_1 */
-               1, /* AWB_DAY_D75_D65_2 */
-               5, /* AWB_DAY_D75_D65_3 */
-               5, /* AWB_DAY_D65 */
-               5, /* AWB_DAY_D65_D50_1 */
-               5, /* AWB_DAY_D65_D50_2 */
-               5, /* AWB_DAY_D65_D50_3 */
-               5, /* AWB_DAY_D50 */
-               5, /* AWB_DAY_NOON_LINE_0 */
-               5, /* AWB_DAY_NOON_LINE_1 */
-               5, /* AWB_DAY_NOON_LINE_2 */
-               5, /* AWB_DAY_NOON_LINE_3 */
-               5, /* AWB_DAY_NOON_LINE_4 */
-               5, /* AWB_DAY_D50_FLO_1 */
-               3, /* AWB_DAY_D50_FLO_2 */
+               2, /* AWB_DAY_D75 */
+               2, /* AWB_DAY_D75_D65_1 */
+               2, /* AWB_DAY_D75_D65_2 */
+               10, /* AWB_DAY_D75_D65_3 */
+               10, /* AWB_DAY_D65 */
+               10, /* AWB_DAY_D65_D50_1 */
+               10, /* AWB_DAY_D65_D50_2 */
+               10, /* AWB_DAY_D65_D50_3 */
+               10, /* AWB_DAY_D50 */
+               10, /* AWB_DAY_NOON_LINE_0 */
+               10, /* AWB_DAY_NOON_LINE_1 */
+               10, /* AWB_DAY_NOON_LINE_2 */
+               10, /* AWB_DAY_NOON_LINE_3 */
+               10, /* AWB_DAY_NOON_LINE_4 */
+               10, /* AWB_DAY_D50_FLO_1 */
+               6, /* AWB_DAY_D50_FLO_2 */
                1, /* AWB_DAY_D50_FLO_3 */
                0, /* AWB_DAY_D50_FLO_4 */
                0, /* AWB_F_TL84 */
@@ -1467,11 +1467,11 @@
                1, /* AWB_DAY_D75 */
                1, /* AWB_DAY_D75_D65_1 */
                1, /* AWB_DAY_D75_D65_2 */
-               5, /* AWB_DAY_D75_D65_3 */
-               5, /* AWB_DAY_D65 */
-               5, /* AWB_DAY_D65_D50_1 */
-               5, /* AWB_DAY_D65_D50_2 */
-               5, /* AWB_DAY_D65_D50_3 */
+               3, /* AWB_DAY_D75_D65_3 */
+               3, /* AWB_DAY_D65 */
+               3, /* AWB_DAY_D65_D50_1 */
+               3, /* AWB_DAY_D65_D50_2 */
+               3, /* AWB_DAY_D65_D50_3 */
                5, /* AWB_DAY_D50 */
                5, /* AWB_DAY_NOON_LINE_0 */
                5, /* AWB_DAY_NOON_LINE_1 */
@@ -1481,27 +1481,27 @@
                5, /* AWB_DAY_D50_FLO_1 */
                3, /* AWB_DAY_D50_FLO_2 */
                1, /* AWB_DAY_D50_FLO_3 */
-               0, /* AWB_DAY_D50_FLO_4 */
-               0, /* AWB_F_TL84 */
-               0, /* AWB_F_TL84_CW_2 */
-               0, /* AWB_F_TL84_CW_3 */
-               0, /* AWB_F_CW */
-               0, /* AWB_F_FLO_A_1 */
-               0, /* AWB_F_FLO_A_2 */
-               0, /* AWB_F_FLO_A_3 */
-               0, /* AWB_A */
-               0, /* AWB_AH_A_H_1 */
-               0, /* AWB_AH_A_H_2 */
-               0, /* AWB_AH_A_H_3 */
-               0, /* AWB_H */
+               1, /* AWB_DAY_D50_FLO_4 */
+               1, /* AWB_F_TL84 */
+               1, /* AWB_F_TL84_CW_2 */
+               1, /* AWB_F_TL84_CW_3 */
+               1, /* AWB_F_CW */
+               1, /* AWB_F_FLO_A_1 */
+               1, /* AWB_F_FLO_A_2 */
+               1, /* AWB_F_FLO_A_3 */
+               1, /* AWB_A */
+               1, /* AWB_AH_A_H_1 */
+               1, /* AWB_AH_A_H_2 */
+               1, /* AWB_AH_A_H_3 */
+               1, /* AWB_H */
                0, /* AWB_CUSTOM_DAYLIGHT1 */
                0, /* AWB_CUSTOM_DAYLIGHT2 */
                0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
+               1, /* AWB_CUSTOM_FLO1 */
                0, /* AWB_CUSTOM_FLO2 */
                0, /* AWB_CUSTOM_FLO3 */
-               0, /* AWB_CUSTOM_A */
-               0  /* AWB_U30 */
+               1, /* AWB_CUSTOM_A */
+               1  /* AWB_U30 */
             },
          },
          /* Region 3 */
@@ -1511,41 +1511,41 @@
                1, /* AWB_DAY_D75 */
                1, /* AWB_DAY_D75_D65_1 */
                1, /* AWB_DAY_D75_D65_2 */
-               5, /* AWB_DAY_D75_D65_3 */
-               5, /* AWB_DAY_D65 */
-               5, /* AWB_DAY_D65_D50_1 */
-               5, /* AWB_DAY_D65_D50_2 */
-               5, /* AWB_DAY_D65_D50_3 */
+               4, /* AWB_DAY_D75_D65_3 */
+               8, /* AWB_DAY_D65 */
+               7, /* AWB_DAY_D65_D50_1 */
+               7, /* AWB_DAY_D65_D50_2 */
+               8, /* AWB_DAY_D65_D50_3 */
                5, /* AWB_DAY_D50 */
-               5, /* AWB_DAY_NOON_LINE_0 */
-               5, /* AWB_DAY_NOON_LINE_1 */
-               5, /* AWB_DAY_NOON_LINE_2 */
-               5, /* AWB_DAY_NOON_LINE_3 */
-               5, /* AWB_DAY_NOON_LINE_4 */
-               5, /* AWB_DAY_D50_FLO_1 */
+               3, /* AWB_DAY_NOON_LINE_0 */
+               3, /* AWB_DAY_NOON_LINE_1 */
+               3, /* AWB_DAY_NOON_LINE_2 */
+               3, /* AWB_DAY_NOON_LINE_3 */
+               3, /* AWB_DAY_NOON_LINE_4 */
+               3, /* AWB_DAY_D50_FLO_1 */
                3, /* AWB_DAY_D50_FLO_2 */
                1, /* AWB_DAY_D50_FLO_3 */
-               0, /* AWB_DAY_D50_FLO_4 */
-               0, /* AWB_F_TL84 */
-               0, /* AWB_F_TL84_CW_2 */
-               0, /* AWB_F_TL84_CW_3 */
-               0, /* AWB_F_CW */
-               0, /* AWB_F_FLO_A_1 */
-               0, /* AWB_F_FLO_A_2 */
-               0, /* AWB_F_FLO_A_3 */
-               0, /* AWB_A */
-               0, /* AWB_AH_A_H_1 */
-               0, /* AWB_AH_A_H_2 */
-               0, /* AWB_AH_A_H_3 */
-               0, /* AWB_H */
+               1, /* AWB_DAY_D50_FLO_4 */
+               1, /* AWB_F_TL84 */
+               1, /* AWB_F_TL84_CW_2 */
+               1, /* AWB_F_TL84_CW_3 */
+               3, /* AWB_F_CW */
+               1, /* AWB_F_FLO_A_1 */
+               1, /* AWB_F_FLO_A_2 */
+               1, /* AWB_F_FLO_A_3 */
+               1, /* AWB_A */
+               1, /* AWB_AH_A_H_1 */
+               1, /* AWB_AH_A_H_2 */
+               1, /* AWB_AH_A_H_3 */
+               1, /* AWB_H */
                0, /* AWB_CUSTOM_DAYLIGHT1 */
                0, /* AWB_CUSTOM_DAYLIGHT2 */
                0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
+               1, /* AWB_CUSTOM_FLO1 */
                0, /* AWB_CUSTOM_FLO2 */
                0, /* AWB_CUSTOM_FLO3 */
-               0, /* AWB_CUSTOM_A */
-               0  /* AWB_U30 */
+               1, /* AWB_CUSTOM_A */
+               1  /* AWB_U30 */
             },
          },
          /* Region 4 */
@@ -1569,27 +1569,27 @@
                4, /* AWB_DAY_D50_FLO_1 */
                2, /* AWB_DAY_D50_FLO_2 */
                1, /* AWB_DAY_D50_FLO_3 */
-               0, /* AWB_DAY_D50_FLO_4 */
-               0, /* AWB_F_TL84 */
-               0, /* AWB_F_TL84_CW_2 */
-               0, /* AWB_F_TL84_CW_3 */
-               0, /* AWB_F_CW */
-               0, /* AWB_F_FLO_A_1 */
-               0, /* AWB_F_FLO_A_2 */
-               0, /* AWB_F_FLO_A_3 */
-               0, /* AWB_A */
-               0, /* AWB_AH_A_H_1 */
-               0, /* AWB_AH_A_H_2 */
-               0, /* AWB_AH_A_H_3 */
-               0, /* AWB_H */
-               0, /* AWB_CUSTOM_DAYLIGHT1 */
-               0, /* AWB_CUSTOM_DAYLIGHT2 */
-               0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
-               0, /* AWB_CUSTOM_FLO2 */
-               0, /* AWB_CUSTOM_FLO3 */
-               0, /* AWB_CUSTOM_A */
-               0  /* AWB_U30 */
+               1, /* AWB_DAY_D50_FLO_4 */
+               1, /* AWB_F_TL84 */
+               1, /* AWB_F_TL84_CW_2 */
+               1, /* AWB_F_TL84_CW_3 */
+               1, /* AWB_F_CW */
+               1, /* AWB_F_FLO_A_1 */
+               1, /* AWB_F_FLO_A_2 */
+               1, /* AWB_F_FLO_A_3 */
+               2, /* AWB_A */
+               1, /* AWB_AH_A_H_1 */
+               1, /* AWB_AH_A_H_2 */
+               1, /* AWB_AH_A_H_3 */
+               1, /* AWB_H */
+               1, /* AWB_CUSTOM_DAYLIGHT1 */
+               1, /* AWB_CUSTOM_DAYLIGHT2 */
+               1, /* AWB_CUSTOM_DAYLIGHT3 */
+               1, /* AWB_CUSTOM_FLO1 */
+               1, /* AWB_CUSTOM_FLO2 */
+               1, /* AWB_CUSTOM_FLO3 */
+               1, /* AWB_CUSTOM_A */
+               1  /* AWB_U30 */
             },
          },
          /* Region 5 */
@@ -1604,36 +1604,36 @@
                6, /* AWB_DAY_D65_D50_1 */
                6, /* AWB_DAY_D65_D50_2 */
                4, /* AWB_DAY_D65_D50_3 */
-               4, /* AWB_DAY_D50 */
+               6, /* AWB_DAY_D50 */
                4, /* AWB_DAY_NOON_LINE_0 */
-               6, /* AWB_DAY_NOON_LINE_1 */
-               6, /* AWB_DAY_NOON_LINE_2 */
+               5, /* AWB_DAY_NOON_LINE_1 */
+               5, /* AWB_DAY_NOON_LINE_2 */
                4, /* AWB_DAY_NOON_LINE_3 */
                4, /* AWB_DAY_NOON_LINE_4 */
                4, /* AWB_DAY_D50_FLO_1 */
-               2, /* AWB_DAY_D50_FLO_2 */
-               1, /* AWB_DAY_D50_FLO_3 */
-               0, /* AWB_DAY_D50_FLO_4 */
-               0, /* AWB_F_TL84 */
-               0, /* AWB_F_TL84_CW_2 */
-               0, /* AWB_F_TL84_CW_3 */
-               0, /* AWB_F_CW */
-               0, /* AWB_F_FLO_A_1 */
-               0, /* AWB_F_FLO_A_2 */
-               0, /* AWB_F_FLO_A_3 */
-               0, /* AWB_A */
-               0, /* AWB_AH_A_H_1 */
-               0, /* AWB_AH_A_H_2 */
-               0, /* AWB_AH_A_H_3 */
-               0, /* AWB_H */
-               0, /* AWB_CUSTOM_DAYLIGHT1 */
-               0, /* AWB_CUSTOM_DAYLIGHT2 */
-               0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
-               0, /* AWB_CUSTOM_FLO2 */
-               0, /* AWB_CUSTOM_FLO3 */
-               0, /* AWB_CUSTOM_A */
-               0  /* AWB_U30 */
+               4, /* AWB_DAY_D50_FLO_2 */
+               4, /* AWB_DAY_D50_FLO_3 */
+               4, /* AWB_DAY_D50_FLO_4 */
+               4, /* AWB_F_TL84 */
+               4, /* AWB_F_TL84_CW_2 */
+               4, /* AWB_F_TL84_CW_3 */
+               6, /* AWB_F_CW */
+               6, /* AWB_F_FLO_A_1 */
+               4, /* AWB_F_FLO_A_2 */
+               1, /* AWB_F_FLO_A_3 */
+               2, /* AWB_A */
+               1, /* AWB_AH_A_H_1 */
+               1, /* AWB_AH_A_H_2 */
+               1, /* AWB_AH_A_H_3 */
+               1, /* AWB_H */
+               1, /* AWB_CUSTOM_DAYLIGHT1 */
+               1, /* AWB_CUSTOM_DAYLIGHT2 */
+               1, /* AWB_CUSTOM_DAYLIGHT3 */
+               1, /* AWB_CUSTOM_FLO1 */
+               1, /* AWB_CUSTOM_FLO2 */
+               1, /* AWB_CUSTOM_FLO3 */
+               1, /* AWB_CUSTOM_A */
+               1  /* AWB_U30 */
             },
          },
          /* Region 6 */
@@ -1648,36 +1648,36 @@
                10, /* AWB_DAY_D65_D50_1 */
                10, /* AWB_DAY_D65_D50_2 */
                4, /* AWB_DAY_D65_D50_3 */
-               4, /* AWB_DAY_D50 */
+               6, /* AWB_DAY_D50 */
                4, /* AWB_DAY_NOON_LINE_0 */
-               10, /* AWB_DAY_NOON_LINE_1 */
-               10, /* AWB_DAY_NOON_LINE_2 */
+               4, /* AWB_DAY_NOON_LINE_1 */
+               4, /* AWB_DAY_NOON_LINE_2 */
                4, /* AWB_DAY_NOON_LINE_3 */
                4, /* AWB_DAY_NOON_LINE_4 */
-               4, /* AWB_DAY_D50_FLO_1 */
-               2, /* AWB_DAY_D50_FLO_2 */
-               1, /* AWB_DAY_D50_FLO_3 */
-               1, /* AWB_DAY_D50_FLO_4 */
-               1, /* AWB_F_TL84 */
-               1, /* AWB_F_TL84_CW_2 */
-               1, /* AWB_F_TL84_CW_3 */
-               1, /* AWB_F_CW */
-               1, /* AWB_F_FLO_A_1 */
-               1, /* AWB_F_FLO_A_2 */
+               2, /* AWB_DAY_D50_FLO_1 */
+               1, /* AWB_DAY_D50_FLO_2 */
+               2, /* AWB_DAY_D50_FLO_3 */
+               4, /* AWB_DAY_D50_FLO_4 */
+               4, /* AWB_F_TL84 */
+               4, /* AWB_F_TL84_CW_2 */
+               4, /* AWB_F_TL84_CW_3 */
+               6, /* AWB_F_CW */
+               6, /* AWB_F_FLO_A_1 */
+               4, /* AWB_F_FLO_A_2 */
                1, /* AWB_F_FLO_A_3 */
                1, /* AWB_A */
                1, /* AWB_AH_A_H_1 */
                1, /* AWB_AH_A_H_2 */
                1, /* AWB_AH_A_H_3 */
                1, /* AWB_H */
-               0, /* AWB_CUSTOM_DAYLIGHT1 */
-               0, /* AWB_CUSTOM_DAYLIGHT2 */
-               0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
-               0, /* AWB_CUSTOM_FLO2 */
-               0, /* AWB_CUSTOM_FLO3 */
-               0, /* AWB_CUSTOM_A */
-               0  /* AWB_U30 */
+               1, /* AWB_CUSTOM_DAYLIGHT1 */
+               1, /* AWB_CUSTOM_DAYLIGHT2 */
+               1, /* AWB_CUSTOM_DAYLIGHT3 */
+               1, /* AWB_CUSTOM_FLO1 */
+               1, /* AWB_CUSTOM_FLO2 */
+               1, /* AWB_CUSTOM_FLO3 */
+               1, /* AWB_CUSTOM_A */
+               1  /* AWB_U30 */
             },
          },
          /* Region 7 */
@@ -1700,14 +1700,14 @@
                8, /* AWB_DAY_NOON_LINE_4 */
                8, /* AWB_DAY_D50_FLO_1 */
                4, /* AWB_DAY_D50_FLO_2 */
-               1, /* AWB_DAY_D50_FLO_3 */
-               1, /* AWB_DAY_D50_FLO_4 */
-               1, /* AWB_F_TL84 */
-               1, /* AWB_F_TL84_CW_2 */
-               1, /* AWB_F_TL84_CW_3 */
-               1, /* AWB_F_CW */
-               1, /* AWB_F_FLO_A_1 */
-               1, /* AWB_F_FLO_A_2 */
+               3, /* AWB_DAY_D50_FLO_3 */
+               3, /* AWB_DAY_D50_FLO_4 */
+               4, /* AWB_F_TL84 */
+               4, /* AWB_F_TL84_CW_2 */
+               4, /* AWB_F_TL84_CW_3 */
+               4, /* AWB_F_CW */
+               4, /* AWB_F_FLO_A_1 */
+               4, /* AWB_F_FLO_A_2 */
                1, /* AWB_F_FLO_A_3 */
                1, /* AWB_A */
                1, /* AWB_AH_A_H_1 */
@@ -1774,28 +1774,28 @@
             {
                1, /* AWB_DAY_D75 */
                1, /* AWB_DAY_D75_D65_1 */
-               1, /* AWB_DAY_D75_D65_2 */
-               2, /* AWB_DAY_D75_D65_3 */
-               2, /* AWB_DAY_D65 */
-               2, /* AWB_DAY_D65_D50_1 */
-               2, /* AWB_DAY_D65_D50_2 */
-               8, /* AWB_DAY_D65_D50_3 */
-               8, /* AWB_DAY_D50 */
-               8, /* AWB_DAY_NOON_LINE_0 */
-               2, /* AWB_DAY_NOON_LINE_1 */
-               2, /* AWB_DAY_NOON_LINE_2 */
-               8, /* AWB_DAY_NOON_LINE_3 */
-               8, /* AWB_DAY_NOON_LINE_4 */
-               8, /* AWB_DAY_D50_FLO_1 */
-               4, /* AWB_DAY_D50_FLO_2 */
+               6, /* AWB_DAY_D75_D65_2 */
+               6, /* AWB_DAY_D75_D65_3 */
+               6, /* AWB_DAY_D65 */
+               4, /* AWB_DAY_D65_D50_1 */
+               7, /* AWB_DAY_D65_D50_2 */
+               10, /* AWB_DAY_D65_D50_3 */
+               15, /* AWB_DAY_D50 */
+               10, /* AWB_DAY_NOON_LINE_0 */
+               10, /* AWB_DAY_NOON_LINE_1 */
+               8, /* AWB_DAY_NOON_LINE_2 */
+               6, /* AWB_DAY_NOON_LINE_3 */
+               6, /* AWB_DAY_NOON_LINE_4 */
+               1, /* AWB_DAY_D50_FLO_1 */
+               1, /* AWB_DAY_D50_FLO_2 */
                1, /* AWB_DAY_D50_FLO_3 */
                1, /* AWB_DAY_D50_FLO_4 */
-               1, /* AWB_F_TL84 */
-               1, /* AWB_F_TL84_CW_2 */
-               2, /* AWB_F_TL84_CW_3 */
-               2, /* AWB_F_CW */
-               2, /* AWB_F_FLO_A_1 */
-               2, /* AWB_F_FLO_A_2 */
+               3, /* AWB_F_TL84 */
+               3, /* AWB_F_TL84_CW_2 */
+               3, /* AWB_F_TL84_CW_3 */
+               3, /* AWB_F_CW */
+               1, /* AWB_F_FLO_A_1 */
+               1, /* AWB_F_FLO_A_2 */
                1, /* AWB_F_FLO_A_3 */
                1, /* AWB_A */
                1, /* AWB_AH_A_H_1 */
@@ -1805,41 +1805,41 @@
                0, /* AWB_CUSTOM_DAYLIGHT1 */
                0, /* AWB_CUSTOM_DAYLIGHT2 */
                0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
+               1, /* AWB_CUSTOM_FLO1 */
                0, /* AWB_CUSTOM_FLO2 */
                0, /* AWB_CUSTOM_FLO3 */
-               0, /* AWB_CUSTOM_A */
-               0  /* AWB_U30 */
+               8, /* AWB_CUSTOM_A */
+               2  /* AWB_U30 */
             },
          },
          /* Region 10 */
          {
             356, /* Index */
             {
-               1, /* AWB_DAY_D75 */
-               1, /* AWB_DAY_D75_D65_1 */
-               1, /* AWB_DAY_D75_D65_2 */
-               2, /* AWB_DAY_D75_D65_3 */
-               2, /* AWB_DAY_D65 */
-               2, /* AWB_DAY_D65_D50_1 */
-               2, /* AWB_DAY_D65_D50_2 */
-               8, /* AWB_DAY_D65_D50_3 */
-               8, /* AWB_DAY_D50 */
-               8, /* AWB_DAY_NOON_LINE_0 */
-               2, /* AWB_DAY_NOON_LINE_1 */
-               2, /* AWB_DAY_NOON_LINE_2 */
-               8, /* AWB_DAY_NOON_LINE_3 */
-               8, /* AWB_DAY_NOON_LINE_4 */
-               8, /* AWB_DAY_D50_FLO_1 */
-               4, /* AWB_DAY_D50_FLO_2 */
-               1, /* AWB_DAY_D50_FLO_3 */
-               1, /* AWB_DAY_D50_FLO_4 */
-               1, /* AWB_F_TL84 */
-               1, /* AWB_F_TL84_CW_2 */
-               2, /* AWB_F_TL84_CW_3 */
-               2, /* AWB_F_CW */
+               2, /* AWB_DAY_D75 */
+               2, /* AWB_DAY_D75_D65_1 */
+               2, /* AWB_DAY_D75_D65_2 */
+               4, /* AWB_DAY_D75_D65_3 */
+               4, /* AWB_DAY_D65 */
+               4, /* AWB_DAY_D65_D50_1 */
+               4, /* AWB_DAY_D65_D50_2 */
+               9, /* AWB_DAY_D65_D50_3 */
+               9, /* AWB_DAY_D50 */
+               4, /* AWB_DAY_NOON_LINE_0 */
+               4, /* AWB_DAY_NOON_LINE_1 */
+               9, /* AWB_DAY_NOON_LINE_2 */
+               9, /* AWB_DAY_NOON_LINE_3 */
+               9, /* AWB_DAY_NOON_LINE_4 */
+               9, /* AWB_DAY_D50_FLO_1 */
+               6, /* AWB_DAY_D50_FLO_2 */
+               8, /* AWB_DAY_D50_FLO_3 */
+               4, /* AWB_DAY_D50_FLO_4 */
+               4, /* AWB_F_TL84 */
+               4, /* AWB_F_TL84_CW_2 */
+               4, /* AWB_F_TL84_CW_3 */
+               4, /* AWB_F_CW */
                2, /* AWB_F_FLO_A_1 */
-               2, /* AWB_F_FLO_A_2 */
+               1, /* AWB_F_FLO_A_2 */
                1, /* AWB_F_FLO_A_3 */
                1, /* AWB_A */
                1, /* AWB_AH_A_H_1 */
@@ -1849,9 +1849,9 @@
                0, /* AWB_CUSTOM_DAYLIGHT1 */
                0, /* AWB_CUSTOM_DAYLIGHT2 */
                0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
-               0, /* AWB_CUSTOM_FLO2 */
-               0, /* AWB_CUSTOM_FLO3 */
+               4, /* AWB_CUSTOM_FLO1 */
+               2, /* AWB_CUSTOM_FLO2 */
+               2, /* AWB_CUSTOM_FLO3 */
                0, /* AWB_CUSTOM_A */
                0  /* AWB_U30 */
             },
@@ -1860,9 +1860,53 @@
          {
             389, /* Index */
             {
-               1, /* AWB_DAY_D75 */
-               1, /* AWB_DAY_D75_D65_1 */
-               1, /* AWB_DAY_D75_D65_2 */
+               2, /* AWB_DAY_D75 */
+               2, /* AWB_DAY_D75_D65_1 */
+               2, /* AWB_DAY_D75_D65_2 */
+               4, /* AWB_DAY_D75_D65_3 */
+               4, /* AWB_DAY_D65 */
+               4, /* AWB_DAY_D65_D50_1 */
+               4, /* AWB_DAY_D65_D50_2 */
+               4, /* AWB_DAY_D65_D50_3 */
+               4, /* AWB_DAY_D50 */
+               4, /* AWB_DAY_NOON_LINE_0 */
+               4, /* AWB_DAY_NOON_LINE_1 */
+               4, /* AWB_DAY_NOON_LINE_2 */
+               4, /* AWB_DAY_NOON_LINE_3 */
+               4, /* AWB_DAY_NOON_LINE_4 */
+               4, /* AWB_DAY_D50_FLO_1 */
+               4, /* AWB_DAY_D50_FLO_2 */
+               4, /* AWB_DAY_D50_FLO_3 */
+               4, /* AWB_DAY_D50_FLO_4 */
+               4, /* AWB_F_TL84 */
+               4, /* AWB_F_TL84_CW_2 */
+               4, /* AWB_F_TL84_CW_3 */
+               4, /* AWB_F_CW */
+               2, /* AWB_F_FLO_A_1 */
+               2, /* AWB_F_FLO_A_2 */
+               2, /* AWB_F_FLO_A_3 */
+               2, /* AWB_A */
+               2, /* AWB_AH_A_H_1 */
+               2, /* AWB_AH_A_H_2 */
+               2, /* AWB_AH_A_H_3 */
+               2, /* AWB_H */
+               0, /* AWB_CUSTOM_DAYLIGHT1 */
+               0, /* AWB_CUSTOM_DAYLIGHT2 */
+               0, /* AWB_CUSTOM_DAYLIGHT3 */
+               4, /* AWB_CUSTOM_FLO1 */
+               2, /* AWB_CUSTOM_FLO2 */
+               2, /* AWB_CUSTOM_FLO3 */
+               0, /* AWB_CUSTOM_A */
+               0  /* AWB_U30 */
+            },
+         },
+         /* Region 12 */
+         {
+            416, /* Index */
+            {
+               2, /* AWB_DAY_D75 */
+               2, /* AWB_DAY_D75_D65_1 */
+               2, /* AWB_DAY_D75_D65_2 */
                2, /* AWB_DAY_D75_D65_3 */
                2, /* AWB_DAY_D65 */
                2, /* AWB_DAY_D65_D50_1 */
@@ -1876,70 +1920,26 @@
                2, /* AWB_DAY_NOON_LINE_4 */
                2, /* AWB_DAY_D50_FLO_1 */
                2, /* AWB_DAY_D50_FLO_2 */
-               1, /* AWB_DAY_D50_FLO_3 */
-               1, /* AWB_DAY_D50_FLO_4 */
-               1, /* AWB_F_TL84 */
-               1, /* AWB_F_TL84_CW_2 */
+               2, /* AWB_DAY_D50_FLO_3 */
+               2, /* AWB_DAY_D50_FLO_4 */
+               2, /* AWB_F_TL84 */
+               2, /* AWB_F_TL84_CW_2 */
                2, /* AWB_F_TL84_CW_3 */
                2, /* AWB_F_CW */
                2, /* AWB_F_FLO_A_1 */
                2, /* AWB_F_FLO_A_2 */
-               1, /* AWB_F_FLO_A_3 */
-               1, /* AWB_A */
-               1, /* AWB_AH_A_H_1 */
-               1, /* AWB_AH_A_H_2 */
-               1, /* AWB_AH_A_H_3 */
-               1, /* AWB_H */
+               2, /* AWB_F_FLO_A_3 */
+               2, /* AWB_A */
+               2, /* AWB_AH_A_H_1 */
+               2, /* AWB_AH_A_H_2 */
+               2, /* AWB_AH_A_H_3 */
+               2, /* AWB_H */
                0, /* AWB_CUSTOM_DAYLIGHT1 */
                0, /* AWB_CUSTOM_DAYLIGHT2 */
                0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
-               0, /* AWB_CUSTOM_FLO2 */
-               0, /* AWB_CUSTOM_FLO3 */
-               0, /* AWB_CUSTOM_A */
-               0  /* AWB_U30 */
-            },
-         },
-         /* Region 12 */
-         {
-            422, /* Index */
-            {
-               1, /* AWB_DAY_D75 */
-               1, /* AWB_DAY_D75_D65_1 */
-               1, /* AWB_DAY_D75_D65_2 */
-               1, /* AWB_DAY_D75_D65_3 */
-               1, /* AWB_DAY_D65 */
-               1, /* AWB_DAY_D65_D50_1 */
-               1, /* AWB_DAY_D65_D50_2 */
-               1, /* AWB_DAY_D65_D50_3 */
-               1, /* AWB_DAY_D50 */
-               1, /* AWB_DAY_NOON_LINE_0 */
-               1, /* AWB_DAY_NOON_LINE_1 */
-               1, /* AWB_DAY_NOON_LINE_2 */
-               1, /* AWB_DAY_NOON_LINE_3 */
-               1, /* AWB_DAY_NOON_LINE_4 */
-               1, /* AWB_DAY_D50_FLO_1 */
-               1, /* AWB_DAY_D50_FLO_2 */
-               1, /* AWB_DAY_D50_FLO_3 */
-               1, /* AWB_DAY_D50_FLO_4 */
-               1, /* AWB_F_TL84 */
-               1, /* AWB_F_TL84_CW_2 */
-               1, /* AWB_F_TL84_CW_3 */
-               1, /* AWB_F_CW */
-               1, /* AWB_F_FLO_A_1 */
-               1, /* AWB_F_FLO_A_2 */
-               1, /* AWB_F_FLO_A_3 */
-               1, /* AWB_A */
-               1, /* AWB_AH_A_H_1 */
-               1, /* AWB_AH_A_H_2 */
-               1, /* AWB_AH_A_H_3 */
-               1, /* AWB_H */
-               0, /* AWB_CUSTOM_DAYLIGHT1 */
-               0, /* AWB_CUSTOM_DAYLIGHT2 */
-               0, /* AWB_CUSTOM_DAYLIGHT3 */
-               0, /* AWB_CUSTOM_FLO1 */
-               0, /* AWB_CUSTOM_FLO2 */
-               0, /* AWB_CUSTOM_FLO3 */
+               2, /* AWB_CUSTOM_FLO1 */
+               2, /* AWB_CUSTOM_FLO2 */
+               2, /* AWB_CUSTOM_FLO3 */
                0, /* AWB_CUSTOM_A */
                0  /* AWB_U30 */
             },
@@ -2192,18 +2192,18 @@
       /******************************************************************************/
 
       1, /* Green Projection Enable */
-      -70, /* Green Zone Offset BG */
-      -40, /* Green RG Offset Top H */
-      -40, /* Green RG Offset Bottom H */
-      1.500000f, /* Slope Factor M */
+      -8, /* Green Zone Offset BG */
+      -30, /* Green RG Offset Top H */
+      0, /* Green RG Offset Bottom H */
+      0.750000f, /* Slope Factor M */
       3.000000f, /* Slope Factor M Shade */
       0, /* Cool White Green Reject Threshold */
       0, /* Custom Fluorescent Green Reject Threshold */
-      6, /* Bright Green Percentage */
-      12, /* Dark Green Percentage */
+      20, /* Bright Green Percentage */
+      40, /* Dark Green Percentage */
       30, /* Green Enhance Low Pec */
       70, /* Green Enhance High Pec */
-      0, /* Green2f Outlier Dist2 */
+      8, /* Green2f Outlier Dist2 */
       /* Green Enhance Gain Adjust High */
       {
          1.000000f, /* Red Adjust */
@@ -2473,19 +2473,19 @@
       //         Old convergence speed slow=0.05, medium=0.1, fast=0.3
       /*********************************************************************/
 
-      30, /* AWB History Size */
-      1, /* Day Stability Enable */
-      1, /* F Stability Enable */
-      1, /* A Stability Enable */
-      1, /* H Stability Enable */
+      1, /* AWB History Size */
+      0, /* Day Stability Enable */
+      0, /* F Stability Enable */
+      0, /* A Stability Enable */
+      0, /* H Stability Enable */
       0, /* Lock Day */
       0, /* Lock F */
       0, /* Lock A */
-      25, /* Day Lock/Unlock Threshold */
-      25, /* F Lock/Unlock Threshold */
+      20, /* Day Lock/Unlock Threshold */
+      20, /* F Lock/Unlock Threshold */
       25, /* A Lock/Unlock Threshold */
-      1, /* Save History Average */
-      0.050000f, /* Convergence Factor Camera */
+      0, /* Save History Average */
+      0.150000f, /* Convergence Factor Camera */
       0.050000f, /* Convergence Factor Video */
    },
    /* Heuristic Control */
@@ -2522,11 +2522,11 @@
       1, /* Gray Weight F */
       1, /* Gray Weight A */
       1, /* Gray Weight H */
-      1, /* White Weight Day */
-      1, /* White Weight F */
-      1, /* White Weight A */
-      1, /* White Weight H */
-      5, /* Exposure Adjustment */
+      0, /* White Weight Day */
+      0, /* White Weight F */
+      0, /* White Weight A */
+      0, /* White Weight H */
+      10, /* Exposure Adjustment */
    },
 
    /*********************************************************************/
@@ -3011,9 +3011,9 @@
 
       0, /* White World Decision Enable */
       30, /* Exposure Index Trigger For White World Decision Enable Under Lowlight Condition */
-      245, /* White Stat Y Threshold High */
-      3.000000f, /* Outlier Valid yMax */
-      10, /* Minimum White Stat Count Required for Making a White Decision */
+      240, /* White Stat Y Threshold High */
+      4.000000f, /* Outlier Valid yMax */
+      5, /* Minimum White Stat Count Required for Making a White Decision */
       5, /* Minimum Distance Between First Y Peak and Second Y Peak */
       5, /* Lock Unlock Threshold for temporal history of white world */
       0.500000f, /* Weight for history white decision */
@@ -3085,7 +3085,7 @@
       0.500000f, /* D65 D50 Shifted Line Boundary */
       0.500000f, /* F A Line Boundary */
       0.500000f, /* CW Tl84 Line Boundary */
-      1.000000f, /* D50 Weighted Sample Boundary */
+      0.650000f, /* D50 Weighted Sample Boundary */
       1.000000f, /* D65 Weighted Sample Boundary */
       /* Horizon Cluster Cutoff Boundary */
       {
@@ -3151,13 +3151,13 @@
       /*********************************************************************/
 
       1, /* Dominant Cluster Enable */
-      0.400000f, /* Cluster High PEC */
-      0.250000f, /* Cluster Mid PEC */
+      0.700000f, /* Cluster High PEC */
+      0.600000f, /* Cluster Mid PEC */
       0.150000f, /* Cluster Low PEC */
-      4, /* Threshold Compact Cluster Valid */
+      10, /* Threshold Compact Cluster Valid */
       60, /* Threshold Compact Cluster */
       4, /* Compact To Grey DIS */
-      4, /* Dominant Cluster Threshold */
+      6, /* Dominant Cluster Threshold */
    },
    /* Low CCT Scene (A/H) Warm Up */
    {
@@ -3319,28 +3319,28 @@
       0, /* Enable */
       /* Trigger Points For Selecting Either Indoor Or Outdoor CCMs */
       {
-         0.000000f, /* Gain Start */
-         0.000000f, /* Gain End */
-         220, /* Lux Index Start */
-         180, /* Lux Index End */
+         1.000000f, /* Gain Start */
+         2.000000f, /* Gain End */
+         180, /* Lux Index Start */
+         220, /* Lux Index End */
       },
       /* Trigger Points For Selecting Either Normal Or Lowlight CCMs */
       {
-         0.000000f, /* Gain Start */
-         0.000000f, /* Gain End */
-         350, /* Lux Index Start */
-         370, /* Lux Index End */
+         16.00000f, /* Gain Start */
+         18.00000f, /* Gain End */
+         390, /* Lux Index Start */
+         410, /* Lux Index End */
       },
       /* Trigger Points For Selecting Either Normal Or Lowlight CCMs For LED */
       {
-         8.000000f, /* Gain Start */
-         7.000000f, /* Gain End */
-         350, /* Lux Index Start */
-         370, /* Lux Index End */
+         16.00000f, /* Gain Start */
+         18.00000f, /* Gain End */
+         390, /* Lux Index Start */
+         410, /* Lux Index End */
       },
       /* Trigger Points For Selecting Either Ambient Or LED CCMs (K Sensitivity Value) */
       {
-         10.00000f, /* Start */
+         14.00000f, /* Start */
          15.00000f, /* End */
       },
       /* Outdoor CCT Trigger. Trigger Points For Selecting Either Shade Or Sunny CCMs */
@@ -3351,22 +3351,22 @@
       /* Indoor Day CCT Trigger. Trigger Points For Selecting Either Indoor D65 Or Indoor D50 CCMs */
       {
          6100, /* Start */
-         6200, /* End */
+         6300, /* End */
       },
       /* Indoor Day F CCT Trigger. Trigger Points For Selecting Either Indoor D50 Or Indoor CW CCMs */
       {
-         4300, /* Start */
-         4600, /* End */
+         4500, /* Start */
+         4800, /* End */
       },
       /* Indoor Day F A CCT Trigger. Trigger Points For Selecting Either Indoor CW Or Indoor A CCMs */
       {
-         2700, /* Start */
-         2950, /* End */
+         2900, /* Start */
+         3200, /* End */
       },
       /* Indoor Day A H CCT Trigger. Trigger Points For Selecting Either Indoor A Or Indoor H CCMs */
       {
          2300, /* Start */
-         2400, /* End */
+         2500, /* End */
       },
       /* Indoor Color Correction */
       {
@@ -3375,9 +3375,9 @@
             1, /* Enable */
             /* D65 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.404900f,    -0.366000f,    -0.039000f,
+               -0.236600f,    1.433700f,    -0.197100f,
+               0.081900f,    -0.555000f,    1.473100f,
                0,    0,    0,
                0
             },
@@ -3387,9 +3387,9 @@
             1, /* Enable */
             /* D50 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.704600f,    -0.676000f,    -0.028600f,
+               -0.272500f,    1.499600f,    -0.227100f,
+               0.078600f,    -0.647700f,    1.569000f,
                0,    0,    0,
                0
             },
@@ -3399,9 +3399,9 @@
             1, /* Enable */
             /* Cool White */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.417900f,    -0.464800f,    0.046900f,
+               -0.346100f,    1.517500f,    -0.171300f,
+               0.152200f,    -0.728800f,    1.576600f,
                0,    0,    0,
                0
             },
@@ -3411,9 +3411,9 @@
             1, /* Enable */
             /* TL84 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.417900f,    -0.464800f,    0.046900f,
+               -0.346100f,    1.517500f,    -0.171300f,
+               0.152200f,    -0.728800f,    1.576600f,
                0,    0,    0,
                0
             },
@@ -3423,9 +3423,9 @@
             1, /* Enable */
             /* A */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.509800f,    -0.425700f,    -0.084100f,
+               -0.449400f,    1.508800f,    -0.059300f,
+               0.023000f,    -0.697100f,    1.674100f,
                0,    0,    0,
                0
             },
@@ -3435,9 +3435,9 @@
             1, /* Enable */
             /* Horizon */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.720000f,    -0.582000f,    -0.138000f,
+               -0.688900f,    1.840100f,    -0.151200f,
+               -0.187200f,    -0.587500f,    1.774700f,
                0,    0,    0,
                0
             },
@@ -3447,7 +3447,7 @@
       {
          /* D65 */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* D65 */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3459,7 +3459,7 @@
          },
          /* D50 */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* D50 */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3471,7 +3471,7 @@
          },
          /* CW */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* Cool White */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3483,7 +3483,7 @@
          },
          /* TL84 */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* TL84 */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3495,7 +3495,7 @@
          },
          /* A */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* A */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3507,7 +3507,7 @@
          },
          /* H */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* H */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3525,9 +3525,9 @@
             1, /* Enable */
             /* D65 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.404900f,    -0.366000f,    -0.039000f,
+               -0.236600f,    1.433700f,    -0.197100f,
+               0.081900f,    -0.555000f,    1.473100f,
                0,    0,    0,
                0
             },
@@ -3537,9 +3537,9 @@
             1, /* Enable */
             /* D50 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.704600f,    -0.676000f,    -0.028600f,
+               -0.272500f,    1.499600f,    -0.227100f,
+               0.078600f,    -0.647700f,    1.569000f,
                0,    0,    0,
                0
             },
@@ -3549,9 +3549,9 @@
             1, /* Enable */
             /* Cool White */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.417900f,    -0.464800f,    0.046900f,
+               -0.346100f,    1.517500f,    -0.171300f,
+               0.152200f,    -0.728800f,    1.576600f,
                0,    0,    0,
                0
             },
@@ -3561,9 +3561,9 @@
             1, /* Enable */
             /* TL84 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.417900f,    -0.464800f,    0.046900f,
+               -0.346100f,    1.517500f,    -0.171300f,
+               0.152200f,    -0.728800f,    1.576600f,
                0,    0,    0,
                0
             },
@@ -3573,9 +3573,9 @@
             1, /* Enable */
             /* A */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               2.146300f,    -1.168800f,    0.022500f,
+               -0.390900f,    1.535000f,    -0.144100f,
+               -0.253000f,    -1.267800f,    2.520700f,
                0,    0,    0,
                0
             },
@@ -3585,9 +3585,9 @@
             1, /* Enable */
             /* H */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.720000f,    -0.582000f,    -0.138000f,
+               -0.688900f,    1.840100f,    -0.151200f,
+               -0.187200f,    -0.587500f,    1.774700f,
                0,    0,    0,
                0
             },
@@ -3600,9 +3600,9 @@
             1, /* Enable */
             /* D75 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               2.286500f,    -1.385900f,    0.099400f,
+               -0.124400f,    1.364300f,    -0.239900f,
+               0.129100f,    -1.161400f,    2.032300f,
                0,    0,    0,
                0
             },
@@ -3612,16 +3612,16 @@
             1, /* Enable */
             /* D50 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               2.477300f,    -1.643200f,    0.165800f,
+               -0.119900f,    1.179300f,    -0.059400f,
+               0.184600f,    -1.644200f,    2.459600f,
                0,    0,    0,
                0
             },
          },
          /* Green */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* Green */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3633,7 +3633,7 @@
          },
          /* Sky */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* Sky */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3645,7 +3645,7 @@
          },
          /* Skin */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* Skin */
             {
                1.000000f,    0.000000f,    0.000000f,
@@ -3657,12 +3657,12 @@
          },
          /* Lowlight */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* Lowlight */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.835900f,    -0.894000f,    0.058200f,
+               -0.130800f,    1.331900f,    -0.201100f,
+               0.070900f,    -0.759700f,    1.688800f,
                0,    0,    0,
                0
             },
@@ -3672,24 +3672,24 @@
       {
          /* LED 1 */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* LED 1 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.835900f,    -0.894000f,    0.058200f,
+               -0.130800f,    1.331900f,    -0.201100f,
+               0.070900f,    -0.759700f,    1.688800f,
                0,    0,    0,
                0
             },
          },
          /* LED 2 */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* LED 2 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.835900f,    -0.894000f,    0.058200f,
+               -0.130800f,    1.331900f,    -0.201100f,
+               0.070900f,    -0.759700f,    1.688800f,
                0,    0,    0,
                0
             },
@@ -3699,24 +3699,24 @@
       {
          /* LED 1 */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* LED 1 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.835900f,    -0.894000f,    0.058200f,
+               -0.130800f,    1.331900f,    -0.201100f,
+               0.070900f,    -0.759700f,    1.688800f,
                0,    0,    0,
                0
             },
          },
          /* LED 2 */
          {
-            1, /* Enable */
+            0, /* Enable */
             /* LED 2 */
             {
-               1.000000f,    0.000000f,    0.000000f,
-               0.000000f,    1.000000f,    0.000000f,
-               0.000000f,    0.000000f,    1.000000f,
+               1.835900f,    -0.894000f,    0.058200f,
+               -0.130800f,    1.331900f,    -0.201100f,
+               0.070900f,    -0.759700f,    1.688800f,
                0,    0,    0,
                0
             },
@@ -5009,10 +5009,10 @@
 
       /* Exp Trigger */
       {
-         140, /* Direct Sun Exp Index */
-         190, /* Outdoor Heuristic Exposure Index Trigger */
-         0, /* Outdoor Heuristic Outdoor Exp Bright Shade Enable */
-         165, /* Outdoor Heuristic Exp Index Bright */
+         90, /* Direct Sun Exp Index */
+         140, /* Outdoor Heurstic Exposure Index Trigger */
+         0, /* Outdoor Heurstic Outdoor Exp Bright Shade Enable */
+         160, /* Outdoor Heuristic Exp Index Bright */
          190, /* Outdoor Heuristic Exp Index Shade */
       },
       0, /* Zone selection array Enable */
@@ -6325,13 +6325,13 @@
 
       /* Day Sum Threshold Count */
       {
-         0, /* Start */
-         0, /* End */
+         100, /* Start */
+         160, /* End */
       },
       /* F Sum Threshold Count */
       {
-         0, /* Start */
-         0, /* End */
+         700, /* Start */
+         1470, /* End */
       },
       /* Misleading Zones */
       {
@@ -6584,18 +6584,18 @@
             0, /* Control Direction */
             /* Detect Zone */
             {
-               0.000000f, /* RG Center */
-               0.000000f, /* BG Center */
-               0, /* RG Radius Grid */
-               0, /* BG Radius Grid */
+               0.926500f, /* RG Center */
+               0.326000f, /* BG Center */
+               4, /* RG Radius Grid */
+               3, /* BG Radius Grid */
                1, /* EEPROM (OTP) Calibration Index */
             },
             /* Trigger */
             {
-               1.000000f, /* Gain Start */
-               1.000000f, /* Gain End */
-               1, /* Lux Index Start */
-               1, /* Lux Index End */
+               390.0000f, /* Gain Start */
+               440.0000f, /* Gain End */
+               320, /* Lux Index Start */
+               450, /* Lux Index End */
             },
             0, /* Misleading Color Zone Enable */
          },
@@ -6606,18 +6606,18 @@
             0, /* Control Direction */
             /* Detect Zone */
             {
-               0.000000f, /* RG Center */
-               0.000000f, /* BG Center */
-               0, /* RG Radius Grid */
-               0, /* BG Radius Grid */
+               0.760000f, /* RG Center */
+               0.440000f, /* BG Center */
+               4, /* RG Radius Grid */
+               3, /* BG Radius Grid */
                1, /* EEPROM (OTP) Calibration Index */
             },
             /* Trigger */
             {
-               1.000000f, /* Gain Start */
-               1.000000f, /* Gain End */
-               1, /* Lux Index Start */
-               1, /* Lux Index End */
+               390.0000f, /* Gain Start */
+               450.0000f, /* Gain End */
+               320, /* Lux Index Start */
+               450, /* Lux Index End */
             },
             0, /* Misleading Color Zone Enable */
          },
@@ -7638,7 +7638,7 @@
       // Data range: [1.0f, 3.0f]
       /*********************************************************************/
 
-      0, /* Num Frames to skip after changing VFE */
+      2, /* Num Frames to skip after changing VFE */
       80, /* Stat Saturation Threshold */
       1, /* All Outlier Heuristic Flag */
       1, /* Valid Percentage Threshold */
@@ -7723,11 +7723,11 @@
          // Range: 0.0f, 4.0f.
          /*********************************************************************/
 
-         100.1039f, /* Ref B BG Tl84 */
-         1.000000f, /* Threshold To Identify Extreme Blue Stats */
+         1.162156f, /* Ref B BG Tl84 */
+         0.850000f, /* Threshold To Identify Extreme Blue Stats */
          0.200000f, /* Blue Sky Percent */
          0.150000f, /* Blue Sky Percent Buffer */
-         0.100000f, /* Threshold Extreme B Percent For Blue Sky Check */
+         1.305320f, /* Threshold Extreme B Percent For Blue Sky Check */
          /* Purple Prevent */
          {
 
@@ -7776,7 +7776,7 @@
          },
       },
       1.100000f, /* Snow Blue Gain Adj Ratio */
-      1.000000f, /* Beach Blue Gain Adj Ratio */
+      0.900000f, /* Beach Blue Gain Adj Ratio */
    },
    /* Skin Control */
    {
@@ -7831,10 +7831,10 @@
       0, /* Enable */
       /* Trigger */
       {
-         3.350000f, /* Gain Start */
-         0.300000f, /* Gain End */
-         190, /* Lux Index Start */
-         290, /* Lux Index End */
+         0.000000f, /* Gain Start */
+         0.000000f, /* Gain End */
+         0, /* Lux Index Start */
+         0, /* Lux Index End */
       },
       /* Skin Reference Points */
       {
@@ -8010,17 +8010,17 @@
       /*********************************************************************/
 
       /* TL84 Whitebalance - RGB */
-      {1.000000f, 1.000000f, 1.000000f},
+      {1.473700f, 1.000000f, 1.847500f},
       /* D50 Whitebalance - RGB */
-      {1.000000f, 1.000000f, 1.000000f},
+      {1.742200f, 1.000000f, 1.585000f},
       /* A Whitebalance - RGB */
-      {1.000000f, 1.000000f, 1.000000f},
+      {1.192100f, 1.000000f, 2.278100f},
       /* D65 Whitebalance - RGB */
-      {1.000000f, 1.000000f, 1.000000f},
+      {2.014400f, 1.000000f, 1.362300f},
       /* Strobe Flash Whitebalance - RGB */
-      {1.000000f, 1.000000f, 1.000000f},
+      {1.640000f, 1.000000f, 1.660000f},
       /* LED Flash Whitebalance - RGB */
-      {1.000000f, 1.000000f, 1.000000f},
+      {1.640000f, 1.000000f, 1.660000f},
    },
    /* AWB Dynamic Convergence */
    {
@@ -11215,7 +11215,7 @@
       },
       /* Reserved Floats */
       {
-         0.000000f,
+         0.516000f,
          0.000000f,
          0.000000f,
          0.000000f,
@@ -12659,16 +12659,16 @@
       // Data range: 0 and 1
       /******************************************************************************/
 
-      240, /* AEC Start Index */
-      2, /* Luma Tolerance */
-      1, /* Enable AEC To Use Percentage Based Luma Tolerance */
-      0.030000f, /* Luma Tolerance Percentage */
-      0, /* Frame Skip Startup */
+      220, /* AEC Start Index */
+      3, /* Luma Tolerance */
+      0, /* Enable AEC To Use Percentage Based Luma Tolerance */
+      0.000000f, /* Luma Tolerance Percentage */
+      2, /* Frame Skip Startup */
       0.950000f, /* Aggressiveness Startup */
       77.90000f, /* Exposure Index Adj Step */
-      2.000000f, /* ISO 100 Gain */
+      1.000000f, /* ISO 100 Gain */
       1, /* Antibanding vs. ISO Priority */
-      1, /* Enable Standardized ISO Value Reporting */
+      0, /* Enable Standardized ISO Value Reporting */
 
       /******************************************************************************/
       // Variable name: max_snapshot_exposure_time_allowed
@@ -12721,7 +12721,7 @@
       {
          0, /* Enable Compensation Of AWB Exposure Index */
          0, /* Enable Compensation Of Lux Index */
-         0.000010f, /* Reference Sensitivity Used In Compensation */
+         0.000000f, /* Reference Sensitivity Used In Compensation */
       },
 
       /******************************************************************************/
@@ -12857,9 +12857,9 @@
          0.586900f, /* G Weight For Calculating Luma */
          0.113700f, /* B Weight For Calculating Luma */
          0, /* Enable Color And Sensor Compensation */
-         1.800000f, /* Reference R Gain */
-         1.000000f, /* Reference G Gain */
-         1.500000f, /* Reference B Gain */
+         0.000000f, /* Reference R Gain */
+         0.000000f, /* Reference G Gain */
+         0.000000f, /* Reference B Gain */
       },
       /* Reserved */
       {
@@ -13450,10 +13450,10 @@
       //    potentially will change trigger points for many parameters.
       /*********************************************************************/
 
-      400, /* Max Exposure Table Entries for EV0 */
+      409, /* Max Exposure Table Entries for EV0 */
       0, /* Enable Digital Gain for EV Lowlight */
-      446, /* Max Exposure Table Entries for EV+2 with digital gain */
-      325, /* Fix FPS AEC Table Index */
+      455, /* Max Exposure Table Entries for EV+2 with digital gain */
+      408, /* Fix FPS AEC Table Index */
       {
          {256, 1}, /* Gain= 1.000 Exposure Index=0 */
          {264, 1}, /* Gain= 1.031 Exposure Index=1 */
@@ -13710,206 +13710,206 @@
          {256, 1695}, /* Gain= 1.000 Exposure Index=252 */
          {256, 1745}, /* Gain= 1.000 Exposure Index=253 */
          {256, 1797}, /* Gain= 1.000 Exposure Index=254 */
-         {259, 1832}, /* Gain= 1.012 Exposure Index=255 */
-         {267, 1832}, /* Gain= 1.043 Exposure Index=256 */
-         {275, 1832}, /* Gain= 1.074 Exposure Index=257 */
-         {283, 1832}, /* Gain= 1.105 Exposure Index=258 */
-         {291, 1832}, /* Gain= 1.137 Exposure Index=259 */
-         {300, 1832}, /* Gain= 1.172 Exposure Index=260 */
-         {309, 1832}, /* Gain= 1.207 Exposure Index=261 */
-         {318, 1832}, /* Gain= 1.242 Exposure Index=262 */
-         {328, 1832}, /* Gain= 1.281 Exposure Index=263 */
-         {338, 1832}, /* Gain= 1.320 Exposure Index=264 */
-         {348, 1832}, /* Gain= 1.359 Exposure Index=265 */
-         {358, 1832}, /* Gain= 1.398 Exposure Index=266 */
-         {369, 1832}, /* Gain= 1.441 Exposure Index=267 */
-         {380, 1832}, /* Gain= 1.484 Exposure Index=268 */
-         {391, 1832}, /* Gain= 1.527 Exposure Index=269 */
-         {403, 1832}, /* Gain= 1.574 Exposure Index=270 */
-         {415, 1832}, /* Gain= 1.621 Exposure Index=271 */
-         {427, 1832}, /* Gain= 1.668 Exposure Index=272 */
-         {440, 1832}, /* Gain= 1.719 Exposure Index=273 */
-         {453, 1832}, /* Gain= 1.770 Exposure Index=274 */
-         {467, 1832}, /* Gain= 1.824 Exposure Index=275 */
-         {481, 1832}, /* Gain= 1.879 Exposure Index=276 */
-         {495, 1832}, /* Gain= 1.934 Exposure Index=277 */
-         {510, 1832}, /* Gain= 1.992 Exposure Index=278 */
-         {525, 1832}, /* Gain= 2.051 Exposure Index=279 */
-         {541, 1832}, /* Gain= 2.113 Exposure Index=280 */
-         {557, 1832}, /* Gain= 2.176 Exposure Index=281 */
-         {574, 1832}, /* Gain= 2.242 Exposure Index=282 */
-         {591, 1832}, /* Gain= 2.309 Exposure Index=283 */
-         {609, 1832}, /* Gain= 2.379 Exposure Index=284 */
-         {627, 1832}, /* Gain= 2.449 Exposure Index=285 */
-         {646, 1832}, /* Gain= 2.523 Exposure Index=286 */
-         {665, 1832}, /* Gain= 2.598 Exposure Index=287 */
-         {685, 1832}, /* Gain= 2.676 Exposure Index=288 */
-         {706, 1832}, /* Gain= 2.758 Exposure Index=289 */
-         {727, 1832}, /* Gain= 2.840 Exposure Index=290 */
-         {749, 1832}, /* Gain= 2.926 Exposure Index=291 */
-         {771, 1832}, /* Gain= 3.012 Exposure Index=292 */
-         {794, 1832}, /* Gain= 3.102 Exposure Index=293 */
-         {818, 1832}, /* Gain= 3.195 Exposure Index=294 */
-         {843, 1832}, /* Gain= 3.293 Exposure Index=295 */
-         {868, 1832}, /* Gain= 3.391 Exposure Index=296 */
-         {894, 1832}, /* Gain= 3.492 Exposure Index=297 */
-         {921, 1832}, /* Gain= 3.598 Exposure Index=298 */
-         {949, 1832}, /* Gain= 3.707 Exposure Index=299 */
-         {977, 1832}, /* Gain= 3.816 Exposure Index=300 */
-         {1006, 1832}, /* Gain= 3.930 Exposure Index=301 */
-         {1036, 1832}, /* Gain= 4.047 Exposure Index=302 */
-         {1067, 1832}, /* Gain= 4.168 Exposure Index=303 */
-         {1099, 1832}, /* Gain= 4.293 Exposure Index=304 */
-         {1132, 1832}, /* Gain= 4.422 Exposure Index=305 */
-         {1166, 1832}, /* Gain= 4.555 Exposure Index=306 */
-         {1201, 1832}, /* Gain= 4.691 Exposure Index=307 */
-         {1237, 1832}, /* Gain= 4.832 Exposure Index=308 */
-         {1274, 1832}, /* Gain= 4.977 Exposure Index=309 */
-         {1312, 1832}, /* Gain= 5.125 Exposure Index=310 */
-         {1351, 1832}, /* Gain= 5.277 Exposure Index=311 */
-         {1392, 1832}, /* Gain= 5.438 Exposure Index=312 */
-         {1434, 1832}, /* Gain= 5.602 Exposure Index=313 */
-         {1477, 1832}, /* Gain= 5.770 Exposure Index=314 */
-         {1521, 1832}, /* Gain= 5.941 Exposure Index=315 */
-         {1567, 1832}, /* Gain= 6.121 Exposure Index=316 */
-         {1614, 1832}, /* Gain= 6.305 Exposure Index=317 */
-         {1662, 1832}, /* Gain= 6.492 Exposure Index=318 */
-         {1712, 1832}, /* Gain= 6.688 Exposure Index=319 */
-         {1763, 1832}, /* Gain= 6.887 Exposure Index=320 */
-         {1816, 1832}, /* Gain= 7.094 Exposure Index=321 */
-         {1870, 1832}, /* Gain= 7.305 Exposure Index=322 */
-         {1926, 1832}, /* Gain= 7.523 Exposure Index=323 */
-         {1984, 1832}, /* Gain= 7.750 Exposure Index=324 */
-         {2044, 1832}, /* Gain= 7.984 Exposure Index=325 */
-         {2048, 1883}, /* Gain= 8.000 Exposure Index=326 */
-         {2048, 1939}, /* Gain= 8.000 Exposure Index=327 */
-         {2048, 1997}, /* Gain= 8.000 Exposure Index=328 */
-         {2048, 2056}, /* Gain= 8.000 Exposure Index=329 */
-         {2048, 2117}, /* Gain= 8.000 Exposure Index=330 */
-         {2048, 2180}, /* Gain= 8.000 Exposure Index=331 */
-         {2048, 2245}, /* Gain= 8.000 Exposure Index=332 */
-         {2048, 2312}, /* Gain= 8.000 Exposure Index=333 */
-         {2048, 2381}, /* Gain= 8.000 Exposure Index=334 */
-         {2048, 2452}, /* Gain= 8.000 Exposure Index=335 */
-         {2048, 2525}, /* Gain= 8.000 Exposure Index=336 */
-         {2048, 2600}, /* Gain= 8.000 Exposure Index=337 */
-         {2048, 2678}, /* Gain= 8.000 Exposure Index=338 */
-         {2048, 2758}, /* Gain= 8.000 Exposure Index=339 */
-         {2048, 2840}, /* Gain= 8.000 Exposure Index=340 */
-         {2048, 2925}, /* Gain= 8.000 Exposure Index=341 */
-         {2048, 3012}, /* Gain= 8.000 Exposure Index=342 */
-         {2048, 3102}, /* Gain= 8.000 Exposure Index=343 */
-         {2048, 3195}, /* Gain= 8.000 Exposure Index=344 */
-         {2048, 3290}, /* Gain= 8.000 Exposure Index=345 */
-         {2048, 3388}, /* Gain= 8.000 Exposure Index=346 */
-         {2048, 3489}, /* Gain= 8.000 Exposure Index=347 */
-         {2048, 3593}, /* Gain= 8.000 Exposure Index=348 */
-         {2069, 3664}, /* Gain= 8.082 Exposure Index=349 */
-         {2131, 3664}, /* Gain= 8.324 Exposure Index=350 */
-         {2195, 3664}, /* Gain= 8.574 Exposure Index=351 */
-         {2261, 3664}, /* Gain= 8.832 Exposure Index=352 */
-         {2329, 3664}, /* Gain= 9.098 Exposure Index=353 */
-         {2399, 3664}, /* Gain= 9.371 Exposure Index=354 */
-         {2471, 3664}, /* Gain= 9.652 Exposure Index=355 */
-         {2545, 3664}, /* Gain= 9.941 Exposure Index=356 */
-         {2621, 3664}, /* Gain=10.238 Exposure Index=357 */
-         {2700, 3664}, /* Gain=10.547 Exposure Index=358 */
-         {2781, 3664}, /* Gain=10.863 Exposure Index=359 */
-         {2864, 3664}, /* Gain=11.188 Exposure Index=360 */
-         {2950, 3664}, /* Gain=11.523 Exposure Index=361 */
-         {3039, 3664}, /* Gain=11.871 Exposure Index=362 */
-         {3130, 3664}, /* Gain=12.227 Exposure Index=363 */
-         {3224, 3664}, /* Gain=12.594 Exposure Index=364 */
-         {3321, 3664}, /* Gain=12.973 Exposure Index=365 */
-         {3421, 3664}, /* Gain=13.363 Exposure Index=366 */
-         {3524, 3664}, /* Gain=13.766 Exposure Index=367 */
-         {3630, 3664}, /* Gain=14.180 Exposure Index=368 */
-         {3739, 3664}, /* Gain=14.605 Exposure Index=369 */
-         {3851, 3664}, /* Gain=15.043 Exposure Index=370 */
-         {3967, 3664}, /* Gain=15.496 Exposure Index=371 */
-         {4086, 3664}, /* Gain=15.961 Exposure Index=372 */
-         {4209, 3664}, /* Gain=16.441 Exposure Index=373 */
-         {4335, 3664}, /* Gain=16.934 Exposure Index=374 */
-         {4465, 3664}, /* Gain=17.441 Exposure Index=375 */
-         {4599, 3664}, /* Gain=17.965 Exposure Index=376 */
-         {4737, 3664}, /* Gain=18.504 Exposure Index=377 */
-         {4879, 3664}, /* Gain=19.059 Exposure Index=378 */
-         {5025, 3664}, /* Gain=19.629 Exposure Index=379 */
-         {5176, 3664}, /* Gain=20.219 Exposure Index=380 */
-         {5331, 3664}, /* Gain=20.824 Exposure Index=381 */
-         {5491, 3664}, /* Gain=21.449 Exposure Index=382 */
-         {5656, 3664}, /* Gain=22.094 Exposure Index=383 */
-         {5826, 3664}, /* Gain=22.758 Exposure Index=384 */
-         {6001, 3664}, /* Gain=23.441 Exposure Index=385 */
-         {6181, 3664}, /* Gain=24.145 Exposure Index=386 */
-         {6366, 3664}, /* Gain=24.867 Exposure Index=387 */
-         {6557, 3664}, /* Gain=25.613 Exposure Index=388 */
-         {6754, 3664}, /* Gain=26.383 Exposure Index=389 */
-         {6957, 3664}, /* Gain=27.176 Exposure Index=390 */
-         {7166, 3664}, /* Gain=27.992 Exposure Index=391 */
-         {7381, 3664}, /* Gain=28.832 Exposure Index=392 */
-         {7602, 3664}, /* Gain=29.695 Exposure Index=393 */
-         {7830, 3664}, /* Gain=30.586 Exposure Index=394 */
-         {8065, 3664}, /* Gain=31.504 Exposure Index=395 */
-         {8307, 3664}, /* Gain=32.449 Exposure Index=396 */
-         {8556, 3664}, /* Gain=33.422 Exposure Index=397 */
-         {8813, 3664}, /* Gain=34.426 Exposure Index=398 */
-         {9077, 3664}, /* Gain=35.457 Exposure Index=399 */
-         {9349, 3664}, /* Gain=36.520 Exposure Index=400 */
-         {9629, 3664}, /* Gain=37.613 Exposure Index=401 */
-         {9918, 3664}, /* Gain=38.742 Exposure Index=402 */
-         {10216, 3664}, /* Gain=39.906 Exposure Index=403 */
-         {10522, 3664}, /* Gain=41.102 Exposure Index=404 */
-         {10838, 3664}, /* Gain=42.336 Exposure Index=405 */
-         {11163, 3664}, /* Gain=43.605 Exposure Index=406 */
-         {11498, 3664}, /* Gain=44.914 Exposure Index=407 */
-         {11843, 3664}, /* Gain=46.262 Exposure Index=408 */
-         {12198, 3664}, /* Gain=47.648 Exposure Index=409 */
-         {12564, 3664}, /* Gain=49.078 Exposure Index=410 */
-         {12941, 3664}, /* Gain=50.551 Exposure Index=411 */
-         {13329, 3664}, /* Gain=52.066 Exposure Index=412 */
-         {13729, 3664}, /* Gain=53.629 Exposure Index=413 */
-         {14141, 3664}, /* Gain=55.238 Exposure Index=414 */
-         {14565, 3664}, /* Gain=56.895 Exposure Index=415 */
-         {15002, 3664}, /* Gain=58.602 Exposure Index=416 */
-         {15452, 3664}, /* Gain=60.359 Exposure Index=417 */
-         {15916, 3664}, /* Gain=62.172 Exposure Index=418 */
-         {16393, 3664}, /* Gain=64.035 Exposure Index=419 */
-         {16885, 3664}, /* Gain=65.957 Exposure Index=420 */
-         {17392, 3664}, /* Gain=67.938 Exposure Index=421 */
-         {17914, 3664}, /* Gain=69.977 Exposure Index=422 */
-         {18451, 3664}, /* Gain=72.074 Exposure Index=423 */
-         {19005, 3664}, /* Gain=74.238 Exposure Index=424 */
-         {19575, 3664}, /* Gain=76.465 Exposure Index=425 */
-         {20162, 3664}, /* Gain=78.758 Exposure Index=426 */
-         {20767, 3664}, /* Gain=81.121 Exposure Index=427 */
-         {21390, 3664}, /* Gain=83.555 Exposure Index=428 */
-         {22032, 3664}, /* Gain=86.063 Exposure Index=429 */
-         {22693, 3664}, /* Gain=88.645 Exposure Index=430 */
-         {23374, 3664}, /* Gain=91.305 Exposure Index=431 */
-         {24075, 3664}, /* Gain=94.043 Exposure Index=432 */
-         {24797, 3664}, /* Gain=96.863 Exposure Index=433 */
-         {25541, 3664}, /* Gain=99.770 Exposure Index=434 */
-         {26307, 3664}, /* Gain=102.762 Exposure Index=435 */
-         {27096, 3664}, /* Gain=105.844 Exposure Index=436 */
-         {27909, 3664}, /* Gain=109.020 Exposure Index=437 */
-         {28746, 3664}, /* Gain=112.289 Exposure Index=438 */
-         {29608, 3664}, /* Gain=115.656 Exposure Index=439 */
-         {30496, 3664}, /* Gain=119.125 Exposure Index=440 */
-         {31411, 3664}, /* Gain=122.699 Exposure Index=441 */
-         {32353, 3664}, /* Gain=126.379 Exposure Index=442 */
-         {33324, 3664}, /* Gain=130.172 Exposure Index=443 */
-         {34324, 3664}, /* Gain=134.078 Exposure Index=444 */
-         {35354, 3664}, /* Gain=138.102 Exposure Index=445 */
-         {0, 0}, /* Gain=0.000 Exposure Index=446 */
-         {0, 0}, /* Gain=0.000 Exposure Index=447 */
-         {0, 0}, /* Gain=0.000 Exposure Index=448 */
-         {0, 0}, /* Gain=0.000 Exposure Index=449 */
-         {0, 0}, /* Gain=0.000 Exposure Index=450 */
-         {0, 0}, /* Gain=0.000 Exposure Index=451 */
-         {0, 0}, /* Gain=0.000 Exposure Index=452 */
-         {0, 0}, /* Gain=0.000 Exposure Index=453 */
-         {0, 0}, /* Gain=0.000 Exposure Index=454 */
+         {262, 1807}, /* Gain= 1.023 Exposure Index=255 */
+         {270, 1807}, /* Gain= 1.055 Exposure Index=256 */
+         {278, 1807}, /* Gain= 1.086 Exposure Index=257 */
+         {286, 1807}, /* Gain= 1.117 Exposure Index=258 */
+         {295, 1807}, /* Gain= 1.152 Exposure Index=259 */
+         {304, 1807}, /* Gain= 1.188 Exposure Index=260 */
+         {313, 1807}, /* Gain= 1.223 Exposure Index=261 */
+         {322, 1807}, /* Gain= 1.258 Exposure Index=262 */
+         {332, 1807}, /* Gain= 1.297 Exposure Index=263 */
+         {342, 1807}, /* Gain= 1.336 Exposure Index=264 */
+         {352, 1807}, /* Gain= 1.375 Exposure Index=265 */
+         {363, 1807}, /* Gain= 1.418 Exposure Index=266 */
+         {374, 1807}, /* Gain= 1.461 Exposure Index=267 */
+         {385, 1807}, /* Gain= 1.504 Exposure Index=268 */
+         {397, 1807}, /* Gain= 1.551 Exposure Index=269 */
+         {409, 1807}, /* Gain= 1.598 Exposure Index=270 */
+         {421, 1807}, /* Gain= 1.645 Exposure Index=271 */
+         {434, 1807}, /* Gain= 1.695 Exposure Index=272 */
+         {447, 1807}, /* Gain= 1.746 Exposure Index=273 */
+         {460, 1807}, /* Gain= 1.797 Exposure Index=274 */
+         {474, 1807}, /* Gain= 1.852 Exposure Index=275 */
+         {488, 1807}, /* Gain= 1.906 Exposure Index=276 */
+         {503, 1807}, /* Gain= 1.965 Exposure Index=277 */
+         {518, 1807}, /* Gain= 2.023 Exposure Index=278 */
+         {534, 1807}, /* Gain= 2.086 Exposure Index=279 */
+         {550, 1807}, /* Gain= 2.148 Exposure Index=280 */
+         {567, 1807}, /* Gain= 2.215 Exposure Index=281 */
+         {584, 1807}, /* Gain= 2.281 Exposure Index=282 */
+         {602, 1807}, /* Gain= 2.352 Exposure Index=283 */
+         {620, 1807}, /* Gain= 2.422 Exposure Index=284 */
+         {639, 1807}, /* Gain= 2.496 Exposure Index=285 */
+         {658, 1807}, /* Gain= 2.570 Exposure Index=286 */
+         {678, 1807}, /* Gain= 2.648 Exposure Index=287 */
+         {698, 1807}, /* Gain= 2.727 Exposure Index=288 */
+         {719, 1807}, /* Gain= 2.809 Exposure Index=289 */
+         {741, 1807}, /* Gain= 2.895 Exposure Index=290 */
+         {763, 1807}, /* Gain= 2.980 Exposure Index=291 */
+         {786, 1807}, /* Gain= 3.070 Exposure Index=292 */
+         {810, 1807}, /* Gain= 3.164 Exposure Index=293 */
+         {834, 1807}, /* Gain= 3.258 Exposure Index=294 */
+         {859, 1807}, /* Gain= 3.355 Exposure Index=295 */
+         {885, 1807}, /* Gain= 3.457 Exposure Index=296 */
+         {912, 1807}, /* Gain= 3.563 Exposure Index=297 */
+         {939, 1807}, /* Gain= 3.668 Exposure Index=298 */
+         {967, 1807}, /* Gain= 3.777 Exposure Index=299 */
+         {996, 1807}, /* Gain= 3.891 Exposure Index=300 */
+         {1026, 1807}, /* Gain= 4.008 Exposure Index=301 */
+         {1057, 1807}, /* Gain= 4.129 Exposure Index=302 */
+         {1089, 1807}, /* Gain= 4.254 Exposure Index=303 */
+         {1122, 1807}, /* Gain= 4.383 Exposure Index=304 */
+         {1156, 1807}, /* Gain= 4.516 Exposure Index=305 */
+         {1191, 1807}, /* Gain= 4.652 Exposure Index=306 */
+         {1227, 1807}, /* Gain= 4.793 Exposure Index=307 */
+         {1264, 1807}, /* Gain= 4.938 Exposure Index=308 */
+         {1302, 1807}, /* Gain= 5.086 Exposure Index=309 */
+         {1341, 1807}, /* Gain= 5.238 Exposure Index=310 */
+         {1381, 1807}, /* Gain= 5.395 Exposure Index=311 */
+         {1422, 1807}, /* Gain= 5.555 Exposure Index=312 */
+         {1465, 1807}, /* Gain= 5.723 Exposure Index=313 */
+         {1509, 1807}, /* Gain= 5.895 Exposure Index=314 */
+         {1554, 1807}, /* Gain= 6.070 Exposure Index=315 */
+         {1601, 1807}, /* Gain= 6.254 Exposure Index=316 */
+         {1649, 1807}, /* Gain= 6.441 Exposure Index=317 */
+         {1698, 1807}, /* Gain= 6.633 Exposure Index=318 */
+         {1749, 1807}, /* Gain= 6.832 Exposure Index=319 */
+         {1801, 1807}, /* Gain= 7.035 Exposure Index=320 */
+         {1855, 1807}, /* Gain= 7.246 Exposure Index=321 */
+         {1911, 1807}, /* Gain= 7.465 Exposure Index=322 */
+         {1968, 1807}, /* Gain= 7.688 Exposure Index=323 */
+         {2027, 1807}, /* Gain= 7.918 Exposure Index=324 */
+         {2027, 1861}, /* Gain= 7.918 Exposure Index=325 */
+         {2028, 1916}, /* Gain= 7.922 Exposure Index=326 */
+         {2027, 1974}, /* Gain= 7.918 Exposure Index=327 */
+         {2027, 2033}, /* Gain= 7.918 Exposure Index=328 */
+         {2028, 2093}, /* Gain= 7.922 Exposure Index=329 */
+         {2028, 2156}, /* Gain= 7.922 Exposure Index=330 */
+         {2028, 2221}, /* Gain= 7.922 Exposure Index=331 */
+         {2028, 2288}, /* Gain= 7.922 Exposure Index=332 */
+         {2028, 2357}, /* Gain= 7.922 Exposure Index=333 */
+         {2028, 2428}, /* Gain= 7.922 Exposure Index=334 */
+         {2027, 2502}, /* Gain= 7.918 Exposure Index=335 */
+         {2027, 2577}, /* Gain= 7.918 Exposure Index=336 */
+         {2027, 2654}, /* Gain= 7.918 Exposure Index=337 */
+         {2027, 2733}, /* Gain= 7.918 Exposure Index=338 */
+         {2028, 2814}, /* Gain= 7.922 Exposure Index=339 */
+         {2028, 2899}, /* Gain= 7.922 Exposure Index=340 */
+         {2027, 2987}, /* Gain= 7.918 Exposure Index=341 */
+         {2027, 3076}, /* Gain= 7.918 Exposure Index=342 */
+         {2027, 3168}, /* Gain= 7.918 Exposure Index=343 */
+         {2027, 3263}, /* Gain= 7.918 Exposure Index=344 */
+         {2028, 3360}, /* Gain= 7.922 Exposure Index=345 */
+         {2027, 3462}, /* Gain= 7.918 Exposure Index=346 */
+         {2027, 3565}, /* Gain= 7.918 Exposure Index=347 */
+         {2045, 3639}, /* Gain= 7.988 Exposure Index=348 */
+         {2106, 3639}, /* Gain= 8.227 Exposure Index=349 */
+         {2169, 3639}, /* Gain= 8.473 Exposure Index=350 */
+         {2234, 3639}, /* Gain= 8.727 Exposure Index=351 */
+         {2301, 3639}, /* Gain= 8.988 Exposure Index=352 */
+         {2370, 3639}, /* Gain= 9.258 Exposure Index=353 */
+         {2441, 3639}, /* Gain= 9.535 Exposure Index=354 */
+         {2514, 3639}, /* Gain= 9.820 Exposure Index=355 */
+         {2589, 3639}, /* Gain=10.113 Exposure Index=356 */
+         {2667, 3639}, /* Gain=10.418 Exposure Index=357 */
+         {2747, 3639}, /* Gain=10.730 Exposure Index=358 */
+         {2829, 3639}, /* Gain=11.051 Exposure Index=359 */
+         {2914, 3639}, /* Gain=11.383 Exposure Index=360 */
+         {3001, 3639}, /* Gain=11.723 Exposure Index=361 */
+         {3091, 3639}, /* Gain=12.074 Exposure Index=362 */
+         {3184, 3639}, /* Gain=12.438 Exposure Index=363 */
+         {3280, 3639}, /* Gain=12.813 Exposure Index=364 */
+         {3378, 3639}, /* Gain=13.195 Exposure Index=365 */
+         {3479, 3639}, /* Gain=13.590 Exposure Index=366 */
+         {3583, 3639}, /* Gain=13.996 Exposure Index=367 */
+         {3690, 3639}, /* Gain=14.414 Exposure Index=368 */
+         {3801, 3639}, /* Gain=14.848 Exposure Index=369 */
+         {3915, 3639}, /* Gain=15.293 Exposure Index=370 */
+         {4032, 3639}, /* Gain=15.750 Exposure Index=371 */
+         {4153, 3639}, /* Gain=16.223 Exposure Index=372 */
+         {4278, 3639}, /* Gain=16.711 Exposure Index=373 */
+         {4406, 3639}, /* Gain=17.211 Exposure Index=374 */
+         {4538, 3639}, /* Gain=17.727 Exposure Index=375 */
+         {4674, 3639}, /* Gain=18.258 Exposure Index=376 */
+         {4814, 3639}, /* Gain=18.805 Exposure Index=377 */
+         {4958, 3639}, /* Gain=19.367 Exposure Index=378 */
+         {5107, 3639}, /* Gain=19.949 Exposure Index=379 */
+         {5260, 3639}, /* Gain=20.547 Exposure Index=380 */
+         {5418, 3639}, /* Gain=21.164 Exposure Index=381 */
+         {5581, 3639}, /* Gain=21.801 Exposure Index=382 */
+         {5748, 3639}, /* Gain=22.453 Exposure Index=383 */
+         {5920, 3639}, /* Gain=23.125 Exposure Index=384 */
+         {6098, 3639}, /* Gain=23.820 Exposure Index=385 */
+         {6281, 3639}, /* Gain=24.535 Exposure Index=386 */
+         {6469, 3639}, /* Gain=25.270 Exposure Index=387 */
+         {6663, 3639}, /* Gain=26.027 Exposure Index=388 */
+         {6863, 3639}, /* Gain=26.809 Exposure Index=389 */
+         {7069, 3639}, /* Gain=27.613 Exposure Index=390 */
+         {7281, 3639}, /* Gain=28.441 Exposure Index=391 */
+         {7499, 3639}, /* Gain=29.293 Exposure Index=392 */
+         {7724, 3639}, /* Gain=30.172 Exposure Index=393 */
+         {7956, 3639}, /* Gain=31.078 Exposure Index=394 */
+         {8195, 3639}, /* Gain=32.012 Exposure Index=395 */
+         {8441, 3639}, /* Gain=32.973 Exposure Index=396 */
+         {8694, 3639}, /* Gain=33.961 Exposure Index=397 */
+         {8955, 3639}, /* Gain=34.980 Exposure Index=398 */
+         {9224, 3639}, /* Gain=36.031 Exposure Index=399 */
+         {9501, 3639}, /* Gain=37.113 Exposure Index=400 */
+         {9786, 3639}, /* Gain=38.227 Exposure Index=401 */
+         {10080, 3639}, /* Gain=39.375 Exposure Index=402 */
+         {10382, 3639}, /* Gain=40.555 Exposure Index=403 */
+         {10693, 3639}, /* Gain=41.770 Exposure Index=404 */
+         {11014, 3639}, /* Gain=43.023 Exposure Index=405 */
+         {11344, 3639}, /* Gain=44.313 Exposure Index=406 */
+         {11684, 3639}, /* Gain=45.641 Exposure Index=407 */
+         {12035, 3639}, /* Gain=47.012 Exposure Index=408 */
+         {12396, 3639}, /* Gain=48.422 Exposure Index=409 */
+         {12768, 3639}, /* Gain=49.875 Exposure Index=410 */
+         {13151, 3639}, /* Gain=51.371 Exposure Index=411 */
+         {13546, 3639}, /* Gain=52.914 Exposure Index=412 */
+         {13952, 3639}, /* Gain=54.500 Exposure Index=413 */
+         {14371, 3639}, /* Gain=56.137 Exposure Index=414 */
+         {14802, 3639}, /* Gain=57.820 Exposure Index=415 */
+         {15246, 3639}, /* Gain=59.555 Exposure Index=416 */
+         {15703, 3639}, /* Gain=61.340 Exposure Index=417 */
+         {16174, 3639}, /* Gain=63.180 Exposure Index=418 */
+         {16659, 3639}, /* Gain=65.074 Exposure Index=419 */
+         {17159, 3639}, /* Gain=67.027 Exposure Index=420 */
+         {17674, 3639}, /* Gain=69.039 Exposure Index=421 */
+         {18204, 3639}, /* Gain=71.109 Exposure Index=422 */
+         {18750, 3639}, /* Gain=73.242 Exposure Index=423 */
+         {19313, 3639}, /* Gain=75.441 Exposure Index=424 */
+         {19892, 3639}, /* Gain=77.703 Exposure Index=425 */
+         {20489, 3639}, /* Gain=80.035 Exposure Index=426 */
+         {21104, 3639}, /* Gain=82.438 Exposure Index=427 */
+         {21737, 3639}, /* Gain=84.910 Exposure Index=428 */
+         {22389, 3639}, /* Gain=87.457 Exposure Index=429 */
+         {23061, 3639}, /* Gain=90.082 Exposure Index=430 */
+         {23753, 3639}, /* Gain=92.785 Exposure Index=431 */
+         {24466, 3639}, /* Gain=95.570 Exposure Index=432 */
+         {25200, 3639}, /* Gain=98.438 Exposure Index=433 */
+         {25956, 3639}, /* Gain=101.391 Exposure Index=434 */
+         {26735, 3639}, /* Gain=104.434 Exposure Index=435 */
+         {27537, 3639}, /* Gain=107.566 Exposure Index=436 */
+         {28363, 3639}, /* Gain=110.793 Exposure Index=437 */
+         {29214, 3639}, /* Gain=114.117 Exposure Index=438 */
+         {30090, 3639}, /* Gain=117.539 Exposure Index=439 */
+         {30993, 3639}, /* Gain=121.066 Exposure Index=440 */
+         {31923, 3639}, /* Gain=124.699 Exposure Index=441 */
+         {32881, 3639}, /* Gain=128.441 Exposure Index=442 */
+         {33867, 3639}, /* Gain=132.293 Exposure Index=443 */
+         {34883, 3639}, /* Gain=136.262 Exposure Index=444 */
+         {35929, 3639}, /* Gain=140.348 Exposure Index=445 */
+         {37007, 3639}, /* Gain=144.559 Exposure Index=446 */
+         {38117, 3639}, /* Gain=148.895 Exposure Index=447 */
+         {39261, 3639}, /* Gain=153.363 Exposure Index=448 */
+         {40439, 3639}, /* Gain=157.965 Exposure Index=449 */
+         {41652, 3639}, /* Gain=162.703 Exposure Index=450 */
+         {42902, 3639}, /* Gain=167.586 Exposure Index=451 */
+         {44189, 3639}, /* Gain=172.613 Exposure Index=452 */
+         {45515, 3639}, /* Gain=177.793 Exposure Index=453 */
+         {46880, 3639}, /* Gain=183.125 Exposure Index=454 */
          {0, 0}, /* Gain=0.000 Exposure Index=455 */
          {0, 0}, /* Gain=0.000 Exposure Index=456 */
          {0, 0}, /* Gain=0.000 Exposure Index=457 */
@@ -14330,15 +14330,15 @@
       {
          /* Region 0 */
          {
-            50, /* Outdoor Luma Target */
+            56, /* Outdoor Luma Target */
          },
          /* Region 1 */
          {
-            50, /* Default Luma Target */
+            39, /* Default Luma Target */
          },
          /* Region 2 */
          {
-            25, /* Low-Light Luma Target */
+            39, /* Low-Light Luma Target */
          },
          /* Region 3 */
          {
@@ -14550,7 +14550,7 @@
    // Whether to enable holding time feature for slow convergence. If enabled,
    //   AEC will delay to start convergence if scene is stable for a period of time
    //   and sudden disturbance is then introduced into the preview.
-   // Default value: 0.
+   // Default value: 1.
    // Data range: 0 or 1.
    //
    // Variable name: ht_tolerance_adjust_factor
@@ -14586,10 +14586,10 @@
    /* Slow Convergence */
    {
       1, /* Enable */
-      0, /* Frame Skip */
-      0.800000f, /* Convergence Speed */
-      0, /* HT Enable */
-      2.000000f, /* HT Tolerance Adjustment Factor */
+      1, /* Frame Skip */
+      0.700000f, /* Convergence Speed */
+      1, /* HT Enable */
+      4.000000f, /* HT Tolerance Adjustment Factor */
       3.000000f, /* HT Threshold */
       1.000000f, /* HT Max */
       1, /* HT Gyro Enable */
@@ -15878,10 +15878,10 @@
       1.000000f, /* Smart Flash Est Strength */
       1, /* Smart Flash Est AWB Enable */
       1.000000f, /* Smart Flash Est AWB Strength */
-      0, /* Enable Dedicated Flash Target */
+      1, /* Enable Dedicated Flash Target */
       /* Flash Target */
       {
-         3, /* Num Zones Used */
+         1, /* Num Zones Used */
          /* Triggers */
          {
             /* Zone 0 */
@@ -15990,7 +15990,7 @@
       /******************************************************************************/
 
       1, /* ROI Enable */
-      0.800000f, /* Weight */
+      0.700000f, /* Weight */
       /* Reserved */
       {
          0.000000f, 1.000000f, 0.500000f, 0.000000f, 0.000000f
@@ -16022,8 +16022,8 @@
       // has no influence on AEC.
       /******************************************************************************/
 
-      0, /* Enable */
-      0.000000f, /* */
+      1, /* Enable */
+      0.6000f, /* */
       /* Reserved */
       {
          0.300000f, /* [0] status_update_delay_time_enter */
@@ -16133,18 +16133,18 @@
       {
          /* Zone 0 */
          {
-            220, /* Outdoor Bright Region Threshold */
-            1.200000f, /* Outdoor Bright Region Weight */
+            210, /* Outdoor Bright Region Threshold */
+            0.40000f, /* Outdoor Bright Region Weight */
          },
          /* Zone 1 */
          {
-            220, /* Indoor Bright Region Threshold */
-            1.200000f, /* Indoor Bright Region Weight */
+            210, /* Indoor Bright Region Threshold */
+            0.50000f, /* Indoor Bright Region Weight */
          },
          /* Zone 2 */
          {
             220, /* Low Light Bright Region Threshold */
-            1.200000f, /* Low Light Bright Region Weight */
+            0.800000f, /* Low Light Bright Region Weight */
          },
          /* Zone 3 */
          {
@@ -16270,13 +16270,13 @@
          {
             5, /* Low Threshold */
             15, /* High Threshold */
-            1.000000f, /* Weight */
+            0.750000f, /* Weight */
          },
          /* Zone 2 */
          {
             5, /* Low Threshold */
             15, /* High Threshold */
-            0.750000f, /* Weight */
+            1.000000f, /* Weight */
          },
          /* Zone 3 */
          {
@@ -16465,7 +16465,7 @@
       // Constraints: color_stats_pct_high_th > color_stats_pct_low_th.
       /*********************************************************************/
 
-      1, /* Color-Based Metering Enable */
+      0, /* Color-Based Metering Enable */
       3, /* Num Zones Used */
       /* Triggers */
       {
@@ -16501,18 +16501,18 @@
          {
             /* Adj Ratio */
             {
-               0.800000f, /* R */
-               0.900000f, /* G */
-               0.800000f, /* B */
+               1.000000f, /* R */
+               1.000000f, /* G */
+               1.000000f, /* B */
             },
          },
          /* Zone 1 */
          {
             /* Adj Ratio */
             {
-               0.900000f, /* R */
-               0.900000f, /* G */
-               0.900000f, /* B */
+               1.000000f, /* R */
+               1.000000f, /* G */
+               1.000000f, /* B */
             },
          },
          /* Zone 2 */
@@ -16744,14 +16744,14 @@
       // Data range: 0 to 500.
       /*********************************************************************/
 
-      1, /* Enable */
+      0, /* Enable */
       42, /* Start Level */
       200, /* End Level */
       40, /* Range */
       0.650000f, /* Delta Th Low */
       0.800000f, /* Delta Th High */
       1.200000f, /* Bright Flat Det Th */
-      10.00000f, /* Dark Flat Det Th */
+      10.000000f, /* Dark Flat Det Th */
       0.001000f, /* Bright Flat Tail Det */
       0.100000f, /* Dark Flat Tail Det */
       0, /* Bright Flat Compensation Enable */
@@ -16816,9 +16816,9 @@
       // Data range: 0.0 to 1.0
       /******************************************************************************/
 
-      1, /* Enable */
+      0, /* Enable */
       0, /* Enable ADRC */
-      0, /* Enable Dark End Control */
+      1, /* Enable Dark End Control */
       3, /* Num Zones Used */
       /* Triggers */
       {
@@ -16963,7 +16963,7 @@
          {
             1.800000f, /* Max Target Adj Ratio */
             0.900000f, /* Min Target Adj Ratio */
-            150, /* Sat Low Ref */
+            200, /* Sat Low Ref */
             240, /* Sat High Ref */
             3, /* Dark Low Ref */
             70, /* Dark High Ref */
@@ -16971,36 +16971,36 @@
             {
                /* Red */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Saturation Pushdown Range */
             {
                /* Red */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Dark Range */
@@ -17032,7 +17032,7 @@
          {
             1.800000f, /* Max Target Adj Ratio */
             0.900000f, /* Min Target Adj Ratio */
-            150, /* Sat Low Ref */
+            200, /* Sat Low Ref */
             240, /* Sat High Ref */
             3, /* Dark Low Ref */
             70, /* Dark High Ref */
@@ -17040,36 +17040,36 @@
             {
                /* Red */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Saturation Pushdown Range */
             {
                /* Red */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Dark Range */
@@ -17100,8 +17100,8 @@
          /* Zone 2 */
          {
             1.000000f, /* Max Target Adj Ratio */
-            0.800000f, /* Min Target Adj Ratio */
-            150, /* Sat Low Ref */
+            0.850000f, /* Min Target Adj Ratio */
+            200, /* Sat Low Ref */
             240, /* Sat High Ref */
             3, /* Dark Low Ref */
             70, /* Dark High Ref */
@@ -17109,36 +17109,36 @@
             {
                /* Red */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Saturation Pushdown Range */
             {
                /* Red */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Dark Range */
@@ -17169,45 +17169,45 @@
          /* Zone 3 */
          {
             1.000000f, /* Max Target Adj Ratio */
-            0.500000f, /* Min Target Adj Ratio */
-            150, /* Sat Low Ref */
+            1.000000f, /* Min Target Adj Ratio */
+            200, /* Sat Low Ref */
             240, /* Sat High Ref */
-            3, /* Dark Low Ref */
+            0, /* Dark Low Ref */
             70, /* Dark High Ref */
             /* Hist Saturation Pushup Range */
             {
                /* Red */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Saturation Pushdown Range */
             {
                /* Red */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Dark Range */
@@ -17238,45 +17238,45 @@
          /* Zone 4 */
          {
             1.000000f, /* Max Target Adj Ratio */
-            0.500000f, /* Min Target Adj Ratio */
-            150, /* Sat Low Ref */
+            1.000000f, /* Min Target Adj Ratio */
+            200, /* Sat Low Ref */
             240, /* Sat High Ref */
-            3, /* Dark Low Ref */
+            0, /* Dark Low Ref */
             70, /* Dark High Ref */
             /* Hist Saturation Pushup Range */
             {
                /* Red */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Saturation Pushdown Range */
             {
                /* Red */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Dark Range */
@@ -17307,45 +17307,45 @@
          /* Zone 5 */
          {
             1.000000f, /* Max Target Adj Ratio */
-            0.500000f, /* Min Target Adj Ratio */
-            150, /* Sat Low Ref */
+            1.000000f, /* Min Target Adj Ratio */
+            200, /* Sat Low Ref */
             240, /* Sat High Ref */
-            3, /* Dark Low Ref */
+            0, /* Dark Low Ref */
             70, /* Dark High Ref */
             /* Hist Saturation Pushup Range */
             {
                /* Red */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.020000f, /* Start */
-                  0.080000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Saturation Pushdown Range */
             {
                /* Red */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Green */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
                /* Blue */
                {
-                  0.010000f, /* Start */
-                  0.040000f, /* End */
+                  0.000000f, /* Start */
+                  0.020000f, /* End */
                },
             },
             /* Hist Dark Range */
@@ -17412,13 +17412,13 @@
       {
          /* Zone 0 */
          {
-            190, /* Start */
-            230, /* End */
+            0, /* Start */
+            0, /* End */
          },
          /* Zone 1 */
          {
-            360, /* Start */
-            420, /* End */
+            0, /* Start */
+            0, /* End */
          },
          /* Zone 2 */
          {
@@ -17940,16 +17940,16 @@
    // 3A version : supported only in 310 & later
    /******************************************************************************/
 
-   6, /* Num Peaks Threshold */
+   5, /* Num Peaks Threshold */
    0.250000f, /* INTL Adjust Factor */
    60, /* Start Antibanding Table */
    66.00000f, /* Maximum Exposure Time (ms) */
-   225, /* Threshold Level2 Ratio */
+   248, /* Threshold Level2 Ratio */
    243, /* Threshold Level3 Ratio */
    6554, /* Lower Energy Threshold of kth Level Processing */
    131072, /* Upper Energy Threshold of kth Level Processing */
    2, /* Counter Threshold for Level3 */
-   6, /* Counter Threshold for Level2 */
+   4, /* Counter Threshold for Level2 */
    2, /* Processing Level2 */
    350, /* Static Low Light Idx Thr */
    0.980000f, /* Static Low Light Comp */
@@ -18186,7 +18186,7 @@
       // Maximum luma target adjustment when backlight is detected.
       //   We expect to increase luma target.
       // Applicable operation mode: Viewfinder.
-      // Default value: 0
+      // Default value: 20
       // Data range: 0 to 255.
       // Constraints: None.
       // Effect: >1 value will increase luma target and bring out the dark areas. <1 value
@@ -18225,12 +18225,12 @@
 
       1, /* Enable */
       0.900000f, /* Histogram Offset */
-      10, /* Low Luma Threshold */
-      235, /* High Luma Threshold */
+      20, /* Low Luma Threshold */
+      225, /* High Luma Threshold */
       10.00000f, /* Low Luma Count Percent Threshold */
       10.00000f, /* High Luma Count Percent Threshold */
       0.090000f, /* Kept Pixel Ratio Threshold */
-      0, /* Max Luma Target Adjust */
+      20, /* Max Luma Target Adjust */
       0.200000f, /* Aggressiveness */
       1.000000f, /* Max Percent Threshold */
       80, /* UI Display Th */
@@ -18421,8 +18421,8 @@
 
       153.6000f, /* Backlight High Threshold */
       102.4000f, /* Backlight Low Threshold */
-      204.8000f, /* Portrait High Threshold */
-      153.6000f, /* Portrait Low Threshold */
+      255.0000f, /* Portrait High Threshold */
+      255.0000f, /* Portrait Low Threshold */
    },
    /* Hazy Detection */
    {
@@ -18620,20 +18620,20 @@
 
       AF_EXHAUSTIVE_SEARCH, /* AF Process Type */
       0, /* Position Near End */
-      0, /* Position Default In Macro */
-      0, /* Position Boundary */
-      0, /* Position Default In normal */
-      0, /* Position Far End */
-      0, /* Position Normal Hyperfocal */
-      0, /* Position Macro Rgn */
+      120, /* Position Default In Macro */
+      230, /* Position Boundary */
+      250, /* Position Default In normal */
+      330, /* Position Far End */
+      260, /* Position Normal Hyperfocal */
+      170, /* Position Macro Rgn */
       0, /* Undershoot Protect - NOT_USED */
       0, /* Undershoot Adjust - NOT_USED */
-      0.500000f, /* Min Max Ratio Threshold - NOT_USED */
-      0, /* LED AF Assist Enable - NOT_USED */
+      0.750000f, /* Min Max Ratio Threshold - NOT_USED */
+      1, /* LED AF Assist Enable - NOT_USED */
       367, /* LED AF Assist Trigger Index - NOT_USED */
-      0, /* Lens Reset Frame Skip Count */
+      1, /* Lens Reset Frame Skip Count */
       10.00000f, /* Lowlight Gain Threhsold */
-      0.034000f, /* Base Delay Adj Threshold - NOT_USED */
+      0.040000f, /* Base Delay Adj Threshold - NOT_USED */
       /* Continuous */
       {
 
@@ -18803,22 +18803,22 @@
 
          1, /* Enable - NOT_USED */
          4, /* Scene Change Detection Ratio - NOT_USED */
-         1.000000f, /* Panning Stable FV Change Trigger - NOT_USED */
-         3.000000f, /* Panning Stable FV Avg to FV Change Trigger - NOT_USED */
+         0.000000f, /* Panning Stable FV Change Trigger - NOT_USED */
+         1.700000f, /* Panning Stable FV Avg to FV Change Trigger - NOT_USED */
          1600, /* Panning Unstable Trigger Cnt - NOT_USED */
-         5, /* Panning Stable Trigger Cnt - NOT_USED */
-         3, /* Downhill Allowance - NOT_USED */
+         6, /* Panning Stable Trigger Cnt - NOT_USED */
+         2, /* Downhill Allowance - NOT_USED */
          3, /* Uphill Allowance - NOT_USED */
          0, /* Base Frame Delay - NOT_USED */
-         10, /* Scene Change Luma Threshold - NOT_USED */
-         10, /* Luma Settled Threshold - NOT_USED */
+         12, /* Scene Change Luma Threshold - NOT_USED */
+         25, /* Luma Settled Threshold - NOT_USED */
          0.050000f, /* Noise Level Th - NOT_USED */
          2, /* Search Step Size - NOT_USED */
          AF_EXHAUSTIVE_SEARCH, /* Init Search Type - NOT_USED */
          AF_CONTINUOUS_SEARCH, /* Search Type - NOT_USED */
          0, /* Lowlight Wait - NOT_USED */
          1, /* Max Indecision Cnt - NOT_USED */
-         0.950000f, /* Flat FV Confidence Level - NOT_USED */
+         0.970000f, /* Flat FV Confidence Level - NOT_USED */
 
          /*********************************************************************/
          // Feature: AF tuning parameters specific to Sum of
@@ -18941,18 +18941,18 @@
          {
             1, /* Enable - NOT_USED */
             2.000000f, /* Gain Minimum - NOT_USED */
-            30.00000f, /* Gain Maximum - NOT_USED */
+            9.000000f, /* Gain Maximum - NOT_USED */
             2.000000f, /* Reference Gain Minimum - NOT_USED */
             30.00000f, /* Reference Gain Maximum - NOT_USED */
             2.000000f, /* Threshold Minimum - NOT_USED */
-            6.000000f, /* Threshold Maximum - NOT_USED */
-            2.000000f, /* Reference Threshold Minimum - NOT_USED */
-            6.000000f, /* Reference Threshold Maximum - NOT_USED */
-            5, /* Unstable Count Th - NOT_USED */
-            5, /* Stable Count Th - NOT_USED */
-            5, /* Frames To Wait - NOT_USED */
-            4, /* Grid Region Start - NOT_USED */
-            8, /* Grid Region End - NOT_USED */
+            1.000000f, /* Threshold Maximum - NOT_USED */
+            26.000000f, /* Reference Threshold Minimum - NOT_USED */
+            29.000000f, /* Reference Threshold Maximum - NOT_USED */
+            2, /* Unstable Count Th - NOT_USED */
+            1, /* Stable Count Th - NOT_USED */
+            6, /* Frames To Wait - NOT_USED */
+            29, /* Grid Region Start - NOT_USED */
+            6, /* Grid Region End - NOT_USED */
             6.000000f, /* Sadr Threshold Scaler - NOT_USED */
             /* AEC Gain Input - NOT_USED */
             {
@@ -19046,8 +19046,8 @@
          /* Gyro */
          {
             1, /* Enable - USED */
-            0.330000f, /* Min Movement Threshold - NOT_USED */
-            0.015000f, /* Stable Detected Threshold - NOT_USED */
+            1.300000f, /* Min Movement Threshold - NOT_USED */
+            0.150000f, /* Stable Detected Threshold - NOT_USED */
             3, /* Unstable Count Threshold - NOT_USED */
             3, /* Stable Count Threshold - NOT_USED */
             0.100000f, /* Fast Pan Threshold - NOT_USED */
@@ -19564,16 +19564,16 @@
          4, /* Num Gross Steps Between Stat Points - NOT_USED */
          1, /* Num Fine Steps Between Stat Points - NOT_USED */
          8, /* Num Fine Search Points - NOT_USED */
-         3, /* Downhill Allowance - NOT_USED */
+         2, /* Downhill Allowance - NOT_USED */
          3, /* Uphill Allowance - NOT_USED */
-         3, /* Base Frame Delay - NOT_USED */
+         0, /* Base Frame Delay - NOT_USED */
          0, /* Coarse Frame Delay - NOT_USED */
          0, /* Fine Frame Delay - NOT_USED */
          1, /* Coarse To Fine Frame Delay - NOT_USED */
          0.020000f, /* Noise Level Threshold - NOT_USED */
-         0.950000f, /* Flat FV Confidence Level - NOT_USED */
-         0.000000f, /* Climb Ratio Threshold - NOT_USED */
-         4, /* Lowlight Luma Threshold - NOT_USED */
+         0.970000f, /* Flat FV Confidence Level - NOT_USED */
+         1.130000f, /* Climb Ratio Threshold - NOT_USED */
+         7, /* Lowlight Luma Threshold - NOT_USED */
          0, /* Enable MultiWindow - NOT_USED */
          0.000000f, /* Gain Threshold - NOT_USED */
       },
@@ -19623,10 +19623,10 @@
 
       /* Full Sweep */
       {
-         4, /* Num Steps Between Stat Points */
-         2, /* Frame Delay Inf */
+         10, /* Num Steps Between Stat Points */
+         4, /* Frame Delay Inf */
          2, /* Frame Delay Norm */
-         2, /* Frame Delay Final */
+         3, /* Frame Delay Final */
          0, /* PAAF Enable */
       },
 
@@ -19816,8 +19816,8 @@
 
          /* Index */
          {
-            0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-            0, 0
+            0, 5, 70, 120, 170, 200, 220, 230, 240, 250,
+            260, 330
          },
          1, /* Actuator Type */
          0, /* Is Hys Comp Needed */
@@ -19898,34 +19898,34 @@
             /* Prescan Normal Light */
             {
                20, /* Region 0 */
-               12, /* Region 1 */
-               12, /* Region 2 */
-               12, /* Region 3 */
-               16, /* Region 4 */
+               20, /* Region 1 */
+               20, /* Region 2 */
+               20, /* Region 3 */
+               20, /* Region 4 */
             },
             /* Prescan Lowlight */
             {
-               24, /* Region 0 */
-               16, /* Region 1 */
-               16, /* Region 2 */
-               16, /* Region 3 */
+               20, /* Region 0 */
+               20, /* Region 1 */
+               20, /* Region 2 */
+               20, /* Region 3 */
                20, /* Region 4 */
             },
             /* Finescan Normal Light */
             {
-               10, /* Region 0 */
-               7, /* Region 1 */
+               6, /* Region 0 */
+               6, /* Region 1 */
                6, /* Region 2 */
                6, /* Region 3 */
-               10, /* Region 4 */
+               8, /* Region 4 */
             },
             /* FineScan Lowlight */
             {
-               12, /* Region 0 */
+               9, /* Region 0 */
                9, /* Region 1 */
-               8, /* Region 2 */
+               9, /* Region 2 */
                9, /* Region 3 */
-               12, /* Region 4 */
+               11, /* Region 4 */
             },
          },
          /* CAF Step Table */
@@ -20004,37 +20004,37 @@
             /* Prescan Normal Light */
             {
                20, /* Region 0 */
-               12, /* Region 1 */
-               12, /* Region 2 */
-               12, /* Region 3 */
-               16, /* Region 4 */
+               20, /* Region 1 */
+               20, /* Region 2 */
+               20, /* Region 3 */
+               20, /* Region 4 */
             },
             /* Prescan Lowlight */
             {
-               24, /* Region 0 */
-               16, /* Region 1 */
-               16, /* Region 2 */
-               16, /* Region 3 */
+               20, /* Region 0 */
+               20, /* Region 1 */
+               20, /* Region 2 */
+               20, /* Region 3 */
                20, /* Region 4 */
             },
             /* Finescan Normal Light */
             {
-               10, /* Region 0 */
-               7, /* Region 1 */
+               6, /* Region 0 */
+               6, /* Region 1 */
                6, /* Region 2 */
                6, /* Region 3 */
-               10, /* Region 4 */
+               8, /* Region 4 */
             },
             /* FineScan Lowlight */
             {
-               12, /* Region 0 */
+               9, /* Region 0 */
                9, /* Region 1 */
-               8, /* Region 2 */
+               9, /* Region 2 */
                9, /* Region 3 */
-               12, /* Region 4 */
+               11, /* Region 4 */
             },
          },
-         1, /* PAAF Enable */
+         0, /* PAAF Enable */
          /* SW Thresholds */
          {
 
@@ -20136,8 +20136,8 @@
             1.005000f, /* Change Ratio Inc */
             0.995000f, /* Change Ratio Dec */
             1.008000f, /* Flat Inc Threshold */
-            0.992000f, /* Flat Dec Threshold */
-            0.990000f, /* Macro Threshold */
+            0.989000f, /* Flat Dec Threshold */
+            1.024000f, /* Macro Threshold */
             0.750000f, /* Drop Threshold */
             800, /* Hist Dec Dec Thresh */
             800, /* Hist Inc Dec Thresh */
@@ -20145,49 +20145,49 @@
             {
                /* Dec Dec 3Frame */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.970000f, 0.970000f, 0.970000f, 0.960000f, 0.950000f, 0.950000f, 0.950000f, 0.950000f
                },
             },
             /* BV Threshold */
             {
                /* Inc Dec 3Frame */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.970000f, 0.970000f, 0.970000f, 0.960000f, 0.960000f, 0.960000f, 0.960000f, 0.960000f
                },
             },
             /* BV Threshold */
             {
                /* Dec Dec */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.970000f, 0.970000f, 0.970000f, 0.960000f, 0.960000f, 0.950000f, 0.950000f, 0.750000f
                },
             },
             /* BV Threshold */
             {
                /* Dec Dec Noise */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.860000f, 0.860000f, 0.860000f, 0.860000f, 0.850000f, 0.840000f, 0.840000f, 0.750000f
                },
             },
             /* BV Threshold */
             {
                /* Inc Dec */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.940000f, 0.940000f, 0.940000f, 0.920000f, 0.910000f, 0.900000f, 0.900000f, 0.900000f
                },
             },
             /* BV Threshold */
             {
                /* Inc Dec Noise */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.940000f, 0.940000f, 0.940000f, 0.920000f, 0.910000f, 0.900000f, 0.900000f, 0.900000f
                },
             },
             /* BV Threshold */
             {
                /* Flat Threshold */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.970000f, 0.942000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.950000f, 0.800000f
                }
             },
          },
@@ -20291,9 +20291,9 @@
 
             1.005000f, /* Change Ratio Inc */
             0.995000f, /* Change Ratio Dec */
-            1.008000f, /* Flat Inc Threshold */
-            0.992000f, /* Flat DeC Threshold */
-            0.990000f, /* Macro Threshold */
+            1.020000f, /* Flat Inc Threshold */
+            0.989000f, /* Flat DeC Threshold */
+            1.024000f, /* Macro Threshold */
             0.750000f, /* Drop Threshold */
             800, /* Hist Dec Dec Thresh */
             800, /* Hist Inc Dec Thresh */
@@ -20301,55 +20301,55 @@
             {
                /* Dec Dec 3Frame */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.970000f, 0.970000f, 0.970000f, 0.960000f, 0.950000f, 0.950000f, 0.950000f, 0.950000f
                },
             },
             /* BV Threshold */
             {
                /* Inc Dec 3Frame */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.970000f, 0.970000f, 0.970000f, 0.960000f, 0.960000f, 0.960000f, 0.960000f, 0.960000f
                },
             },
             /* BV Threshold */
             {
                /* Dec Dec */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.960000f, 0.960000f, 0.960000f, 0.920000f, 0.910000f, 0.910000f, 0.910000f, 0.750000f
                },
             },
             /* BV Threshold */
             {
                /* Dec Dec Noise */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.860000f, 0.860000f, 0.860000f, 0.860000f, 0.850000f, 0.840000f, 0.840000f, 0.750000f
                },
             },
             /* BV Threshold */
             {
                /* Inc Dec */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.940000f, 0.940000f, 0.940000f, 0.920000f, 0.910000f, 0.900000f, 0.900000f, 0.900000f
                },
             },
             /* BV Threshold */
             {
                /* Inc Dec Noise */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.940000f, 0.940000f, 0.940000f, 0.920000f, 0.910000f, 0.900000f, 0.900000f, 0.900000f
                },
             },
             /* BV Threshold */
             {
                /* Flat Threshold */
                {
-                  0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f
+                  0.970000f, 0.942000f, 0.970000f, 0.970000f, 0.970000f, 0.970000f, 0.950000f, 0.800000f
                }
             },
          },
          /* BV Gain */
          {
-            -30.00000f, -0.500000f, 0.500000f, 1.500000f, 2.500000f, 3.200000f, 6.000000f, 8.000000f
+            -30.00000f, -2.000000f, -0.500000f, 0.600000f, 2.500000f, 3.200000f, 6.000000f, 9.000000f
          },
 
          /*********************************************************************/
@@ -20442,20 +20442,20 @@
 
          /* Optics */
          {
-            10, /* CAF Far End */
+            11, /* CAF Far End */
             0, /* CAF Near End */
-            10, /* TAF Far End */
+            11, /* TAF Far End */
             0, /* TAF Near End */
             7, /* Search Region 1 */
             4, /* Search Region 2 */
             3, /* Search Region 3 */
-            7, /* Fine Search Region */
-            10, /* Far Zone */
-            2, /* Near Zone */
+            11, /* Fine Search Region */
+            11, /* Far Zone */
+            1, /* Near Zone */
             8, /* Mid Zone */
-            0, /* Far Start Position */
+            10, /* Far Start Position */
             0, /* Near Start Position */
-            0, /* Initial Position */
+            10, /* Initial Position */
          },
          /* FV Score Threshold - NOT_USED */
          {
@@ -20516,7 +20516,7 @@
             // Effect: Affects Stats selection.
             /*********************************************************************/
 
-            2, /* Default Stats - NOT_USED */
+            0, /* Default Stats - NOT_USED */
             /* BV Threshold - NOT_USED */
             {
                /* Score Ratio Showdif - NOT_USED */
@@ -20617,7 +20617,7 @@
 
       /* Shake Resistant - NOT_USED */
       {
-         1, /* Enable - NOT_USED */
+         0, /* Enable - NOT_USED */
          4.000000f, /* Max Gain - NOT_USED */
          0, /* Min Frame Luma - NOT_USED */
          4.000000f, /* Tradeoff Ratio - NOT_USED */
@@ -20784,10 +20784,10 @@
          // Constraints: None.
          /*********************************************************************/
 
-         0, /* Enable */
+         1, /* Enable */
          /* F DAC */
          {
-            0, 0, 0
+            100, 150, 50
          },
          1.200000f, /* F Dist */
          0.150000f, /* Trigger Threshold */
@@ -20883,14 +20883,14 @@
          // Constraints: None.
          /*********************************************************************/
 
-         0, /* Enable */
+         1, /* Enable */
          /* Algo Enable */
          {
-            0, 0, 0, 0
+            0, 0, 1, 0
          },
          /* Stats Consume Enable */
          {
-            0, 0, 0
+            1, 1, 1
          },
          0, /* Lens Sag Comp Enable - NOT_USED */
          0, /* Hysteresis Comp Enable - NOT_USED */
@@ -20898,10 +20898,10 @@
          0, /* Actuator Hysteresis Comp - NOT_USED */
          0.000000f, /* Actuator Sensitivity */
          AF_FV_STATS_TYPE_HW_1, /* Stats Select */
-         0.700000f, /* Fine Search Drop Thresh */
-         8, /* Fine Step Size */
+         0.500000f, /* Fine Search Drop Thresh */
+         10, /* Fine Step Size */
          100, /* Max Move Step */
-         15, /* Max Move Step Buffer */
+         30, /* Max Move Step Buffer */
          0, /* Base Frame Delay */
          /* PDAF */
          {
@@ -21067,18 +21067,18 @@
                {
                   /* Entry 0 */
                   {
-                     10, /* Defocus */
-                     0.750000f, /* Move Percent */
+                     50, /* Defocus */
+                     0.450000f, /* Move Percent */
                   },
                   /* Entry 1 */
                   {
-                     20, /* Defocus */
-                     0.670000f, /* Move Percent */
+                     100, /* Defocus */
+                     0.300000f, /* Move Percent */
                   },
                   /* Entry 2 */
                   {
-                     30, /* Defocus */
-                     0.500000f, /* Move Percent */
+                     200, /* Defocus */
+                     0.300000f, /* Move Percent */
                   },
                   /* Entry 3 */
                   {
@@ -21224,7 +21224,7 @@
                   /* Entry 3 */
                   {
                      0.000000f, /* Noise Gain */
-                     1.000000f, /* Multiplier */
+                     0.000000f, /* Multiplier */
                   },
                   /* Entry 4 */
                   {
@@ -21347,13 +21347,13 @@
                {
                   /* Entry 0 */
                   {
-                     -24.50000f, /* Noise Gain */
+                     0.000000f, /* Noise Gain */
                      300, /* Minimum Confidence */
                   },
                   /* Entry 1 */
                   {
-                     -23.00000f, /* Noise Gain */
-                     200, /* Minimum Confidence */
+                     2.000000f, /* Noise Gain */
+                     150, /* Minimum Confidence */
                   },
                   /* Entry 2 */
                   {
@@ -21498,7 +21498,7 @@
                   /* Entry 2 */
                   {
                      24, /* FPS */
-                     2, /* Minimum Stable Count */
+                     1, /* Minimum Stable Count */
                   },
                   /* Entry 3 */
                   {
@@ -21655,7 +21655,7 @@
                1, /* Conv Frame Skip */
                1, /* Enable Fine Scan */
                1, /* Min Fine Scane Range */
-               4, /* Fine Scan Step Size */
+               3, /* Fine Scan Step Size */
                6, /* Focus Done Threshold */
                1, /* Enable Fine Scan Extension */
                2, /* First Run Not Conf Cnt Add */
@@ -21732,7 +21732,7 @@
                2, /* Wait After Focus Count */
                4, /* Conf Recover Count */
                10.00000f, /* Defocused Threshold */
-               15.00000f, /* Depth Stable Threshold */
+               20.00000f, /* Depth Stable Threshold */
                3, /* Defocus Stable Filter Len */
                0, /* Enable Trigger Suppr By Scene Change */
                1.000000f, /* Defocus Dof Multiplier */
@@ -22038,7 +22038,7 @@
                // Description: Sony confirms that type 1 lib will generate inaccurate PD value with
                // high confidence in scene of 5-30 degree stripe line. We use this flag to enable a
                // function which will detect this scene by ratio of H, V focus value and set PDAF
-               // "is_conf" false when this scene is detected
+               // "is_conf"? false when this scene is detected
                // Constraints:
                0.000000f, /* Enable_check_VH_stats_ratio */
 
@@ -22046,7 +22046,7 @@
                // Default value: 4
                // Data range: [0 - 20]
                // Description: Sony confirms that type 1 lib will generate inaccurate PD value with
-               // high confidence in scene of 5-30 degree stripe line. We set PD "is_conf" false
+               // high confidence in scene of 5-30 degree stripe line. We set PD "is_conf"? false
                // if ratio H, V focus value is larger than this threshold.
                // Constraints:
                0.000000f, /* VH_stats_ratio_unconfindent_thrsh */

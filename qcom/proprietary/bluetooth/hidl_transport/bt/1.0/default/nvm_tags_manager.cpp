@@ -69,59 +69,71 @@ int NvmTagsManager::SocInit()
 
 unsigned char buftochar(char *buf)
 {
- unsigned char result=0;
- int i=0;
- for(i=0;i<sizeof(buf);i++)
- {
-       if(buf[i]>='0'&&buf[i]<='9')
-       {
-       result=buf[i]-'0'+result*16;
-       continue;
-       }
-     if(buf[i]>='A'&&buf[i]<='F')
-       buf[i]=(buf[i]-'A')+'a';
-     if(buf[i]>='a'&&buf[i]<='f')
-       result=buf[i]-'a'+10+result*16;
-       else
-       break;
- }  
-       return result;
+    unsigned char result = 0;
+    int i = 0;
+
+    for (i = 0; i < sizeof(*buf) + 1; i++) {
+        if (buf[i] >= '0' && buf[i] <= '9') {
+            result = buf[i]-'0'+ result*16;
+            continue;
+        }
+        if (buf[i] >= 'A' && buf[i]<='F')
+            buf[i] = (buf[i]-'A') + 'a';
+        if (buf[i] >= 'a' && buf[i]<='f')
+            result = buf[i]-'a' + 10 + result*16;
+        else
+            break;
+    }
+
+    return result;
 }
 
 int quec_get_bt_cfg( unsigned char * cmd)
 {
-       FILE *fp;
-       int i=0;
-       int count=0;
-       static int fpsize = 0;
-       char *persist_read_buf=(char *)malloc(256);
-       unsigned char string[32]={0};
-       ALOGD("%s: quec open", __func__);
-       fp = fopen("/mnt/vendor/persist/quec_bt_tag_36.txt","r");
-       if(fp==NULL)
-               return 0;
-       fseek(fp, 0, SEEK_END);  
-       fpsize = ftell(fp); 
-       rewind(fp); 
-       count=fread((void *)persist_read_buf,1,fpsize,fp);
-       fclose(fp);
-       for(i=0;i<18;i++)
-       {
-       persist_read_buf=strstr(persist_read_buf,"0x")+2;
-       if(persist_read_buf==NULL)
-       break;  
-       string[i]=buftochar(persist_read_buf);
-       }
-       free(persist_read_buf);
-       if(i!=18)
-           return 0;
-       
-       for(i = 0;i < 18;i++)
-       {
-               cmd[i] = string[i];
-       }
-       ALOGE("%s: quec read bt config from persist success!!!!!!", __func__);
-       return 1;
+    FILE *fp;
+    int i=0;
+    int count=0;
+    static int fpsize = 0;
+    char *persist_read_buf=(char *)malloc(256);
+    char *p = persist_read_buf;
+    unsigned char string[32]={0};
+
+    ALOGD("%s: quec open", __func__);
+    fp = fopen("/mnt/vendor/persist/quec_bt_tag_36.txt","r");
+    if(!fp)
+        return 0;
+
+    fseek(fp, 0, SEEK_END);  
+    fpsize = ftell(fp); 
+    rewind(fp); 
+    count = fread((void *)persist_read_buf, 1, fpsize, fp);
+    fclose(fp);
+
+    if (count > 2*6 + 6 - 1) {
+        for (i = 0; i < 18; i++) {
+            p = strstr(p,"0x");
+            if(!p)
+                break;
+            p +=2;
+            if (p > persist_read_buf + count - 1) {
+                break;
+            }
+            string[i] = buftochar(p); 
+        }
+    }
+
+    free(persist_read_buf);
+
+    if(i != 18)
+       return 0;
+
+    for (i = 0; i < 18; i++) {
+        cmd[i] = string[i];
+    }
+
+    ALOGE("%s: quec read bt config from persist success!!!!!!", __func__);
+
+    return 1;
 }
 
 int NvmTagsManager::DownloadNvmTags(uint8_t *bdaddr)
