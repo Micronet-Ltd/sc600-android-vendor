@@ -4736,6 +4736,7 @@ NQ_NFC_PROP += libnfc-qrd_rf2.conf
 NQ_NFC_PROP += libnfc-qrd-NQ3XX.conf
 NQ_NFC_PROP += libnfc-qrd-NQ4XX.conf
 NQ_NFC_PROP += libnfc-qrd-SN100.conf
+NQ_NFC_PROP += libnfc-nxp-PN7150.conf
 NQ_NFC_PROP += libsn100u_fw.so
 NQ_NFC_PROP += libpn547_fw.so
 NQ_NFC_PROP += libpn548ad_fw.so
