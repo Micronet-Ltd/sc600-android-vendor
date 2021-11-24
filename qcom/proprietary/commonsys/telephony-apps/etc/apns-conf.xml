@@ -5800,6 +5800,17 @@
       port="8080"
       type="default,supl"
   />
+  <apn carrier="TELUS JASPER"
+      mcc="302"
+      mnc="220"
+      apn="m2mjdw.telus.com"
+      type="default,mms,supl"
+      mmsc="http://aliasredirect.net/proxy/mmsc"
+      mmsproxy="74.49.0.18"
+      mmsport="80"
+      mvno_match_data="54"
+      mvno_type="gid"
+  />
   <apn carrier="Telus"
       mcc="302"
       mnc="220"
@@ -30370,5 +30381,35 @@
       mmsc="http://mms.ctimovil.com.uy"
       authtype="1"
       type="mms"
+  />
+  <apn carrier="ATT"
+      mcc="310"
+      mnc="410"
+      apn="broadband"
+  />
+  <apn carrier="AT Jasper"
+      mcc="310"
+      mnc="170"
+      apn="m2m005086.attz"
+  />
+  <apn carrier="ATT Mexico"
+      mcc="334"
+      mnc="050"
+      apn="web.iusacellgsm.mx"
+  />
+  <apn carrier="Rogers"
+      mcc="720"
+      mnc="302"
+      apn="ltemobile.apn"
+  />
+  <apn carrier="Rogers Jasper"
+      mcc="820"
+      mnc="302"
+      apn="ciot"
+  />
+  <apn carrier="Telstra"
+      mcc="505"
+      mnc="10"
+      apn="telstra.m2m"
   />
 </apns>
