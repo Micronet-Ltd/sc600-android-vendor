@@ -104,7 +104,7 @@ phNxpNci_getCfg_info_t* mGetCfg_info = NULL;
 uint32_t gSvddSyncOff_Delay = 10;
 bool_t force_fw_download_req = false;
 bool_t gParserCreated = FALSE;
-bool nfc_debug_enabled = true;
+bool nfc_debug_enabled = 0;
 /* global variable to get FW version from NCI response*/
 uint32_t wFwVerRsp;
 #ifdef ENABLE_ESE_CLIENT

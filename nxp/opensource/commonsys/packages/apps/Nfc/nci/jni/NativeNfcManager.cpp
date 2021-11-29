@@ -589,7 +589,7 @@ void initializeGlobalDebugEnabledFlag() {
   char valueStr[PROPERTY_VALUE_MAX] = {0};
   int len = property_get("nfc.debug_enabled", valueStr, "");
   if (len > 0) {
-    unsigned debug_enabled = 1;
+    unsigned debug_enabled = 0;
     // let Android property override .conf variable
     sscanf(valueStr, "%u", &debug_enabled);
     nfc_debug_enabled = (debug_enabled == 0) ? false : true;
