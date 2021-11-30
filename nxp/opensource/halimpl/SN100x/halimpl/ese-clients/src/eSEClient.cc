@@ -228,7 +228,7 @@ uint8_t handleJcopOsDownload() {
 
   usleep(50 * 1000);
   ALOGE("%s: after init", __FUNCTION__);
-  nfc_debug_enabled = 0;
+  nfc_debug_enabled = true;
   ESE_ChannelInit(&Ch);
   ALOGE("%s: ESE_ChannelInit", __FUNCTION__);
 
@@ -273,7 +273,7 @@ uint8_t performLSUpdate()
 
   usleep(50 * 1000);
   ALOGE("%s: after init", __FUNCTION__);
-  nfc_debug_enabled = 0;
+  nfc_debug_enabled = true;
   ESE_ChannelInit(&Ch);
   ALOGE("%s: ESE_ChannelInit", __FUNCTION__);
 
