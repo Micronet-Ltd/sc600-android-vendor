@@ -114,7 +114,7 @@ uint32_t timeoutTimerId = 0;
 #ifndef FW_DWNLD_FLAG
 uint8_t fw_dwnld_flag = false;
 #endif
-bool nfc_debug_enabled = true;
+bool nfc_debug_enabled = 0;
 
 phNxpNciHal_Sem_t config_data;
 

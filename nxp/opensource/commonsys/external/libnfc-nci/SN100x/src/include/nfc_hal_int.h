@@ -77,7 +77,7 @@ typedef uint8_t tNFC_HAL_POWER_MODE;
 #define NFC_HAL_SAVED_CMD_SIZE (2)
 
 #ifndef NFC_HAL_DEBUG
-#define NFC_HAL_DEBUG TRUE
+#define NFC_HAL_DEBUG FALSE
 #endif
 
 #if (NFC_HAL_DEBUG == TRUE)
