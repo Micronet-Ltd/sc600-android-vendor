@@ -3746,11 +3746,13 @@ static void phNxpNciHal_check_factory_reset(void) {
  *
  ******************************************************************************/
 static void phNxpNciHal_print_res_status(uint8_t* p_rx_data, uint16_t* p_len) {
+#if ENABLE_HAL_TRACES
   static uint8_t response_buf[][30] = {
       "STATUS_OK", "STATUS_REJECTED", "STATUS_RF_FRAME_CORRUPTED",
       "STATUS_FAILED", "STATUS_NOT_INITIALIZED", "STATUS_SYNTAX_ERROR",
       "STATUS_SEMANTIC_ERROR", "RFU", "RFU", "STATUS_INVALID_PARAM",
       "STATUS_MESSAGE_SIZE_EXCEEDED", "STATUS_UNDEFINED"};
+#endif
   int status_byte;
   if (p_rx_data[0] == 0x40 && (p_rx_data[1] == 0x02 || p_rx_data[1] == 0x03)) {
     if (p_rx_data[2] && p_rx_data[3] <= 10) {
