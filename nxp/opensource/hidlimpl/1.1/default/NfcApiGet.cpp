@@ -204,7 +204,7 @@ hal_api_struct_t* getHalApiStruct() {
     }
 
     //set the debug status and set the active status of the HIDL.
-    nfc_debug_enabled = hal_api_s->phNxpNciHal_get_debug_status();
+    nfc_debug_enabled = 0; //hal_api_s->phNxpNciHal_get_debug_status();
     struct_initialized = true;
     return hal_api_s;
 }

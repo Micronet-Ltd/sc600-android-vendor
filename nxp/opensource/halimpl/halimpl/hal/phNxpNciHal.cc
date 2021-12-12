@@ -185,6 +185,7 @@ static void phNxpNciHal_initialize_debug_enabled_flag() {
     sscanf(valueStr, "%u", &debug_enabled);
     nfc_debug_enabled = (debug_enabled == 0) ? false : true;
   }
+  nfc_debug_enabled = 0;
   NXPLOG_NCIHAL_D("==>nfc_debug_enabled : %d",nfc_debug_enabled);
 
 }

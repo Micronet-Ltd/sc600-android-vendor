@@ -119,6 +119,7 @@ void initializeGlobalDebugEnabledFlag() {
     nfc_debug_enabled = (debug_enabled == 0) ? false : true;
   }
 
+  nfc_debug_enabled = 0;
   DLOG_IF(INFO, nfc_debug_enabled)
       << StringPrintf("%s: level=%u", __func__, nfc_debug_enabled);
 }
