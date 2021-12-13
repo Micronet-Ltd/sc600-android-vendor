@@ -33,11 +33,11 @@ typedef struct nci_log_level {
 extern nci_log_level_t gLog_level;
 
 /* define log module included when compile */
-#define ENABLE_HAL_TRACES TRUE
-#define ENABLE_TML_TRACES TRUE
-#define ENABLE_FWDNLD_TRACES TRUE
-#define ENABLE_NCIX_TRACES TRUE
-#define ENABLE_NCIR_TRACES TRUE
+#define ENABLE_HAL_TRACES FALSE
+#define ENABLE_TML_TRACES FALSE
+#define ENABLE_FWDNLD_TRACES FALSE
+#define ENABLE_NCIX_TRACES FALSE
+#define ENABLE_NCIR_TRACES FALSE
 
 #define ENABLE_HCPX_TRACES FALSE
 #define ENABLE_HCPR_TRACES FALSE

@@ -34,12 +34,12 @@ extern nci_log_level_t gLog_level;
 extern bool nfc_debug_enabled;
 
 /* define log module included when compile */
-#define ENABLE_EXTNS_TRACES true
-#define ENABLE_HAL_TRACES true
-#define ENABLE_TML_TRACES true
-#define ENABLE_FWDNLD_TRACES true
-#define ENABLE_NCIX_TRACES true
-#define ENABLE_NCIR_TRACES true
+#define ENABLE_EXTNS_TRACES FALSE
+#define ENABLE_HAL_TRACES FALSE
+#define ENABLE_TML_TRACES FALSE
+#define ENABLE_FWDNLD_TRACES FALSE
+#define ENABLE_NCIX_TRACES FALSE
+#define ENABLE_NCIR_TRACES FALSE
 
 #define ENABLE_HCPX_TRACES false
 #define ENABLE_HCPR_TRACES false

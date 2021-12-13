@@ -114,7 +114,7 @@ uint32_t timeoutTimerId = 0;
 #ifndef FW_DWNLD_FLAG
 uint8_t fw_dwnld_flag = false;
 #endif
-bool nfc_debug_enabled = true;
+bool nfc_debug_enabled = 0;
 
 phNxpNciHal_Sem_t config_data;
 
@@ -188,6 +188,7 @@ static void phNxpNciHal_initialize_debug_enabled_flag() {
     sscanf(valueStr, "%u", &debug_enabled);
     nfc_debug_enabled = (debug_enabled == 0) ? false : true;
   }
+  nfc_debug_enabled = 0;
   NXPLOG_NCIHAL_D("nfc_debug_enabled : %d",nfc_debug_enabled);
 
 }
@@ -3634,6 +3635,7 @@ bool phNxpNciHal_get_debug_status(void) {
  *
  ******************************************************************************/
 static void phNxpNciHal_print_res_status(uint8_t* p_rx_data, uint16_t* p_len) {
+#if ENABLE_HAL_TRACES
   static uint8_t response_buf[][30] = {"STATUS_OK",
                                        "STATUS_REJECTED",
                                        "STATUS_RF_FRAME_CORRUPTED",
@@ -3646,6 +3648,7 @@ static void phNxpNciHal_print_res_status(uint8_t* p_rx_data, uint16_t* p_len) {
                                        "STATUS_INVALID_PARAM",
                                        "STATUS_MESSAGE_SIZE_EXCEEDED",
                                        "STATUS_UNDEFINED"};
+#endif
   int status_byte;
   if (p_rx_data[0] == 0x40 && (p_rx_data[1] == 0x02 || p_rx_data[1] == 0x03)) {
     if (p_rx_data[2] && p_rx_data[3] <= 10) {
