@@ -71,7 +71,7 @@ typedef struct sensor1_waiting_client
 /*=============================================================================
  * Static Data Definitions
  ============================================================================*/
-log_level sensor1_log_level = LOG_LEVEL_WARN;
+log_level sensor1_log_level = LOG_LEVEL_ALL;
 
 /* Linked-list of all registered clients */
 static sensor1_client *clients;
