@@ -82,7 +82,7 @@ void Proximity::processReportInd(sns_smgr_periodic_report_ind_msg_v01* smgr_ind,
         /* near */
         sensor_data.distance = 0;
     }
-    HAL_LOG_VERBOSE("%s: prox data: %x %x %f", __FUNCTION__,
+    HAL_LOG_INFO("%s: prox data: %x %x %f", __FUNCTION__,
                     smgr_data->ItemData[0],
                     smgr_data->ItemData[1],
                     sensor_data.distance);
