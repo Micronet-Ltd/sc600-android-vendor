@@ -3833,6 +3833,21 @@ MM_CAMERA += libchromatix_ov9284_snapshot
 MM_CAMERA += libchromatix_ov9284_default_video
 MM_CAMERA += libchromatix_ov9284_postproc
 
+MM_CAMERA += libmmcamera_gc2053
+MM_CAMERA += gc2053_chromatix.xml
+MM_CAMERA += libchromatix_gc2053_default_preview_3a
+MM_CAMERA += libchromatix_gc2053_default_video_3a
+MM_CAMERA += libchromatix_gc2053_zsl_preview
+MM_CAMERA += libchromatix_gc2053_zsl_video
+MM_CAMERA += libchromatix_gc2053_common
+MM_CAMERA += libchromatix_gc2053_cpp_liveshot
+MM_CAMERA += libchromatix_gc2053_cpp_preview
+MM_CAMERA += libchromatix_gc2053_cpp_snapshot
+MM_CAMERA += libchromatix_gc2053_cpp_video
+MM_CAMERA += libchromatix_gc2053_preview
+MM_CAMERA += libchromatix_gc2053_snapshot
+MM_CAMERA += libchromatix_gc2053_default_video
+MM_CAMERA += libchromatix_gc2053_postproc
 
 MM_CAMERA += camera_config.xml
 MM_CAMERA += msm8996_camera.xml

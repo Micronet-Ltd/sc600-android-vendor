@@ -10,6 +10,8 @@
 #ifdef _ANDROID_
   #include <stdlib.h>
   #include <utils/Log.h>
+//  #include <cutils/log.h>
+//  #include "../../../../../../../system/core/include/utils/Log.h"
   #include <cutils/properties.h>
 
   #undef SLOG_HIGH
