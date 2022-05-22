@@ -139,7 +139,7 @@ LensInfo : Information of the lens present in the module.
     <ModesSupported>1</ModesSupported>
     <Position>BACK</Position>
     <MountAngle>180</MountAngle>
-    <SensorSlaveAddress>0x37</SensorSlaveAddress>
+    <SensorSlaveAddress>0x3F</SensorSlaveAddress>
     <CSIInfo>
       <CSIDCore>0</CSIDCore>
       <LaneMask>0x7</LaneMask>
@@ -156,15 +156,20 @@ LensInfo : Information of the lens present in the module.
     </LensInfo>
   </CameraModuleConfig>
   <CameraModuleConfig>
-	<CameraId>3</CameraId>
+	<CameraId>2</CameraId>
 	<SensorName>gc2053</SensorName>
 	<FlashName>pmic</FlashName>
+<!--
 	<EepromName>gc2053_otp</EepromName>
+-->
 	<ChromatixName>gc2053_chromatix</ChromatixName>
 	<ModesSupported>1</ModesSupported>
 	<Position>FRONT</Position>
 	<MountAngle>180</MountAngle>
-	<SensorSlaveAddress>0x3F</SensorSlaveAddress>
+<!--
+	<SensorSlaveAddress>0x37</SensorSlaveAddress>
+-->
+	<SensorSlaveAddress>0x6E</SensorSlaveAddress>
 	<CSIInfo>
 	  <CSIDCore>1</CSIDCore>
 	  <LaneMask>0x7</LaneMask>
