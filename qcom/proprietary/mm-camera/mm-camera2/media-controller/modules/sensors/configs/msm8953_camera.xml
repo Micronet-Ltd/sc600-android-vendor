@@ -169,7 +169,7 @@ LensInfo : Information of the lens present in the module.
 <!--
 	<SensorSlaveAddress>0x37</SensorSlaveAddress>
 -->
-	<SensorSlaveAddress>0x6E</SensorSlaveAddress>
+	<SensorSlaveAddress>0x7E</SensorSlaveAddress>
 	<CSIInfo>
 	  <CSIDCore>1</CSIDCore>
 	  <LaneMask>0x7</LaneMask>
