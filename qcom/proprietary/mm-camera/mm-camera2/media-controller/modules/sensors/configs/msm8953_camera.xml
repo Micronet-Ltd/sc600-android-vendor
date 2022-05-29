@@ -131,7 +131,7 @@ LensInfo : Information of the lens present in the module.
     </LensInfo>
   </CameraModuleConfig>
   <CameraModuleConfig>
-    <CameraId>1</CameraId>
+    <CameraId>0</CameraId>
     <SensorName>gc2053</SensorName>
     <FlashName>pmic</FlashName>
 <!--
