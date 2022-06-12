@@ -397,7 +397,8 @@ static sensor_lib_t sensor_lib_ptr = {
 #elif defined(GC2053_MIRROR_V)
     .filter_arrangement = SENSOR_GBRG,
 #elif defined(GC2053_MIRROR_HV)
-    .filter_arrangement = SENSOR_BGGR,
+    .filter_arrangement = SENSOR_RGGB,
+//    .filter_arrangement = SENSOR_BGGR,
       //.filter_arrangement = SENSOR_Y,
 #else
     //.filter_arrangement = SENSOR_RGGB,
