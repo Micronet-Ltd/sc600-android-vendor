@@ -125,7 +125,7 @@ void PickUpGesture::processResp(sensor1_msg_header_s *msg_hdr, void *msg_ptr)
     sns_sam_dpc_enable_resp_msg_v02* crsp_ptr = (sns_sam_dpc_enable_resp_msg_v02*) msg_ptr;
     bool                          error = false;
 
-    HAL_LOG_INFO("%s: handle:%d", __FUNCTION__, handle);
+    HAL_LOG_INFO("%s: PickUpGesture::handle:%d", __FUNCTION__, handle);
     if (crsp_ptr->resp.sns_result_t != 0 &&
         msg_hdr->msg_id != SNS_SAM_DPC_CANCEL_RESP_V02) {
         HAL_LOG_ERROR("%s: Msg %i; Result: %u, Error: %u", __FUNCTION__,

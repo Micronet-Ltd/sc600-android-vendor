@@ -683,7 +683,7 @@ void SMGRSensor::processBufferingInd(Sensor** mSensors, sns_smgr_buffering_ind_m
                     __FUNCTION__, smgr_ind->IndType);
                 processReportInd(mSensors, &report_msg);
             } else {
-                HAL_LOG_DEBUG("%s:stop reporting (on_change_sensor) eventtype %d",
+                HAL_LOG_INFO("%s:stop reporting (on_change_sensor) eventtype %d",
                     __FUNCTION__, smgr_ind->IndType);
             }
         } else {
@@ -722,7 +722,7 @@ void SMGRSensor::processBufferingInd(Sensor** mSensors, sns_smgr_buffering_ind_m
             }
         }
     } else {
-            HAL_LOG_DEBUG("%s: smgr_ind->Indices_len (%d) is out of bounds",
+            HAL_LOG_INFO("%s: smgr_ind->Indices_len (%d) is out of bounds",
                     __FUNCTION__, smgr_ind->Indices_len);
     }
     pthread_mutex_unlock(&data_cb->data_mutex);
@@ -775,6 +775,9 @@ void SMGRSensor::processReportInd(Sensor** mSensors, sns_smgr_periodic_report_in
          (smgr_data->SensorId==SNS_SMGR_ID_OBJECT_TEMP_V01)           ? "OBJ_TEMP_DATA" :
             "invalid"), smgr_data->DataType, smgr_data->ItemQuality);
 
+    if (smgr_data->SensorId==SNS_SMGR_ID_PROX_LIGHT_V01) {
+        HAL_LOG_INFO("%s: type[%d] id[%d]\n", __FUNCTION__, smgr_data->DataType, smgr_ind->ReportId);
+    }
     if (smgr_data->ItemQuality == SNS_SMGR_ITEM_QUALITY_INVALID_NOT_READY_V01) {
         HAL_LOG_DEBUG("%s: Received invalid/not ready sample for sensor ID %i",
                       __FUNCTION__, smgr_data->SensorId);
@@ -1104,6 +1107,7 @@ int getHandleFromInd (int ReportId, int DataType, int SensorId) {
         }
         break;
     case SNS_SMGR_ID_PROX_LIGHT_V01:
+        HAL_LOG_INFO("%s: type[%d] id[%d]\n", __FUNCTION__, DataType, ReportId);
         if(SNS_SMGR_DATA_TYPE_PRIMARY_V01 == DataType) {
             if(ReportId == HANDLE_PROXIMITY)
                 handle = HANDLE_PROXIMITY;

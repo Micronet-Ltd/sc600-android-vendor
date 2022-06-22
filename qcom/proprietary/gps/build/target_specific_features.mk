@@ -70,6 +70,6 @@ LW_FEATURE_SET := true
 endif
 
 #android Go target specific
-ifeq ($(TARGET_HAS_LOW_RAM),true)
+#ifeq ($(TARGET_HAS_LOW_RAM),true)
 FEATURE_SLIM_AP := false
-endif
+#endif

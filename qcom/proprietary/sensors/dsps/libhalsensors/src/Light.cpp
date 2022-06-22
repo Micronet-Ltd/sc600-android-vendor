@@ -60,26 +60,70 @@ void Light::setSensorInfo(sns_smgr_sensor_datatype_info_s_v01* sensor_datatype)
     @smgr_data : the sensor1 data message from the sensor1 callback
     @sensor_data : the sensor event message that will be send to framework
 ===========================================================================*/
+#include <unistd.h>
 void Light::processReportInd(sns_smgr_periodic_report_ind_msg_v01* smgr_ind,
             sns_smgr_data_item_s_v01* smgr_data, sensors_event_t &sensor_data)
 {
+    int fd = -1;
+    int ir_led_bri = 0, ir_exaggeration_2_linearity = 0, dsp_raw;
+    char bri[4];
     UNREFERENCED_PARAMETER(smgr_ind);
     sensor_data.type = SENSOR_TYPE_LIGHT;
 
     if(bWakeUp == false) {
         sensor_data.sensor = HANDLE_LIGHT;
-        HAL_LOG_VERBOSE("%s:sensor %s ",__FUNCTION__,
+        HAL_LOG_VERBOSE("%s:light sensor %s ",__FUNCTION__,
                     Utility::SensorTypeToSensorString(getType()));
     } else {
         sensor_data.sensor = HANDLE_LIGHT_WAKE_UP;
-        HAL_LOG_VERBOSE("%s:sensor %s (wake_up)",__FUNCTION__,
+        HAL_LOG_VERBOSE("%s:light sensor %s (wake_up)",__FUNCTION__,
                         Utility::SensorTypeToSensorString(getType()));
     }
 
-    sensor_data.light = (float)(smgr_data->ItemData[0]) * UNIT_CONVERT_LIGHT;
-    HAL_LOG_VERBOSE("%s: %x %f", __FUNCTION__,
-                    smgr_data->ItemData[0],
-                    sensor_data.light );
+    dsp_raw = smgr_data->ItemData[0];
+#if 0
+    if ((dsp_raw & (1 << 31)) && !(dsp_raw & (1 << 30))) {
+        dsp_raw |= 1 << 30;
+    }
+    if ((dsp_raw & (1 << 30)) && !(dsp_raw & (1 << 29))) {
+        dsp_raw |= 1 << 29;
+    }
+    dsp_raw &= 0x3FFFFFFF; 
+#endif
+    if (fd < 0) {
+        fd = open("/sys/class/leds/lcd-backlight/brightness", O_RDONLY);
+    }
+    if (fd > 0) {
+        if (read(fd, &bri, 4) > 0) {
+            int i = 0;
+            ir_led_bri = 0;
+        	while (i < 3 && (bri[i] != '\n')) {
+        		ir_led_bri *= 10;
+        		ir_led_bri += bri[i++] - 0x30;
+        	}
+            ir_exaggeration_2_linearity = 64*ir_led_bri/100;
+            ir_led_bri *= 8;
+            //dsp_raw -= 0x00460000*ir_led_bri;
+            if (dsp_raw < 0) {
+                //dsp_raw = 0;
+            }
+        } else {
+            ir_led_bri = 0;
+        }
+        close(fd);
+    }
+//    sensor_data.light = (float)(smgr_data->ItemData[0]) * UNIT_CONVERT_LIGHT;
+    sensor_data.light = (float)(dsp_raw) * UNIT_CONVERT_LIGHT;
+    if (ir_led_bri > 0 && sensor_data.light > (float)ir_led_bri) {
+        sensor_data.light -= ir_led_bri;
+    }
+    sensor_data.light /= 10.0;
+    if (ir_exaggeration_2_linearity > 0 && sensor_data.light > (float)ir_exaggeration_2_linearity) {
+        sensor_data.light -= ir_exaggeration_2_linearity;
+    }
+    HAL_LOG_INFO("Light::%s: %x %x %d %d %f[%f]", __FUNCTION__, 
+                    smgr_data->ItemData[0], dsp_raw, ir_led_bri, ir_exaggeration_2_linearity,
+                    sensor_data.light, (float)(smgr_data->ItemData[0]) * UNIT_CONVERT_LIGHT );
 }
 
 /*===========================================================================

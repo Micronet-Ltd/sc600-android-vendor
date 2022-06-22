@@ -164,7 +164,7 @@ void BringToEar::processInd(sensor1_msg_header_s *msg_hdr, void *msg_ptr)
     uint32_t                         timestamp;
     sensors_event_t                  sensor_data;
 
-    HAL_LOG_INFO("%s: handle:%d", __FUNCTION__, handle);
+    HAL_LOG_INFO("%s: BringToEar::handle:%d", __FUNCTION__, handle);
     switch(msg_hdr->msg_id) {
         case SNS_SAM_BTE_REPORT_IND_V01:
             HAL_LOG_DEBUG("%s: SNS_SAM_BTE_REPORT_IND_V01", __FUNCTION__);
