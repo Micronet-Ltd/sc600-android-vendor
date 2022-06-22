@@ -130,4 +130,61 @@ LensInfo : Information of the lens present in the module.
       <MinFocusDistance>0.1</MinFocusDistance>
     </LensInfo>
   </CameraModuleConfig>
+  <CameraModuleConfig>
+    <CameraId>0</CameraId>
+    <SensorName>gc2053</SensorName>
+    <FlashName>pmic</FlashName>
+<!--
+    <EepromName>gc2053_otp</EepromName>
+-->
+    <ChromatixName>gc2053_chromatix</ChromatixName>
+    <ModesSupported>1</ModesSupported>
+    <Position>BACK</Position>
+    <MountAngle>180</MountAngle>
+    <SensorSlaveAddress>0x6E</SensorSlaveAddress>
+    <CSIInfo>
+      <CSIDCore>0</CSIDCore>
+      <LaneMask>0x7</LaneMask>
+      <LaneAssign>0x4320</LaneAssign>
+      <ComboMode>0</ComboMode>
+    </CSIInfo>
+    <LensInfo>
+      <FocalLength>3.05</FocalLength>
+      <FNumber>2.0</FNumber>
+      <TotalFocusDistance>1.97</TotalFocusDistance>
+      <HorizontalViewAngle>120.0</HorizontalViewAngle>
+      <VerticalViewAngle>62.4</VerticalViewAngle>
+      <MinFocusDistance>0.1</MinFocusDistance>
+    </LensInfo>
+  </CameraModuleConfig>
+  <CameraModuleConfig>
+	<CameraId>2</CameraId>
+	<SensorName>gc2053</SensorName>
+	<FlashName>pmic</FlashName>
+<!--
+	<EepromName>gc2053_otp</EepromName>
+-->
+	<ChromatixName>gc2053_chromatix</ChromatixName>
+	<ModesSupported>1</ModesSupported>
+	<Position>FRONT</Position>
+	<MountAngle>180</MountAngle>
+<!--
+	<SensorSlaveAddress>0x37</SensorSlaveAddress>
+-->
+	<SensorSlaveAddress>0x7E</SensorSlaveAddress>
+	<CSIInfo>
+	  <CSIDCore>1</CSIDCore>
+	  <LaneMask>0x7</LaneMask>
+	  <LaneAssign>0x4320</LaneAssign>
+	  <ComboMode>0</ComboMode>
+	</CSIInfo>
+	<LensInfo>
+	  <FocalLength>1.75</FocalLength>
+	  <FNumber>2.0</FNumber>
+	  <TotalFocusDistance>1.97</TotalFocusDistance>
+	  <HorizontalViewAngle>116.0</HorizontalViewAngle>
+	  <VerticalViewAngle>76</VerticalViewAngle>
+	  <MinFocusDistance>0.1</MinFocusDistance>
+	</LensInfo>
+  </CameraModuleConfig>
 </CameraConfigurationRoot>
