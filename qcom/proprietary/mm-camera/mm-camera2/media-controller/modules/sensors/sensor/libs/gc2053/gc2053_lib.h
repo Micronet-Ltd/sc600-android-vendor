@@ -21,8 +21,7 @@
 #undef GC2053_MIRROR_H
 #undef GC2053_MIRROR_V
 #undef GC2053_MIRROR_HV
-#define GC2053_MIRROR_HV
-//#define GC2053_MIRROR_NORMAL
+#define GC2053_MIRROR_V
 
 #if defined(GC2053_MIRROR_NORMAL)
 #define GC2053_MIRROR        0x80
@@ -391,14 +390,16 @@ static sensor_lib_t sensor_lib_ptr = {
     .connection_mode = SENSOR_MIPI_CSI,
     .raw_output = SENSOR_10_BIT_DIRECT,
 #if defined(GC2053_MIRROR_NORMAL)
-    .filter_arrangement = SENSOR_RGGB,
-#elif defined(GC2053_MIRROR_H)
     .filter_arrangement = SENSOR_GRBG,
-#elif defined(GC2053_MIRROR_V)
-    .filter_arrangement = SENSOR_GBRG,
-#elif defined(GC2053_MIRROR_HV)
+    //.filter_arrangement = SENSOR_RGGB,
+#elif defined(GC2053_MIRROR_H)
     .filter_arrangement = SENSOR_RGGB,
-//    .filter_arrangement = SENSOR_BGGR,
+    //.filter_arrangement = SENSOR_GRBG,
+#elif defined(GC2053_MIRROR_V)
+    .filter_arrangement = SENSOR_BGGR,
+    //.filter_arrangement = SENSOR_GBRG,
+#elif defined(GC2053_MIRROR_HV)
+    .filter_arrangement = SENSOR_GBRG,
       //.filter_arrangement = SENSOR_Y,
 #else
     //.filter_arrangement = SENSOR_RGGB,
