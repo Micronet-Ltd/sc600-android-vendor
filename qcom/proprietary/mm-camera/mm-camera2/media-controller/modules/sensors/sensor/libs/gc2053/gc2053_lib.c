@@ -66,16 +66,16 @@ static int sensor_calculate_exposure(float real_gain,
   if (!exp_info)
     return -1;
 
-  ALOGE("GC2053 reg_gain: %d, real_gain: %f, line_cnt: %d\n",
-    sensor_real_to_register_gain(real_gain),
-    sensor_register_to_real_gain(exp_info->reg_gain),
-    line_count);
+//  ALOGE("GC2053 reg_gain: %d, real_gain: %f, line_cnt: %d\n",
+//    sensor_real_to_register_gain(real_gain),
+//    sensor_register_to_real_gain(exp_info->reg_gain),
+//    line_count);
   exp_info->reg_gain = sensor_real_to_register_gain(real_gain);
     exp_info->sensor_real_gain =sensor_register_to_real_gain(exp_info->reg_gain);
   exp_info->digital_gain = real_gain / exp_info->sensor_real_gain;
     exp_info->line_count = line_count;
-ALOGE("GC2053 Gloria,reg_gain=%d, sensor_real_gain=%f, digital_gain=%f\n",
-		 exp_info->reg_gain,exp_info->sensor_real_gain,exp_info->digital_gain);
+//ALOGE("GC2053 Gloria,reg_gain=%d, sensor_real_gain=%f, digital_gain=%f\n",
+//		 exp_info->reg_gain,exp_info->sensor_real_gain,exp_info->digital_gain);
 	
   return 0;
 }
@@ -100,7 +100,7 @@ static int sensor_fill_exposure_array(unsigned int gain,
     uint16_t reg_count = 0;
     uint16_t gain_b1 = 1, gain_b2 = 0;
 	uint32_t temp_gain = 0;
-    ALOGE("GC2053,fl_lines=%d,gain=%d, line=%d\n",fl_lines,gain,line);
+//    ALOGE("GC2053,fl_lines=%d,gain=%d, line=%d\n",fl_lines,gain,line);
     if (1 == line && gain <= 64)
         return rc;
 

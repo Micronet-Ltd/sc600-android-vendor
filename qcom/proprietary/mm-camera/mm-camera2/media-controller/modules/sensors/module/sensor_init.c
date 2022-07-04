@@ -169,7 +169,8 @@ static boolean sensor_probe(module_sensor_ctrl_t *module_ctrl, int32_t fd,
   boolean is_stereo_config, boolean bypass_video_node_creation)
 {
   boolean                              ret = TRUE;
-  int32_t                              rc = 0, i;
+  int32_t                              rc = 0;
+  uint32_t                              i;
   sensor_lib_params_t                  *sensor_lib_params;
   struct sensor_init_cfg_data          cfg;
   struct msm_camera_sensor_slave_info *slave_info = NULL;
@@ -225,6 +226,31 @@ static boolean sensor_probe(module_sensor_ctrl_t *module_ctrl, int32_t fd,
   translate_sensor_slave_info(slave_info,
     &sensor_lib_params->sensor_lib_ptr->sensor_slave_info,
     xmlConfig->configPtr, power_up_setting, power_down_setting);
+
+  SINFO("%s-%d[%x, %d]\n", slave_info->sensor_name, slave_info->camera_id, slave_info->slave_addr,
+        sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].size);
+
+  if (0 == strncmp(slave_info->sensor_name, "gc2053", strlen("gc2053"))) {
+      for (i = 0; i < 200; i++) {
+          if (0x17 == sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_addr) {
+              sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data &= ~3;
+              if (CAMERA_0 == slave_info->camera_id) {
+                  sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data |= 0x01;
+                  sensor_lib_params->sensor_lib_ptr->sensor_output.filter_arrangement = SENSOR_RGGB;
+                  SINFO("%s: %s[%x, RGGB]\n", __func__,
+                        slave_info->sensor_name,
+                        sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data);
+              } else {
+                  sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data = 0x02;
+                  sensor_lib_params->sensor_lib_ptr->sensor_output.filter_arrangement = SENSOR_RGGB;
+                  SINFO("%s: %s[%x, BGGR]\n", __func__,
+                        slave_info->sensor_name,
+                        sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data);
+              }
+              break; 
+          }
+      }
+  }
 
   /* Update the output format in slave info */
   if (SENSOR_BAYER == sensor_lib_params->sensor_lib_ptr->
