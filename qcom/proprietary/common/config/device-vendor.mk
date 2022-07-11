@@ -3834,6 +3834,7 @@ MM_CAMERA += libchromatix_ov9284_default_video
 MM_CAMERA += libchromatix_ov9284_postproc
 
 MM_CAMERA += libmmcamera_gc2053
+MM_CAMERA += libmmcamera_gc2053_2
 MM_CAMERA += gc2053_chromatix.xml
 MM_CAMERA += libchromatix_gc2053_default_preview_3a
 MM_CAMERA += libchromatix_gc2053_default_video_3a

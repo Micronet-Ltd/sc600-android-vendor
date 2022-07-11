@@ -229,7 +229,7 @@ static boolean sensor_probe(module_sensor_ctrl_t *module_ctrl, int32_t fd,
 
   SINFO("%s-%d[%x, %d]\n", slave_info->sensor_name, slave_info->camera_id, slave_info->slave_addr,
         sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].size);
-
+/*
   if (0 == strncmp(slave_info->sensor_name, "gc2053", strlen("gc2053"))) {
       for (i = 0; i < 200; i++) {
           if (0x17 == sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_addr) {
@@ -241,9 +241,9 @@ static boolean sensor_probe(module_sensor_ctrl_t *module_ctrl, int32_t fd,
                         slave_info->sensor_name,
                         sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data);
               } else {
-                  sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data = 0x02;
-                  sensor_lib_params->sensor_lib_ptr->sensor_output.filter_arrangement = SENSOR_RGGB;
-                  SINFO("%s: %s[%x, BGGR]\n", __func__,
+                  sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data |= 0x02;
+                  sensor_lib_params->sensor_lib_ptr->sensor_output.filter_arrangement = SENSOR_GBRG;
+                  SINFO("%s: %s[%x, GBRG]\n", __func__,
                         slave_info->sensor_name,
                         sensor_lib_params->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[i].reg_data);
               }
@@ -251,6 +251,7 @@ static boolean sensor_probe(module_sensor_ctrl_t *module_ctrl, int32_t fd,
           }
       }
   }
+*/
 
   /* Update the output format in slave info */
   if (SENSOR_BAYER == sensor_lib_params->sensor_lib_ptr->

@@ -159,7 +159,7 @@ LensInfo : Information of the lens present in the module.
   </CameraModuleConfig>
   <CameraModuleConfig>
 	<CameraId>2</CameraId>
-	<SensorName>gc2053</SensorName>
+	<SensorName>gc2053_2</SensorName>
 	<FlashName>pmic</FlashName>
 <!--
 	<EepromName>gc2053_otp</EepromName>
