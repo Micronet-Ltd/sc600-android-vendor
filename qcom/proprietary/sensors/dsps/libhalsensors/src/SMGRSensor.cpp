@@ -112,24 +112,28 @@ int SMGRSensor::enable(int en)
         }
         HAL_LOG_DEBUG("%s:sensor(%s) handle %d, freq=%f report_rate=%d batched=%d",
             __FUNCTION__, Utility::SensorTypeToSensorString(getType()),handle, freq, report_rate, batching);
-        err = SMGRReportAdd(freq, report_rate, batching, wait_for_resp);
-        if (true != err) {
-            HAL_LOG_ERROR("%s:sensor(%s) Failed for handle %d @ samp %f Hz rpt %d Hz batched %d",
-                __FUNCTION__, Utility::SensorTypeToSensorString(getType()), handle, freq, report_rate, batching);
-            pthread_mutex_unlock(&smgr_sensor1_cb->cb_mutex);
-            enabled = 0;
-            return -1;
+        if (HANDLE_LIGHT != handle) {
+            err = SMGRReportAdd(freq, report_rate, batching, wait_for_resp); 
+            if (true != err) {
+                HAL_LOG_ERROR("%s:sensor(%s) Failed for handle %d @ samp %f Hz rpt %d Hz batched %d",
+                    __FUNCTION__, Utility::SensorTypeToSensorString(getType()), handle, freq, report_rate, batching);
+                pthread_mutex_unlock(&smgr_sensor1_cb->cb_mutex);
+                enabled = 0;
+                return -1;
+            }
         }
     } else {
         /* disable the sensor */
         HAL_LOG_DEBUG("%s:sensor(%s) Deactivating sensor handle=%d",
             __FUNCTION__,Utility::SensorTypeToSensorString(getType()), handle);
-        err = SMGRReportDelete();
-        if (true != err) {
-            HAL_LOG_ERROR( "%s:sensor(%s) Failed to deactivate sensor handle=%d",
-                __FUNCTION__,Utility::SensorTypeToSensorString(getType()), handle );
-            pthread_mutex_unlock(&smgr_sensor1_cb->cb_mutex);
-            return -1;
+        if (HANDLE_LIGHT != handle) {
+            err = SMGRReportDelete();
+            if (true != err) {
+                HAL_LOG_ERROR( "%s:sensor(%s) Failed to deactivate sensor handle=%d",
+                    __FUNCTION__,Utility::SensorTypeToSensorString(getType()), handle );
+                pthread_mutex_unlock(&smgr_sensor1_cb->cb_mutex);
+                return -1;
+            }
         }
     }
     pthread_mutex_unlock(&smgr_sensor1_cb->cb_mutex);
@@ -683,7 +687,7 @@ void SMGRSensor::processBufferingInd(Sensor** mSensors, sns_smgr_buffering_ind_m
                     __FUNCTION__, smgr_ind->IndType);
                 processReportInd(mSensors, &report_msg);
             } else {
-                HAL_LOG_INFO("%s:stop reporting (on_change_sensor) eventtype %d",
+                HAL_LOG_DEBUG("%s:stop reporting (on_change_sensor) eventtype %d",
                     __FUNCTION__, smgr_ind->IndType);
             }
         } else {
@@ -722,7 +726,7 @@ void SMGRSensor::processBufferingInd(Sensor** mSensors, sns_smgr_buffering_ind_m
             }
         }
     } else {
-            HAL_LOG_INFO("%s: smgr_ind->Indices_len (%d) is out of bounds",
+            HAL_LOG_DEBUG("%s: smgr_ind->Indices_len (%d) is out of bounds",
                     __FUNCTION__, smgr_ind->Indices_len);
     }
     pthread_mutex_unlock(&data_cb->data_mutex);

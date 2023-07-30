@@ -170,6 +170,100 @@ inotify_thread( void *unused )
   LOG_DEBUG("%s: Exiting inotify thread", __func__);
 }
 
+#define ALS_2S_STATE "/proc/als_2s"
+static int notify_fd;
+static char prv_als_s[8];
+int als_changed = -1;
+
+int als_2s_changed(void)
+{
+    return als_changed;
+}
+
+void als_2s_clr_change(void)
+{
+    als_changed = 0;
+    return;
+}
+
+static void inotify_als_2s_thread (void *unused)
+{
+    UNREFERENCED_PARAMETER(unused);
+    int rd;
+    char als_s[8];
+
+    LOG_WARN("%s: ALS-2S entry\n", __func__);
+
+//    notify_fd = inotify_init();
+//    if (-1 == notify_fd) {
+//        LOG_ERROR( "%s: inotify_init error %d", __func__, errno );
+//        return;
+//    }
+
+//    inotify_add_watch(notify_fd, ALS_2S_STATE, IN_CREATE | IN_MODIFY | IN_CLOSE_WRITE);
+    notify_fd = open(ALS_2S_STATE, O_RDONLY);
+    for( ;; ) {
+//        int sel_err;
+//        int max_fd = 0;
+//        fd_set read_fd;
+//        fd_set error_fd;
+
+//        FD_ZERO(&read_fd);
+//        FD_ZERO(&error_fd);
+//        FD_ADD(notify_fd, &read_fd, max_fd);
+
+//        error_fd = read_fd;
+//        max_fd++;
+
+//        errno = 0;
+//        LOG_WARN("%s: wait for ALS-2S changed\n", __func__);
+//        RETRY_ON_EINTR (sel_err, select(max_fd, &read_fd, (fd_set*)NULL, &error_fd, (struct timeval*) NULL));
+
+//        if (sel_err < 0) {
+//            LOG_ERROR("%s: Error on select %i", __func__, sel_err);
+//        } else if (FD_ISSET(notify_fd, &read_fd)) {
+            // Change in settings file
+//            char buf[512];
+//            struct inotify_event *evt = (struct inotify_event*)buf;
+//            read(notify_fd, evt, sizeof(buf));
+//            if (evt->mask & IN_IGNORED) {
+//                // Previous watch was removed. Nothing to do here
+//            } else if (evt->len == 0 || ((evt->mask & (IN_CREATE | IN_MODIFY | IN_CLOSE_WRITE)) &&
+//                       (0 == strncmp(evt->name, ALS_2S_STATE, evt->len)))) {
+//                inotify_rm_watch(notify_fd, evt->wd);
+//                LOG_WARN("%s: ALS-2S changed\n", __func__);
+//                inotify_add_watch(notify_fd, ALS_2S_STATE, IN_CREATE | IN_MODIFY | IN_CLOSE_WRITE);
+//            }
+//        }
+        if (notify_fd < 0) {
+            notify_fd = open(ALS_2S_STATE, O_RDONLY); 
+        }
+        if (notify_fd >= 0) {
+            rd = read(notify_fd, als_s, 4);
+
+            if (rd > 0) {
+                if (als_s[0] != prv_als_s[0]) {
+                    memcpy(prv_als_s, als_s, 5);
+                    if ('h' == prv_als_s[0]) {
+                        als_changed = 2;
+                        als_s[4] = 0;
+                    } else {
+                        als_changed = 1;
+                        als_s[3] = 0;
+                    }
+                    //LOG_WARN("%s: ALS-2S changed %s\n", __func__, prv_als_s);
+                }
+            }
+            close(notify_fd);
+            notify_fd = -1;
+        }
+
+        sleep(1);
+    }
+
+    LOG_WARN("%s: ALS-2S finished\n", __func__);
+}
+
 /*============================================================================
   Public Function Definitions
   ============================================================================*/
@@ -252,5 +346,10 @@ sensor1_osa_init_once( void )
   err = sns_os_task_create( inotify_thread, NULL, NULL, 0 );
   if( 0 != err ) {
     LOG_ERROR("%s: Error spawning WOULDBLOCK thread %i", __func__, err);
+  }
+
+  err = sns_os_task_create(inotify_als_2s_thread, 0, 0, 0);
+  if( 0 != err ) {
+    LOG_ERROR("%s: can't create ALS-2S task %i\n", __func__, err);
   }
 }

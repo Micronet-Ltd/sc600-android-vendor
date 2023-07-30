@@ -724,7 +724,7 @@ sensor1_open( sensor1_handle_s **hndl, sensor1_notify_data_cb_t data_cbf,
     client->writable_cb = NULL;
     client->timeout = 0;
 
-    LOG_VERBOSE("%s:creating the waiting thread", __func__);
+    LOG_WARN("%s:creating the waiting thread", __func__);
 
     err = sns_os_task_create( waiting_thread, client, NULL, 0 );
     if( 0 != err ) {
