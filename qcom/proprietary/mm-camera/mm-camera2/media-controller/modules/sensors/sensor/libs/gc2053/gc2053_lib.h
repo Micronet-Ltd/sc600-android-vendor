@@ -21,7 +21,7 @@
 #undef GC2053_MIRROR_H
 #undef GC2053_MIRROR_V
 #undef GC2053_MIRROR_HV
-#define GC2053_MIRROR_H
+#define GC2053_MIRROR_HV
 
 #if defined(GC2053_MIRROR_NORMAL)
 #define GC2053_MIRROR        0x00
@@ -164,7 +164,7 @@ uint8_t agc_register[MAX_AG_INDEX][AGC_REG_NUM] = {
 {0x0e,0x40,0x00}, \
 {0x12,0xe2,0x00}, \
 {0x13,0x16,0x00}, \
-/*{0x17,MIRROR,0x00},*/ \
+/*{0x17,MIRROR,0x00},*/{0x17,0x8 | MIRROR,0x00}, \
 {0x19,0x0a,0x00}, \
 {0x21,0x1c,0x00}, \
 {0x28,0x0a,0x00}, \
@@ -211,8 +211,7 @@ uint8_t agc_register[MAX_AG_INDEX][AGC_REG_NUM] = {
 {0x14,0x78,0x00}, \
 {0x15,0x78,0x00}, \
 {0x16,0x78,0x00}, \
-/*{0x17,MIRROR,0x00},*/ \
-{0x17,0x78 | MIRROR,0x00}, \
+/*{0x17,0x78 | MIRROR,0x00},*/{0x17,0x78,0x00}, \
 /*window*/ \
 {0xfe,0x01,0x00}, \
 {0x92,0x00,0x00}, \
@@ -395,7 +394,7 @@ static sensor_lib_t sensor_lib_ptr = {
 #elif defined(GC2053_MIRROR_H)
     .filter_arrangement = SENSOR_RGGB,
 #elif defined(GC2053_MIRROR_V)
-    .filter_arrangement = SENSOR_BGGR,
+    .filter_arrangement = SENSOR_RGGB,
 #elif defined(GC2053_MIRROR_HV)
     .filter_arrangement = SENSOR_RGGB,
       //.filter_arrangement = SENSOR_Y,
