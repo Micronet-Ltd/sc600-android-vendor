@@ -4,7 +4,7 @@
   @brief
   SensorContext class implementation.
 
-  Copyright (c) 2014-2019 Qualcomm Technologies, Inc.
+  Copyright (c) 2014-2020 Qualcomm Technologies, Inc.
   All Rights Reserved.
   Confidential and Proprietary - Qualcomm Technologies, Inc.
 ============================================================================*/
@@ -212,6 +212,17 @@ SensorsContext::SensorsContext()
         }
     }
 
+    addSensor(HANDLE_LIGHT);
+    mSensors[HANDLE_LIGHT]->setAttribOK(true);
+    mSensors[HANDLE_LIGHT]->setName("ALS-2S");
+    mSensors[HANDLE_LIGHT]->setVendor("OSRAM");
+    mSensors[HANDLE_LIGHT]->setVersion(01);
+    mSensors[HANDLE_LIGHT]->setType(SENSOR_TYPE_LIGHT);
+    mSensors[HANDLE_LIGHT]->setMaxRange(200);
+    mSensors[HANDLE_LIGHT]->setResolution(200);
+    mSensors[HANDLE_LIGHT]->setPower(10);
+    mSensors[HANDLE_LIGHT]->setFlags(SENSOR_FLAG_ON_CHANGE_MODE);
+
     err = updateSensorList();
     if (err) {
         HAL_LOG_ERROR("%s: update sensor list failed!", __FUNCTION__);
@@ -302,6 +313,7 @@ Sensor* SensorsContext::getSensor(int handle)
     }
 }
 
+static sensors_event_t last_als_2s_event;
 int SensorsContext::activate(int handle, int en)
 {
     int err;
@@ -327,6 +339,37 @@ int SensorsContext::activate(int handle, int en)
         if (err) {
             HAL_LOG_ERROR("Activate the handle %d is not successful", handle);
             active_sensors.set(handle, false);
+        } else if (en) {
+            if (HANDLE_LIGHT == handle) {
+                int chg = als_2s_changed();
+                sensors_event_t sensor_data;
+                struct timespec ts;
+                hal_data_cb_t *data_cb = Utility::getDataCb();
+                memset(&sensor_data, 0, sizeof(sensor_data));
+
+                HAL_LOG_WARN("%s: ALS-2S light %d ", __func__, chg);
+                if (0 != chg) {
+                    if (chg < 0) {
+                        // light not yet changed, init as low
+                        chg = 1;
+                    }
+                    sensor_data.type = SENSOR_TYPE_LIGHT; 
+                    sensor_data.sensor = HANDLE_LIGHT;
+                    sensor_data.version = sizeof(sensors_event_t);
+                    clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
+                    sensor_data.timestamp = time_service->timestampCalc((uint64_t)ts.tv_sec * 1000, sensor_data.sensor);
+                    sensor_data.light = (float)mSensors[handle]->getResolution() * (chg - 1);
+                    memcpy(&last_als_2s_event, &sensor_data, sizeof(sensors_event_t));
+                } else {
+                    // already handled, use last event for apk
+                    memcpy(&sensor_data, &last_als_2s_event, sizeof(sensors_event_t));
+                }
+
+                als_2s_clr_change();
+                if (Utility::insertQueue(&sensor_data, 0, data_cb)) {
+                    Utility::signalInd(data_cb);
+                }
+            }
         }
     }
     else {
@@ -360,16 +403,40 @@ int SensorsContext::poll(sensors_event_t* data, int count)
 
     ATRACE_BEGIN("SensorsContext::poll->waitForResponse");
     while(i == 0) {
-        data_cb->is_ind_arrived = false;
-        /* wait for notify cb - wait indefinitely */
-        err = Utility::waitForResponse(0, &data_cb->data_mutex,
-                        &data_cb->data_cond,
-                        &data_cb->is_ind_arrived);
-        if(err == false) {
-            pthread_mutex_unlock(&data_cb->data_mutex);
-            ATRACE_END();
-            return -ETIMEDOUT;
+        if (als_2s_changed() > 0) {
+            sensors_event_t sensor_data;
+            struct timespec ts;
+            hal_data_cb_t *data_cb = Utility::getDataCb();
+
+            memset(&sensor_data, 0, sizeof(sensor_data));
+
+            sensor_data.type = SENSOR_TYPE_LIGHT;
+            sensor_data.sensor = HANDLE_LIGHT;
+            sensor_data.version = sizeof(sensors_event_t);
+            clock_gettime(CLOCK_MONOTONIC_RAW, &ts);
+            sensor_data.timestamp = time_service->timestampCalc((uint64_t)ts.tv_sec * 1000, sensor_data.sensor);
+            sensor_data.light = (float)mSensors[HANDLE_LIGHT]->getResolution() * (als_2s_changed() - 1);
+
+            HAL_LOG_WARN("%s: ALS-2S light %f ", __func__, sensor_data.light);
+
+            memcpy(&last_als_2s_event, &sensor_data, sizeof(sensors_event_t));
+            als_2s_clr_change();
+            if (Utility::insertQueue(&sensor_data, 0, data_cb)) {
+                Utility::signalInd(data_cb);
+            }
+        } else {
+            data_cb->is_ind_arrived = false;
+            /* wait for notify cb - wait indefinitely */
+            err = Utility::waitForResponse(0, &data_cb->data_mutex,
+                            &data_cb->data_cond,
+                            &data_cb->is_ind_arrived);
+            if(err == false) {
+                pthread_mutex_unlock(&data_cb->data_mutex);
+                ATRACE_END();
+                return -ETIMEDOUT;
+            }
         }
+
         /* Data received */
         while(i < count && Utility::removeFromQueue(&data[i], data_cb, mSensors)) {
             i++;

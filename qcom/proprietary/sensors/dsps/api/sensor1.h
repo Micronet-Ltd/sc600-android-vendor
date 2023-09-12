@@ -452,6 +452,8 @@ sensor1_free_msg_buf(sensor1_handle_s *hndl,
 */
 sensor1_error_e
 sensor1_init( void );
+int als_2s_changed(void);
+void als_2s_clr_change(void);
 
 #ifdef __cplusplus
 }
