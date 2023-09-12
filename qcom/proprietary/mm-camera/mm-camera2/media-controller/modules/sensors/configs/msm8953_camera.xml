@@ -95,7 +95,7 @@ LensInfo : Information of the lens present in the module.
   -->
 	  <ChromatixName>gc2053_chromatix</ChromatixName>
 	  <ModesSupported>1</ModesSupported>
-	  <Position>FRONT</Position>
+	  <Position>BACK</Position>
 	  <MountAngle>180</MountAngle>
 	  <SensorSlaveAddress>0x7E</SensorSlaveAddress>
 	  <CSIInfo>
@@ -122,7 +122,7 @@ LensInfo : Information of the lens present in the module.
   -->
 	  <ChromatixName>gc2053_chromatix</ChromatixName>
 	  <ModesSupported>1</ModesSupported>
-	  <Position>BACK</Position>
+	  <Position>FRONT</Position>
 	  <MountAngle>180</MountAngle>
   <!--
 	  <SensorSlaveAddress>0x37</SensorSlaveAddress>
