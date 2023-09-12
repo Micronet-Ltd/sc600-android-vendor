@@ -29,7 +29,8 @@ import com.qualcomm.qcrilhook.QcRilHook;
 import com.qualcomm.qcrilhook.QcRilHookCallback;
 
 import android.content.Context;
-import android.os.AsyncResult;
+//import android.os.AsyncResult;
+//import org.codeaurora.telephony.utils.AsyncResult;
 import android.util.Log;
 
 import java.io.IOException;
@@ -136,31 +137,31 @@ public class QcNvItems implements IQcNvItems {
     }
 
     private void doNvWrite(BaseQCNvItemType nvItem, int itemId, String spc) throws IOException {
-        vLog(nvItem.toDebugString());
-
-        if (!mIsQcRilHookReady) {
-            // return if the QcRilHook isn't ready
-            Log.e(LOG_TAG, "QcRilHook isn't ready yet.");
-            throw new IOException();
-        }
-
-        checkSpc(spc);
-        ByteBuffer buf = ByteBuffer.allocate(HEADER_SIZE + nvItem.getSize() + spc.length());
-        buf.order(ByteOrder.nativeOrder());
-        buf.putInt(itemId);
-        buf.putInt(nvItem.getSize());
-        buf.put(nvItem.toByteArray());
-        buf.put(spc.getBytes());
-
-        AsyncResult result = mQcRilOemHook.sendQcRilHookMsg(IQcRilHook.QCRILHOOK_NV_WRITE, buf
-                .array());
-
-        if (result.exception != null) {
-            Log.w(LOG_TAG, String.format("doNvWrite() Failed : %s",
-                    result.exception.toString()));
-            result.exception.printStackTrace();
-            throw new IOException();
-        }
+//         vLog(nvItem.toDebugString());
+// 
+//         if (!mIsQcRilHookReady) {
+//             // return if the QcRilHook isn't ready
+//             Log.e(LOG_TAG, "QcRilHook isn't ready yet.");
+//             throw new IOException();
+//         }
+// 
+//         checkSpc(spc);
+//         ByteBuffer buf = ByteBuffer.allocate(HEADER_SIZE + nvItem.getSize() + spc.length());
+//         buf.order(ByteOrder.nativeOrder());
+//         buf.putInt(itemId);
+//         buf.putInt(nvItem.getSize());
+//         buf.put(nvItem.toByteArray());
+//         buf.put(spc.getBytes());
+// 
+//         AsyncResult result = mQcRilOemHook.sendQcRilHookMsg(IQcRilHook.QCRILHOOK_NV_WRITE, buf
+//                 .array());
+// 
+//         if (result.exception != null) {
+//             Log.w(LOG_TAG, String.format("doNvWrite() Failed : %s",
+//                     result.exception.toString()));
+//             result.exception.printStackTrace();
+//             throw new IOException();
+//         }
     }
 
     public static String bytesToHexString(byte[] bytes) {
@@ -177,7 +178,7 @@ public class QcNvItems implements IQcNvItems {
     }
 
     private byte[] doNvRead(int itemId) throws IOException {
-
+/*
         if (!mIsQcRilHookReady) {
             // return if the QcRilHook isn't ready
             Log.e(LOG_TAG, "QcRilHook isn't ready yet.");
@@ -187,13 +188,13 @@ public class QcNvItems implements IQcNvItems {
         AsyncResult result = mQcRilOemHook.sendQcRilHookMsg(IQcRilHook.QCRILHOOK_NV_READ, itemId);
         if (result.exception != null) {
             Log.w(LOG_TAG, String.format("doNvRead() Failed : %s", result.exception.toString()));
-            result.exception.printStackTrace();
-            throw new IOException();
-        }
+            result.exception.printStackTrace();*/
+//             throw new IOException();
+//         }
 
-        vLog("Received: " + bytesToHexString((byte[]) result.result));
+//         vLog("Received: " + bytesToHexString((byte[]) result.result));
 
-        return (byte[]) result.result;
+        return null; //(byte[]) result.result;
     }
 
     // NAS
@@ -1229,62 +1230,64 @@ public class QcNvItems implements IQcNvItems {
 
     // NV Helper Functions
     private NvAutoAnswerType getAutoAnswer() throws IOException {
-
-        if (!mIsQcRilHookReady) {
-            // return if the QcRilHook isn't ready
-            return null;
-        }
-
-        AsyncResult result;
-
-        NvAutoAnswerType mAutoAnswer = new NvAutoAnswerType();
-
-        result = mQcRilOemHook.sendQcRilHookMsg(IQcRilHook.QCRILHOOK_NV_READ,
-                QcNvItemIds.NV_AUTO_ANSWER_I);
-
-        if ((result.exception == null) && (result.result != null)
-                && ((byte[]) (result.result)).length >= NvAutoAnswerType.getSize()) {
-            byte[] responseData = (byte[]) result.result;
-
-            mAutoAnswer.enable = (responseData[0] == 0) ? false : true;
-            mAutoAnswer.rings = responseData[1];
-        } else {
-            Log.w(LOG_TAG, "Unable to read Auto Answer Value from NV Memory");
-            throw new IOException();
-        }
-
-        return mAutoAnswer;
+	
+	return null;
+	
+//         if (!mIsQcRilHookReady) {
+//             // return if the QcRilHook isn't ready
+//             return null;
+//         }
+// 
+//         AsyncResult result;
+// 
+//         NvAutoAnswerType mAutoAnswer = new NvAutoAnswerType();
+// 
+//         result = mQcRilOemHook.sendQcRilHookMsg(IQcRilHook.QCRILHOOK_NV_READ,
+//                 QcNvItemIds.NV_AUTO_ANSWER_I);
+// 
+//         if ((result.exception == null) && (result.result != null)
+//                 && ((byte[]) (result.result)).length >= NvAutoAnswerType.getSize()) {
+//             byte[] responseData = (byte[]) result.result;
+// 
+//             mAutoAnswer.enable = (responseData[0] == 0) ? false : true;
+//             mAutoAnswer.rings = responseData[1];
+//         } else {
+//             Log.w(LOG_TAG, "Unable to read Auto Answer Value from NV Memory");
+//             throw new IOException();
+//         }
+// 
+//         return mAutoAnswer;
     }
 
     private void setAutoAnswer(NvAutoAnswerType mAutoAnswer, String spc) throws IOException {
-        if (!mIsQcRilHookReady) {
-            // return if the QcRilHook isn't ready
-            return;
-        }
-
-        try {
-            checkSpc(spc);
-            byte[] requestData = new byte[HEADER_SIZE + NvAutoAnswerType.getSize()];
-            ByteBuffer buf = QcRilHook.createBufferWithNativeByteOrder(requestData);
-
-            buf.putInt(QcNvItemIds.NV_AUTO_ANSWER_I); // ItemID
-            buf.putInt(NvAutoAnswerType.getSize()); // ItemSize
-
-            // NV Item
-            buf.put((byte) (mAutoAnswer.enable ? 1 : 0));
-            buf.put(mAutoAnswer.rings);
-            buf.put(spc.getBytes());
-
-            AsyncResult result = mQcRilOemHook.sendQcRilHookMsg(IQcRilHook.QCRILHOOK_NV_WRITE,
-                    requestData);
-
-            if (result.exception != null) {
-                Log.w(LOG_TAG, "Unable to Set Auto Answer");
-                throw new IOException();
-            }
-        } catch (InvalidParameterException e) {
-            Log.w(LOG_TAG, e.toString());
-        }
+//         if (!mIsQcRilHookReady) {
+//             // return if the QcRilHook isn't ready
+//             return;
+//         }
+// 
+//         try {
+//             checkSpc(spc);
+//             byte[] requestData = new byte[HEADER_SIZE + NvAutoAnswerType.getSize()];
+//             ByteBuffer buf = QcRilHook.createBufferWithNativeByteOrder(requestData);
+// 
+//             buf.putInt(QcNvItemIds.NV_AUTO_ANSWER_I); // ItemID
+//             buf.putInt(NvAutoAnswerType.getSize()); // ItemSize
+// 
+//             // NV Item
+//             buf.put((byte) (mAutoAnswer.enable ? 1 : 0));
+//             buf.put(mAutoAnswer.rings);
+//             buf.put(spc.getBytes());
+// 
+//             AsyncResult result = mQcRilOemHook.sendQcRilHookMsg(IQcRilHook.QCRILHOOK_NV_WRITE,
+//                     requestData);
+// 
+//             if (result.exception != null) {
+//                 Log.w(LOG_TAG, "Unable to Set Auto Answer");
+//                 throw new IOException();
+//             }
+//         } catch (InvalidParameterException e) {
+//             Log.w(LOG_TAG, e.toString());
+//         }
     }
 
     public static int ipAddressStringToInt(String ipAddress) throws InvalidParameterException {

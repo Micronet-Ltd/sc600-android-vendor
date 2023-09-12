@@ -1027,6 +1027,17 @@ static int32_t sensor_write_init_settings(void *sctrl)
   SLOW("enter");
 
   init_settings = &(lib->sensor_lib_ptr->init_settings_array);
+  if (0 == strncmp(lib->sensor_lib_ptr->sensor_slave_info.sensor_name, "gc2053", strlen("gc2053"))) {
+      for (index = 0; index < init_settings->reg_settings[0].size; index++) {
+          if (0x17 == init_settings->reg_settings[0].reg_setting_a[index].reg_addr) {
+              SINFO("%s [%d, %x]\n", lib->sensor_lib_ptr->sensor_slave_info.sensor_name,
+                    lib->sensor_lib_ptr->sensor_output.filter_arrangement,
+                    lib->sensor_lib_ptr->init_settings_array.reg_settings[0].reg_setting_a[index].reg_data);
+              break; 
+          }
+      }
+  }
+
   for (index = 0; index < init_settings->size; index++) {
     rc = sensor_write_i2c_init_res_setting_array(
       ctrl, &init_settings->reg_settings[index]);

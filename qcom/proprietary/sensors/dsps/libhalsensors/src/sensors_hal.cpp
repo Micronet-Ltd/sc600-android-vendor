@@ -36,7 +36,7 @@
 /*===========================================================================
                          GLOBAL VARIABLES
 ===========================================================================*/
-hal_log_level_e g_hal_log_level = HAL_LOG_LEVEL_INFO;
+hal_log_level_e g_hal_log_level = HAL_LOG_LEVEL_WARN;
 
 /*****************************************************************************/
 
@@ -63,7 +63,10 @@ static int sensors_batch(sensors_poll_device_1_t *dev,
     SensorsContext *ctx = (SensorsContext *)dev;
     int ret = 0;
     ATRACE_BEGIN("SSCHAL:sensors_batch");
-    ret = ctx->batch(handle, flags, period_ns, timeout);
+    if (HANDLE_LIGHT == handle) {
+        return 0;
+    }
+    ret = ctx->batch(handle, flags, period_ns, timeout); 
     ATRACE_END();
     return ret;
 }
@@ -92,6 +95,9 @@ static int sensors_flush(sensors_poll_device_1_t *dev, int handle)
     SensorsContext *ctx = (SensorsContext *)dev;
     int ret = 0;
     ATRACE_BEGIN("SSCHAL:sensors_flush");
+    if (HANDLE_LIGHT == handle) {
+        return 0;
+    }
     ret = ctx->flush(handle);
     ATRACE_END();
     return ret;
@@ -148,6 +154,7 @@ static int sensors_open(const struct hw_module_t* module, const char* id,
     SensorsContext *dev = SensorsContext::getInstance();
 
     memset(&dev->device, 0, sizeof(sensors_poll_device_1_t));
+    HAL_LOG_WARN("%s: ALS-2S [%s]\n", __func__, (id)?id:"unknown");
 
     dev->device.common.tag       = HARDWARE_DEVICE_TAG;
     dev->device.common.version   = SENSORS_DEVICE_API_VERSION_1_4;

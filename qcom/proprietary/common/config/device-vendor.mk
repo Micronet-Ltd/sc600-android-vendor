@@ -596,6 +596,9 @@ ifneq ($(TARGET_HAS_LOW_RAM),true)
 #DISPLAY += vendor.display.color@1.3
 #DISPLAY += vendor.display.postproc@1.0
 #DISPLAY += vendor.display.color@1.0-service.rc
+#DISPLAY += QdcmFF
+#DISPLAY += qdcmss
+#DISPLAY += qdcmss.rc
 endif
 
 DISPLAY += vendor.display.config@1.0
@@ -608,9 +611,6 @@ DISPLAY += vendor.display.config@1.6
 DISPLAY += vendor.display.config@1.7
 DISPLAY += vendor.display.config@1.8
 DISPLAY += libdisplayconfig
-DISPLAY += QdcmFF
-DISPLAY += qdcmss
-DISPLAY += qdcmss.rc
 
 # Add lib_drm_fe on automotive hypervisor build
 ifeq ($(ENABLE_HYP),true)
@@ -3834,6 +3834,7 @@ MM_CAMERA += libchromatix_ov9284_default_video
 MM_CAMERA += libchromatix_ov9284_postproc
 
 MM_CAMERA += libmmcamera_gc2053
+MM_CAMERA += libmmcamera_gc2053_2
 MM_CAMERA += gc2053_chromatix.xml
 MM_CAMERA += libchromatix_gc2053_default_preview_3a
 MM_CAMERA += libchromatix_gc2053_default_video_3a
@@ -6151,19 +6152,19 @@ CSM += libcsm_data
 CHRE += chre
 
 #QDMA
-QDMA += qdmastatsd
-ifeq ($(QDMA_EXT),true)
-QDMA += QDMA-EXT
-QDMA += QDMA-UI-EXT
-QDMA += libqdma-ext
-QDMA += libqdma_file_agent-ext
-QDMA += QDMAUtils
-else
-QDMA += QDMA
-QDMA += QDMA-UI
-QDMA += libqdma
-QDMA += libqdma_file_agent
-endif
+#QDMA += qdmastatsd
+#ifeq ($(QDMA_EXT),true)
+#QDMA += QDMA-EXT
+#QDMA += QDMA-UI-EXT
+#QDMA += libqdma-ext
+#QDMA += libqdma_file_agent-ext
+#QDMA += QDMAUtils
+#else
+#QDMA += QDMA
+#QDMA += QDMA-UI
+#QDMA += libqdma
+#QDMA += libqdma_file_agent
+#endif
 
 #scr modules
 SCR_MODULES := bg_daemon
@@ -6263,7 +6264,7 @@ PRODUCT_PACKAGES += $(FOTA)
 PRODUCT_PACKAGES += $(FTM)
 PRODUCT_PACKAGES += $(GPS)
 PRODUCT_PACKAGES += $(GPQESE)
-PRODUCT_PACKAGES += $(GSMA_NFC)
+#PRODUCT_PACKAGES += $(GSMA_NFC)
 PRODUCT_PACKAGES += $(HBTP)
 PRODUCT_PACKAGES += $(TS_FORWARD)
 PRODUCT_PACKAGES += $(HVDCP_OPTI)
@@ -6323,7 +6324,7 @@ PRODUCT_PACKAGES += $(MPQ_PLATFORM)
 PRODUCT_PACKAGES += $(MSM_IRQBALANCE)
 PRODUCT_PACKAGES += $(MXT_CFG)
 PRODUCT_PACKAGES += $(N_SMUX)
-PRODUCT_PACKAGES += $(NQ_NFC_PROP)
+#PRODUCT_PACKAGES += $(NQ_NFC_PROP)
 PRODUCT_PACKAGES += $(OEM_SERVICES)
 PRODUCT_PACKAGES += $(ONCRPC)
 PRODUCT_PACKAGES += $(PASRHAL)
@@ -6340,7 +6341,7 @@ PRODUCT_PACKAGES += $(QMI)
 PRODUCT_PACKAGES += $(QOSMGR)
 PRODUCT_PACKAGES += $(QUICKCHARGE)
 PRODUCT_PACKAGES += $(QVR)
-PRODUCT_PACKAGES += $(QDMA)
+#PRODUCT_PACKAGES += $(QDMA)
 PRODUCT_PACKAGES += $(REMOTEFS)
 PRODUCT_PACKAGES += $(RIDL_BINS)
 #PRODUCT_PACKAGES += $(RFS_ACCESS)
@@ -6697,7 +6698,7 @@ SENSORS_DBG += libSensorCalLibNative_system
 
 #TELEPHONY_APPS_DBG
 #TELEPHONY_APPS_DBG := Presence
-TELEPHONY_APPS_DBG = NetworkSetting
+TELEPHONY_APPS_DBG := NetworkSetting
 TELEPHONY_APPS_DBG += QosTest
 TELEPHONY_APPS_DBG += LDSTestApp.xml
 TELEPHONY_APPS_DBG += QosTestConfig.xml

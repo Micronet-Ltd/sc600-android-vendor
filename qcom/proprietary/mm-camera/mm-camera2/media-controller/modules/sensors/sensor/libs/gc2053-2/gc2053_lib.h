@@ -14,7 +14,7 @@
 #define   GC2053MinRealGain            1.0	   ///< Minimum sensor real gain (1X)
 #define   GC2053MaxRealGain            128.0	   ///< Maximum sensor real gain (32X)
 
-#define SENSOR_MODEL "gc2053"
+#define SENSOR_MODEL "gc2053-2"
 
 /*Mirror*/
 #undef GC2053_MIRROR_NORMAL
